@@ -12,12 +12,24 @@ public class CubeOnJoints : MonoBehaviour
     [SerializeField]
     private long jointSize = 10;
 
+    private void OnEnable()
+    {
+        KinectManager.OnNewUser += OnNewUser;
+        KinectManager.OnLostUser += OnLostUser;
+    }
+
+    private void OnDisable()
+    {
+        KinectManager.OnNewUser -= OnNewUser;
+        KinectManager.OnLostUser -= OnLostUser;
+    }
 
     // Use this for initialization
     void Start()
     {
 
         kManager = KinectManager.Instance;
+
 
         if (!kManager.IsInitialized())
         {
@@ -47,8 +59,13 @@ public class CubeOnJoints : MonoBehaviour
         }
     }
 
-    private void OnNewUser()
+    private void OnNewUser(long userId)
     {
+       
+    }
 
+    private void OnLostUser(long userId)
+    {
+        
     }
 }
