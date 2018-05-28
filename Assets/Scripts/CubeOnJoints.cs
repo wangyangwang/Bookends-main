@@ -2,16 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CubeOnJoints : MonoBehaviour
 {
+    private class KinectUser
+    {
+        List<GameObject> jointIndicators;
+        public readonly long userId;
+
+        public KinectUser(long id)
+        {
+            userId = id;
+            jointIndicators = new List<GameObject>();
+        }
+
+        public void UpdatePositions()
+        {
+            for (int i = 0; i < KinectManager.Instance.GetJointCount(); i++)
+            {
+                if (jointIndicators[i] == null)
+                {
+                    jointIndicators.Add(GameObject.CreatePrimitive(PrimitiveType.Cube));
+                }
+                jointIndicators[i].transform.position = KinectManager.Instance.GetJointPosition(userId, i);
+            }
+        }
+    }
 
     //objects
     private KinectManager kManager;
+    private List<KinectUser> allUsers;
 
     //parameters
     [SerializeField]
     private long jointSize = 10;
 
+    //setup event listeners
     private void OnEnable()
     {
         KinectManager.OnNewUser += OnNewUser;
@@ -29,6 +55,7 @@ public class CubeOnJoints : MonoBehaviour
     {
 
         kManager = KinectManager.Instance;
+        allUsers = new List<KinectUser>();
 
 
         if (!kManager.IsInitialized())
@@ -41,31 +68,28 @@ public class CubeOnJoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-
-    private void OnDrawGizmos()
-    {
-        if (!kManager) return;
-        for (int i = 0; i < kManager.GetUsersCount(); i++)
+        foreach(KinectUser ku in allUsers)
         {
-            long userid = kManager.GetUserIdByIndex(i);
-            Vector3 headVec = kManager.GetJointKinectPosition(userid, (int)KinectInterop.JointType.Head);
-            Gizmos.DrawCube(headVec, new Vector3(jointSize, jointSize, jointSize));
-
-            Vector3 leftHandVec = kManager.GetJointKinectPosition(userid, (int)KinectInterop.JointType.HandLeft);
-            Gizmos.DrawCube(leftHandVec, new Vector3(jointSize, jointSize, jointSize));
+            ku.UpdatePositions();
         }
+
     }
+
 
     private void OnNewUser(long userId)
     {
-       
+        KinectUser newUser = new KinectUser(userId);
+        allUsers.Add(newUser);
     }
 
     private void OnLostUser(long userId)
     {
-        
+        foreach (KinectUser ku in allUsers)
+        {
+            if (ku.userId == userId)
+            {
+                allUsers.Remove(ku);
+            }
+        }
     }
 }
