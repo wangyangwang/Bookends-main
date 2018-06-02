@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public class CubeOnJoints : MonoBehaviour
+public class MakeParicleFromJoints : MonoBehaviour
 {
     private class KinectUser
     {
@@ -18,6 +18,7 @@ public class CubeOnJoints : MonoBehaviour
 
         public void UpdatePositions()
         {
+            if (JointParticle.instance == null) return;
             for (int i = 0; i < KinectManager.Instance.GetJointCount(); i++)
             {
                 JointParticle.instance.MakeParicle(KinectManager.Instance.GetJointPosition(userId, i));
