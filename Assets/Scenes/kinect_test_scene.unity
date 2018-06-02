@@ -254,40 +254,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &815279665 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
-  m_PrefabInternal: {fileID: 1228437205}
---- !u!114 &815279666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 815279665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c52c07402f7274cab64e484b1bddc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerIndex: 0
-  mirroredMovement: 0
-  verticalMovement: 0
-  externalRootMotion: 0
-  externalHeadRotation: 0
-  externalHandRotations: 0
-  fingerOrientations: 0
-  moveRate: 1
-  smoothFactor: 10
-  offsetNode: {fileID: 0}
-  posRelativeToCamera: {fileID: 0}
-  posRelOverlayColor: 0
-  backgroundPlane: {fileID: 0}
-  posRelInvertedZ: 0
-  groundedFeet: 0
-  applyMuscleLimits: 0
-  flipLeftRight: 0
-  verticalOffset: 0
-  forwardOffset: 0
 --- !u!1 &1012344591
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,52 +342,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+    - target: {fileID: 4724814623869130, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 100074, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100112, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100162, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 18d87bd7602f04fb28b5fa44c7b8985c, type: 3}
+  m_ParentPrefab: {fileID: 100100000, guid: 902d9a388b8f8ce42b1524bb94bc53e6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1547577334
 GameObject:
