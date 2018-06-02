@@ -5,14 +5,20 @@ public class ReceivePosition : MonoBehaviour {
     
    	public OSC osc;
 
+    [SerializeField]
+    string[] receiveHandlers;
+
+
 
 	// Use this for initialization
 	void Start () {
-	   //osc.SetAddressHandler( "/CubeXYZ" , OnReceiveXYZ);
-        osc.SetAddressHandler("/1/faderA", OnReceivePosY);
-        osc.SetAddressHandler("/1/rotaryA", OnReceiveRY);
-        osc.SetAddressHandler("/message", OnReceive);
-       //osc.SetAddressHandler("/CubeZ", OnReceiveZ);
+
+        osc.SetAddressHandler(receiveHandlers[0], OnReceivePosY);
+        osc.SetAddressHandler(receiveHandlers[1], OnReceiveRY);
+        osc.SetAddressHandler(receiveHandlers[2], OnReceive);
+
+
+        //osc.SetAddressHandler("/CubeZ", OnReceiveZ);
     }
 	
 	// Update is called once per frame

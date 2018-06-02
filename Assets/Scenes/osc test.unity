@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 303305483}
   - component: {fileID: 303305487}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: OSC Receiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,6 +349,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   osc: {fileID: 839470520}
+  receiveHandlers:
+  - /1/faderA
+  - /1/rotaryA
+  - /message
 --- !u!114 &839470520 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114721042529775624, guid: ec1bf467768525d48a41eabdd349be43,
