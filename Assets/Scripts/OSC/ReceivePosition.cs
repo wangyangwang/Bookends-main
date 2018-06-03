@@ -5,13 +5,20 @@ public class ReceivePosition : MonoBehaviour {
     
    	public OSC osc;
 
+    [SerializeField]
+    string[] receiveHandlers;
+
+
 
 	// Use this for initialization
 	void Start () {
-	   //osc.SetAddressHandler( "/CubeXYZ" , OnReceiveXYZ);
-        osc.SetAddressHandler("/1/faderA", OnReceivePosY);
-        osc.SetAddressHandler("/1/rotaryA", OnReceiveRY);
-       //osc.SetAddressHandler("/CubeZ", OnReceiveZ);
+
+        osc.SetAddressHandler(receiveHandlers[0], OnReceivePosY);
+        osc.SetAddressHandler(receiveHandlers[1], OnReceiveRY);
+        osc.SetAddressHandler(receiveHandlers[2], OnReceive);
+
+
+        //osc.SetAddressHandler("/CubeZ", OnReceiveZ);
     }
 	
 	// Update is called once per frame
@@ -19,7 +26,13 @@ public class ReceivePosition : MonoBehaviour {
 	
 	}
 
-	void OnReceiveXYZ(OscMessage message){
+    void OnReceive(OscMessage message)
+    {
+        print(message.GetFloat(0));
+    }
+
+
+    void OnReceiveXYZ(OscMessage message){
 		float x = message.GetFloat(0);
          float y = message.GetFloat(1);
 		float z = message.GetFloat(2);
@@ -35,16 +48,21 @@ public class ReceivePosition : MonoBehaviour {
         position.y = y;
 
         transform.position = position;
+        Debug.Log("Y");
     }
 
     void OnReceiveRY(OscMessage message) {
         float rY = message.GetFloat(0);
 
-        Quaternion cubeRotation = transform.rotation;
+        print(rY);
 
-        cubeRotation.y = rY;
+        //Quaternion cubeRotation = transform.rotation;
 
-        transform.rotation = cubeRotation;
+        transform.Rotate(new Vector3(rY,rY,rY));
+
+       // cubeRotation.y = rY;
+
+       // transform.rotation = cubeRotation;
     }
 
     void OnReceiveZ(OscMessage message) {
