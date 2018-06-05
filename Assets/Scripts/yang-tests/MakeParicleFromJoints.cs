@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public class MakeParicleFromJoints : MonoBehaviour
+public class MakeParicleFromJoints : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
     private class KinectUser
     {
@@ -21,7 +21,7 @@ public class MakeParicleFromJoints : MonoBehaviour
             if (JointParticle.instance == null) return;
             for (int i = 0; i < KinectManager.Instance.GetJointCount(); i++)
             {
-                JointParticle.instance.MakeParicle(KinectManager.Instance.GetJointPosition(userId, i));
+                JointParticle.instance.MakeParticle(KinectManager.Instance.GetJointPosition(userId, i));
             }
         }
 
@@ -34,6 +34,8 @@ public class MakeParicleFromJoints : MonoBehaviour
     //parameters
     [SerializeField]
     private float skeletonSize = 5f;
+    [SerializeField]
+    private Material pandaMat;
 
     //setup event listeners
     private void OnEnable()
@@ -64,10 +66,13 @@ public class MakeParicleFromJoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(KinectUser ku in allUsers)
-        {
-            ku.UpdatePositions();
-        }
+        
+        //foreach(KinectUser ku in allUsers)
+        //{
+        //    ku.UpdatePositions();
+          
+        //    //if(kManager.gestu)
+        //}
     }
 
 
@@ -86,5 +91,55 @@ public class MakeParicleFromJoints : MonoBehaviour
                 allUsers.Remove(ku);
             }
         }
+    }
+
+    public void UserDetected(long userId, int userIndex)
+    {
+        //throw new NotImplementedException();
+        if (!kManager) return;
+        kManager.DetectGesture(userId, KinectGestures.Gestures.Wave);
+        kManager.DetectGesture(userId, KinectGestures.Gestures.Jump);
+    }
+
+    public void UserLost(long userId, int userIndex)
+    {
+        //throw new NotImplementedException();
+    }
+
+    public void GestureInProgress(long userId, int userIndex, KinectGestures.Gestures gesture, float progress, KinectInterop.JointType joint, Vector3 screenPos)
+    {
+        //throw new NotImplementedException();
+
+        //print("gesture in progress");
+
+    }
+
+    public bool GestureCompleted(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint, Vector3 screenPos)
+    {
+        //throw new NotImplementedException();
+        //print("gesture completed");
+
+        if (gesture == KinectGestures.Gestures.Jump)
+        {
+           // JointParticle.instance.MakeParticle(kManager.GetJointPosition(userId, (int)KinectInterop.JointType.FootLeft));
+          //  JointParticle.instance.MakeParticle(kManager.GetJointPosition(userId, (int)KinectInterop.JointType.FootRight));
+        }
+
+        if (gesture == KinectGestures.Gestures.Wave)
+        {
+            JointParticle.instance.MakeParticle(kManager.GetJointPosition(userId, (int)KinectInterop.JointType.HandLeft));
+            pandaMat.color = Color.HSVToRGB(UnityEngine.Random.Range(0f, 1f), 1, 1);
+
+        }
+
+
+        return true;
+    }
+
+    public bool GestureCancelled(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint)
+    {
+        //throw new NotImplementedException();
+        //print("gesture canceled");
+        return true;
     }
 }

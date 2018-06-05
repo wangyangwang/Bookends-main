@@ -14,24 +14,26 @@ public class JointParticle : MonoBehaviour {
         {
             instance = this;
         }
+    
     }
 
     // Use this for initialization
     void Start () {
-
+        //gestures = GetComponent<>
         ps = GetComponent<ParticleSystem>();
         
 	}
 
-    public void MakeParicle(Vector3 position)
+    public void MakeParticle(Vector3 position)
     {
         ps.startColor = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
         gameObject.transform.position = position;
-        ps.Emit(1);
+        ps.Emit(10);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        //if (gestures.)
+
+    }
 }
