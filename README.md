@@ -34,7 +34,7 @@ Control timings like when to cue a certain music, or when to start a certain ani
 
 
 
-- [ ] `OSCHandler`
+- [x] `OSCHandler`
 
     - [ ] Receive OSC data from Richard's iPad control panel app
     - [ ] possibily send OSC out (as feedback?)
