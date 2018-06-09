@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes: [{enabled: 1, path: Assets/K2Examples/KinectDemos/MultiSceneDemo/Scene0-StartupScene.unity,
+      guid: a90846a7f67ad3643b749eadab2bff57}, {enabled: 1, path: Assets/K2Examples/KinectDemos/MultiSceneDemo/Scene1-AvatarsDemo.unity,
+      guid: 467da7afcd9774846adc2532be87b77d}, {enabled: 1, path: Assets/K2Examples/KinectDemos/MultiSceneDemo/Scene2-GesturesDemo.unity,
+      guid: 9070f8ae67139a94fb288cc38da290be}]
   m_configObjects: {}
