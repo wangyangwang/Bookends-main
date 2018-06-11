@@ -3,59 +3,90 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PScontroller : MonoBehaviour {
+public class PScontroller : MonoBehaviour
+{
+    //fileds
     GameObject[] psChildren;
     Kvant.Spray[] sprays;
-    int childrenNum;
-    public Slider amountSlider;
-    public Toggle[] enableToggles;
+
+    [SerializeField]
+    Slider amountSlider;
+    [SerializeField]
+    Toggle[] enableToggles;
+
+    //properties
+    public int ParticleSystemNumer
+    {
+        get
+        {
+            return sprays.Length;
+        }
+    }
 
 
     // Use this for initialization
-    void Awake () {
-        childrenNum = transform.childCount;
-        if (childrenNum > 0)
-        {
-            psChildren = new GameObject [childrenNum];
-            sprays = new Kvant.Spray[childrenNum];
-        }
-        
+    void Awake()
+    {
+
     }
 
 
-    private void Start()
+    void Start()
     {
-        for (int i = 0; i < childrenNum; i++)
+        if (!amountSlider)
         {
-            psChildren[i] = gameObject.transform.GetChild(i).gameObject;
-            sprays[i] = psChildren[i].GetComponent<Kvant.Spray>();
-            
-        }
-    }
-
-
-
-    // Update is called once per frame
-    void Update () {
-        ChangeParicleAmount();
-        EnableParticle();
-	}
-
-
-    public void ChangeParicleAmount()
-    {
-        for (int i = 0; i < childrenNum; i++)
-        {
-            sprays[i].throttle = amountSlider.value;
+            Debug.LogError("amoutn slider is not linked.");
+            return;
         }
 
+
+        sprays = GetComponentsInChildren<Kvant.Spray>();
+        print(sprays.Length);
+
+
+        for (int i = 0; i < enableToggles.Length; ++i)
+        {
+            enableToggles[i].onValueChanged.AddListener(delegate { CheckAllParticles(); });
+        }
+
+        amountSlider.onValueChanged.AddListener((arg0) => ChangeParicleAmount(arg0));
+
+        Init();
     }
 
-    public void EnableParticle()
+
+    void Init()
     {
-        for (int i = 0; i < childrenNum; i++)
-        {
-            sprays[i].enabled = enableToggles[i].isOn;
-        } 
+        CheckAllParticles();
+        ChangeParicleAmount(amountSlider.value);
     }
+
+
+
+    //public methods
+
+    public void ChangeParicleAmount(float n)
+    {
+        for (int i = 0; i < sprays.Length; i++)
+        {
+            sprays[i].throttle = n;
+        }
+
+    }
+
+    public void CheckAllParticles()
+    {
+        for (int i = 0; i < sprays.Length; i++)
+        {
+            EnableParticle(i, enableToggles[i].isOn);
+        }
+    }
+
+    public void EnableParticle(int index, bool state)
+    {
+        sprays[index].enabled = state;
+    }
+
+
+
 }
