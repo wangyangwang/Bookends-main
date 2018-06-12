@@ -17,6 +17,7 @@ public class PScontroller : MonoBehaviour
     //properties
     public int ParticleSystemNumer
     {
+
         get
         {
             return sprays.Length;
@@ -46,9 +47,10 @@ public class PScontroller : MonoBehaviour
 
         for (int i = 0; i < enableToggles.Length; ++i)
         {
+            //add the method to the event "ToggleValueChanged"
             enableToggles[i].onValueChanged.AddListener(delegate { CheckAllParticles(); });
         }
-
+        
         amountSlider.onValueChanged.AddListener((arg0) => ChangeParicleAmount(arg0));
 
         Init();
