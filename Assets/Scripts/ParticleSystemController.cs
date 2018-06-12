@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PScontroller : MonoBehaviour
+public class ParticleSystemController : MonoBehaviour
 {
     //fileds
     GameObject[] psChildren;
@@ -14,7 +14,7 @@ public class PScontroller : MonoBehaviour
     [SerializeField]
     Toggle[] enableToggles;
 
-    public static PScontroller instance = null;
+    public static ParticleSystemController instance = null;
 
 
     //properties
