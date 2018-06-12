@@ -4,8 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: [{enabled: 1, path: Assets/K2Examples/KinectDemos/MultiSceneDemo/Scene0-StartupScene.unity,
-      guid: a90846a7f67ad3643b749eadab2bff57}, {enabled: 1, path: Assets/K2Examples/KinectDemos/MultiSceneDemo/Scene1-AvatarsDemo.unity,
-      guid: 467da7afcd9774846adc2532be87b77d}, {enabled: 1, path: Assets/K2Examples/KinectDemos/MultiSceneDemo/Scene2-GesturesDemo.unity,
-      guid: 9070f8ae67139a94fb288cc38da290be}]
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Game1-Stage1.unity
+    guid: f64c503bca7547646970ccc3ef822065
+  - enabled: 1
+    path: Assets/Scenes/firstScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/audioControllerTest.unity
+    guid: c0669d63bc1010d40ba2533f5ac294b2
+  - enabled: 1
+    path: Assets/Scenes/particleScene.unity
+    guid: 3bdd43502a7606841a9ff7a2b19f346e
   m_configObjects: {}
