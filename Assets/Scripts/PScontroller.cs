@@ -14,6 +14,9 @@ public class PScontroller : MonoBehaviour
     [SerializeField]
     Toggle[] enableToggles;
 
+    public static PScontroller instance = null;
+
+
     //properties
     public int ParticleSystemNumer
     {
@@ -27,6 +30,14 @@ public class PScontroller : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
 
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public class MakeParicleFromJoints : MonoBehaviour, KinectGestures.GestureListenerInterface
+public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
     private class KinectUser
     {
