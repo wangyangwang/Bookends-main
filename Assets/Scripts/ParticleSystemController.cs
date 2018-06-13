@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PScontroller : MonoBehaviour
+public class ParticleSystemController : MonoBehaviour
 {
     //fileds
     GameObject[] psChildren;
@@ -13,6 +13,9 @@ public class PScontroller : MonoBehaviour
     Slider amountSlider;
     [SerializeField]
     Toggle[] enableToggles;
+
+    public static ParticleSystemController instance = null;
+
 
     //properties
     public int ParticleSystemNumer
@@ -28,6 +31,14 @@ public class PScontroller : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
 
     }
 

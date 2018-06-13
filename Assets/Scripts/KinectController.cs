@@ -4,8 +4,15 @@ using UnityEngine;
 using System;
 
 
-public class MakeParicleFromJoints : MonoBehaviour, KinectGestures.GestureListenerInterface
+public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
+
+
+    public static KinectController instance = null;
+
+    /// <summary>
+    /// nested class for storing kinect user id and more.
+    /// </summary>
     private class KinectUser
     {
         public readonly long userId;
@@ -14,18 +21,8 @@ public class MakeParicleFromJoints : MonoBehaviour, KinectGestures.GestureListen
         {
             userId = id;
         }
-
-
-        public void UpdatePositions()
-        {
-            if (JointParticle.instance == null) return;
-            for (int i = 0; i < KinectManager.Instance.GetJointCount(); i++)
-            {
-                JointParticle.instance.MakeParticle(KinectManager.Instance.GetJointPosition(userId, i));
-            }
-        }
-
     }
+
 
     //objects
     private KinectManager kManager;
@@ -50,29 +47,30 @@ public class MakeParicleFromJoints : MonoBehaviour, KinectGestures.GestureListen
         KinectManager.OnLostUser -= OnLostUser;
     }
 
+
+    void Awake()
+    {
+        if (instance == null) instance = this;
+        if (instance != null)
+        {
+            Debug.LogError("Found more than 1 kinectControler instance");
+            Destroy(gameObject);
+        }
+    }
+
+
     // Use this for initialization
     void Start()
     {
         kManager = KinectManager.Instance;
         allUsers = new List<KinectUser>();
+
         kManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
         if (!kManager.IsInitialized())
         {
             Debug.LogError("Kinect Manager is not initialized!");
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        //foreach(KinectUser ku in allUsers)
-        //{
-        //    ku.UpdatePositions();
-          
-        //    //if(kManager.gestu)
-        //}
     }
 
 
@@ -95,51 +93,39 @@ public class MakeParicleFromJoints : MonoBehaviour, KinectGestures.GestureListen
 
     public void UserDetected(long userId, int userIndex)
     {
-        //throw new NotImplementedException();
         if (!kManager) return;
+        //list of gestures to be detected
         kManager.DetectGesture(userId, KinectGestures.Gestures.Wave);
         kManager.DetectGesture(userId, KinectGestures.Gestures.Jump);
     }
 
     public void UserLost(long userId, int userIndex)
     {
-        //throw new NotImplementedException();
+        //...
     }
 
     public void GestureInProgress(long userId, int userIndex, KinectGestures.Gestures gesture, float progress, KinectInterop.JointType joint, Vector3 screenPos)
     {
-        //throw new NotImplementedException();
-
-        //print("gesture in progress");
-
+        //...
     }
 
     public bool GestureCompleted(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint, Vector3 screenPos)
     {
-        //throw new NotImplementedException();
-        //print("gesture completed");
 
         if (gesture == KinectGestures.Gestures.Jump)
         {
-           // JointParticle.instance.MakeParticle(kManager.GetJointPosition(userId, (int)KinectInterop.JointType.FootLeft));
-          //  JointParticle.instance.MakeParticle(kManager.GetJointPosition(userId, (int)KinectInterop.JointType.FootRight));
+            //do stuff
         }
 
         if (gesture == KinectGestures.Gestures.Wave)
         {
-            JointParticle.instance.MakeParticle(kManager.GetJointPosition(userId, (int)KinectInterop.JointType.HandLeft));
-            pandaMat.color = Color.HSVToRGB(UnityEngine.Random.Range(0f, 1f), 1, 1);
-
+            //do stuff
         }
-
-
         return true;
     }
 
     public bool GestureCancelled(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint)
     {
-        //throw new NotImplementedException();
-        //print("gesture canceled");
         return true;
     }
 }
