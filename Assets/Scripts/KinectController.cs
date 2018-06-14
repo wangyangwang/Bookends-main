@@ -31,8 +31,6 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     //parameters
     [SerializeField]
     private float skeletonSize = 5f;
-    [SerializeField]
-    private Material pandaMat;
 
     //setup event listeners
     private void OnEnable()
@@ -50,8 +48,11 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     void Awake()
     {
-        if (instance == null) instance = this;
-        if (instance != null)
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
         {
             Debug.LogError("Found more than 1 kinectControler instance");
             Destroy(gameObject);

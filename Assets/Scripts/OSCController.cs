@@ -18,12 +18,14 @@ public class OSCController : MonoBehaviour
     public static event FloatMsg OnParticleAmountChange;
     public static event IntMsg OnParticleTypeChange;
     public static event BoolMsg OnPlay;
-    public static event BoolMsg OnPause;
-    public static event BoolMsg OnStop;
+    public static event BoolMsg OnPausePlay;
+    public static event BoolMsg OnStopPlay;
     public static event FloatMsg OnJumpTo;
     public static event IntPlusValueMsg OnVolumnChange;
     public static event IntMsg OnFilterTypeChange;
     public static event BoolMsg OnKinectUserReset;
+    public static event BoolMsg OnNextStage;
+    public static event BoolMsg OnPreStage;
 
 
     OSC oscObject;
@@ -51,6 +53,9 @@ public class OSCController : MonoBehaviour
         //public string filterSetting;
         //kinect
         public const string kinectUserTracking = "/kinect/resetUserTracking"; //int 0-1
+        //stage control
+        public const string nextStage = "/stage/next";
+        public const string preStage = "/stage/pre";
     }
 
 
@@ -94,11 +99,11 @@ public class OSCController : MonoBehaviour
                 break;
 
             case Paths.pause:
-                if (OnPause != null) OnPause();
+                if (OnPausePlay != null) OnPausePlay();
                 break;
 
             case Paths.stop:
-                if (OnStop != null) OnStop();
+                if (OnStopPlay != null) OnStopPlay();
                 break;
 
             case Paths.jumpTo:
@@ -121,9 +126,15 @@ public class OSCController : MonoBehaviour
             case Paths.filterType:
                 if (OnFilterTypeChange != null) OnFilterTypeChange(msg.GetInt(0));
                 break;
-
+               
             case Paths.kinectUserTracking:
                 if (OnKinectUserReset != null) OnKinectUserReset();
+                break;
+            case Paths.nextStage:
+                if (OnNextStage != null) OnNextStage();
+                break;
+            case Paths.preStage:
+                if (OnPreStage != null) OnPreStage();
                 break;
 
             default:

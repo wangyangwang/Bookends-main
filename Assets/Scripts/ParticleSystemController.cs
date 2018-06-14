@@ -9,9 +9,7 @@ public class ParticleSystemController : MonoBehaviour
     GameObject[] psChildren;
     Kvant.Spray[] sprays;
 
-    [SerializeField]
     Slider amountSlider;
-    [SerializeField]
     Toggle[] enableToggles;
 
     public static ParticleSystemController instance = null;
@@ -40,6 +38,7 @@ public class ParticleSystemController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //enableToggles = 
     }
 
 

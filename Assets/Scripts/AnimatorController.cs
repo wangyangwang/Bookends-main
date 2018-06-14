@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class AudioController : MonoBehaviour
+//TODO
+public class AnimatorController : MonoBehaviour
 {
-    
-    public static AudioController instance;
 
-    AudioSource audioSource;
+    public static AnimatorController instance = null;
 
 
     private void Awake()
@@ -19,7 +17,7 @@ public class AudioController : MonoBehaviour
         }
         else if (instance != null)
         {
-            Debug.LogError("Found more than 1 AudioController, destroying...");
+            Debug.LogError("Found more than 1 AnimatorController, destroying gameobject...");
             Destroy(gameObject);
         }
     }
@@ -27,7 +25,7 @@ public class AudioController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -38,19 +36,16 @@ public class AudioController : MonoBehaviour
 
     public void Play()
     {
-        audioSource.Play();
+        //TODO
     }
-
     public void PausePlay()
     {
-        audioSource.Pause();
+        //TODO
     }
-
     public void StopPlay()
     {
-        audioSource.Stop();
+        //TODO
     }
-
     public void JumpTo(float p)
     {
         //TODO
