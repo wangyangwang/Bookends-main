@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     void ParticleTypeChange(int typeIndex)
     {
-        //FIXME: change to EnableParticle
+        ParticleSystemController.instance.ChangeParticleType(typeIndex);
     }
 
     void VolumnChange(int which, float newVol)

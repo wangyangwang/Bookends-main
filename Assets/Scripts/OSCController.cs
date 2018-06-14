@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 /// <summary>
 /// Receive and send OSC data to the iPad control panel
@@ -82,7 +83,8 @@ public class OSCController : MonoBehaviour
 
     void ProcessMessage(OscMessage msg)
     {
-        Debug.Log("Message from:  " + msg.address + "  Message Content:  " + msg);
+
+        Debug.Log(msg);
 
         switch (msg.address)
         {
