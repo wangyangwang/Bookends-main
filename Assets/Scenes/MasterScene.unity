@@ -746,6 +746,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 95805593840685854, guid: 30e1b03ccc0b2c44e9adc43a94e5e79f,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 95805593840685854, guid: 30e1b03ccc0b2c44e9adc43a94e5e79f,
+        type: 2}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30e1b03ccc0b2c44e9adc43a94e5e79f, type: 2}
   m_IsPrefabParent: 0
@@ -1674,6 +1684,11 @@ Prefab:
     - target: {fileID: 4216663444791892, guid: 75f266d8507d7204bb9097474a50a6ed, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114006946549973778, guid: 75f266d8507d7204bb9097474a50a6ed,
+        type: 2}
+      propertyPath: lateUpdateAvatars
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75f266d8507d7204bb9097474a50a6ed, type: 2}
