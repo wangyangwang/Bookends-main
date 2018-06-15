@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ParticleSystemController : MonoBehaviour
 {
+    //TODO: move particle position to hands.
+
     //fileds
     GameObject[] psChildren;
     Kvant.Spray[] particleSystems;

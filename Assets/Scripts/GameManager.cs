@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
         OSCController.OnKinectUserReset += ResetUserTracking;
         OSCController.OnNextStage += ToNextStage;
         OSCController.OnPreStage += ToPreStage;
+
+        KinectController.OnWave += OnUserWave;
+
     }
 
     private void OnDisable()
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
         OSCController.OnKinectUserReset -= ResetUserTracking;
         OSCController.OnNextStage -= ToNextStage;
         OSCController.OnPreStage -= ToPreStage;
+
+        KinectController.OnWave -= OnUserWave;
     }
 
     private void Awake()
@@ -153,6 +158,11 @@ public class GameManager : MonoBehaviour
     void ToPreStage()
     {
         StageController.instance.LoadPreStage();
+    }
+
+    void OnUserWave()
+    {
+
     }
 
 }

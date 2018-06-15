@@ -8,6 +8,11 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 {
 
 
+    public delegate void GestureEvent();
+    public static event GestureEvent OnWave;
+
+
+
     public static KinectController instance = null;
 
     /// <summary>
@@ -22,7 +27,6 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
             userId = id;
         }
     }
-
 
     //objects
     private KinectManager kManager;
@@ -120,7 +124,7 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
         if (gesture == KinectGestures.Gestures.Wave)
         {
-            //do stuff
+            if (OnWave != null) OnWave();
         }
         return true;
     }
