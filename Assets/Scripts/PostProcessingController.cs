@@ -7,6 +7,8 @@ public class PostProcessingController : MonoBehaviour
     
     public static PostProcessingController instance = null;
 
+
+
     private void Awake()
     {
         if (instance == null)
@@ -22,6 +24,7 @@ public class PostProcessingController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
 
     }
 
