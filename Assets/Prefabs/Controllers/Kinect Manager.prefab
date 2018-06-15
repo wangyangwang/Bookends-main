@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4216663444791892}
   - component: {fileID: 114006946549973778}
   - component: {fileID: 114373932944750826}
+  - component: {fileID: 114087075685073810}
   m_Layer: 0
   m_Name: Kinect Manager
   m_TagString: Untagged
@@ -88,6 +89,18 @@ MonoBehaviour:
   gestureListeners: []
   calibrationText: {fileID: 0}
   gesturesDebugText: {fileID: 0}
+--- !u!114 &114087075685073810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1138955176311816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f4901c755794c97b5efd60a615b4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonSize: 5
 --- !u!114 &114373932944750826
 MonoBehaviour:
   m_ObjectHideFlags: 1

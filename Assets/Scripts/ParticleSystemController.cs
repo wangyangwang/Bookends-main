@@ -7,23 +7,24 @@ public class ParticleSystemController : MonoBehaviour
 {
     //fileds
     GameObject[] psChildren;
-    Kvant.Spray[] sprays;
+    Kvant.Spray[] particleSystems;
 
-    [SerializeField]
-    Slider amountSlider;
-    [SerializeField]
-    Toggle[] enableToggles;
+    //Slider amountSlider;
+    //Toggle[] enableToggles;
 
     public static ParticleSystemController instance = null;
 
 
+    public float defaultParticleSystemAmount = 1;
+    [Range(0, 2)]
+    public int defaultParticleSystemIndex = 0;
+
     //properties
     public int ParticleSystemNumer
     {
-
         get
         {
-            return sprays.Length;
+            return particleSystems.Length;
         }
     }
 
@@ -40,65 +41,62 @@ public class ParticleSystemController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //enableToggles = 
     }
 
 
     void Start()
     {
-        if (!amountSlider)
-        {
-            Debug.LogError("amoutn slider is not linked.");
-            return;
-        }
 
+        particleSystems = GetComponentsInChildren<Kvant.Spray>();
 
-        sprays = GetComponentsInChildren<Kvant.Spray>();
-        print(sprays.Length);
+        //for (int i = 0; i < enableToggles.Length; ++i)
+        //{
+        //    //add the method to the event "ToggleValueChanged"
+        //    enableToggles[i].onValueChanged.AddListener(delegate { CheckAllParticles(); });
+        //}
 
+        ////UNDONE: for testing
+        //if (amountSlider) amountSlider.onValueChanged.AddListener((arg0) => ChangeParicleAmount(arg0));
 
-        for (int i = 0; i < enableToggles.Length; ++i)
-        {
-            //add the method to the event "ToggleValueChanged"
-            enableToggles[i].onValueChanged.AddListener(delegate { CheckAllParticles(); });
-        }
-        
-        amountSlider.onValueChanged.AddListener((arg0) => ChangeParicleAmount(arg0));
-
-        Init();
+        ChangeParticleType(defaultParticleSystemIndex);
+        ChangeParicleAmount(defaultParticleSystemAmount);
     }
 
 
-    void Init()
+    void EnableParticle(int index, bool state)
     {
-        CheckAllParticles();
-        ChangeParicleAmount(amountSlider.value);
+        particleSystems[index].enabled = state;
     }
-
 
 
     //public methods
 
     public void ChangeParicleAmount(float n)
     {
-        for (int i = 0; i < sprays.Length; i++)
+        for (int i = 0; i < particleSystems.Length; i++)
         {
-            sprays[i].throttle = n;
+            particleSystems[i].throttle = n;
         }
 
     }
 
-    public void CheckAllParticles()
+    //public void CheckAllParticles()
+    //{
+    //    for (int i = 0; i < sprays.Length; i++)
+    //    {
+    //        EnableParticle(i, enableToggles[i].isOn);
+    //    }
+    //}
+
+    public void ChangeParticleType(int index)
     {
-        for (int i = 0; i < sprays.Length; i++)
+        for (int i = 0; i < particleSystems.Length; ++i)
         {
-            EnableParticle(i, enableToggles[i].isOn);
+            EnableParticle(i, i == index);
         }
     }
 
-    public void EnableParticle(int index, bool state)
-    {
-        sprays[index].enabled = state;
-    }
 
 
 
