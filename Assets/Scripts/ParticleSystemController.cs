@@ -31,6 +31,9 @@ public class ParticleSystemController : MonoBehaviour
     }
 
 
+    public bool FollowHand { get; set; }
+
+
     // Use this for initialization
     void Awake()
     {
@@ -52,17 +55,16 @@ public class ParticleSystemController : MonoBehaviour
 
         particleSystems = GetComponentsInChildren<Kvant.Spray>();
 
-        //for (int i = 0; i < enableToggles.Length; ++i)
-        //{
-        //    //add the method to the event "ToggleValueChanged"
-        //    enableToggles[i].onValueChanged.AddListener(delegate { CheckAllParticles(); });
-        //}
-
-        ////UNDONE: for testing
-        //if (amountSlider) amountSlider.onValueChanged.AddListener((arg0) => ChangeParicleAmount(arg0));
-
         ChangeParticleType(defaultParticleSystemIndex);
         ChangeParicleAmount(defaultParticleSystemAmount);
+
+        FollowHand = true;
+        //TODO: particle follow hands
+    }
+
+    private void Update()
+    {
+        
     }
 
 

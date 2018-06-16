@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioController : MonoBehaviour
 {
-    
+
     public static AudioController instance;
 
     AudioSource audioSource;
@@ -28,6 +28,8 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class AudioController : MonoBehaviour
 
     public void JumpTo(float p)
     {
-        //TODO
+        float realSeconds = p / audioSource.clip.length;
+        audioSource.time = realSeconds;
     }
 }

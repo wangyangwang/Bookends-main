@@ -15,12 +15,6 @@ using System.Collections.Generic;
 /// </summary>
 public class KinectManager : MonoBehaviour 
 {
-    //Events
-    //yang added
-    public delegate void UserAction(long userId);
-    public static event UserAction OnNewUser;
-    public static event UserAction OnLostUser;
-    //....
 
 	[Tooltip("How high above the ground is the sensor, in meters.")]
 	public float sensorHeight = 1.0f;
@@ -3905,10 +3899,6 @@ public class KinectManager : MonoBehaviour
 				
 				Debug.Log("Adding user " + uidIndex + ", ID: " + userId + ", Body: " + bodyIndex + ", Time: " + Time.realtimeSinceStartup);
 
-                if (OnNewUser != null)
-                {
-                    OnNewUser(userId);
-                }
 
                 dictUserIdToIndex[userId] = bodyIndex;
 				dictUserIdToTime[userId] = Time.time;
@@ -3968,10 +3958,7 @@ public class KinectManager : MonoBehaviour
 		//int uidIndex = alUserIds.IndexOf(userId);
 		int uidIndex = Array.IndexOf(aUserIndexIds, userId);
 		Debug.Log("Removing user " + uidIndex + ", ID: " + userId + ", Body: " + dictUserIdToIndex[userId] + ", Time: " + Time.realtimeSinceStartup);
-        if (OnLostUser != null)
-        {
-            OnLostUser(userId);
-        }
+
 //		// reset the respective avatar controllers
 //		for(int i = 0; i < avatarControllers.Count; i++)
 //		{

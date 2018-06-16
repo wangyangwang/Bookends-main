@@ -11,22 +11,8 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     public delegate void GestureEvent();
     public static event GestureEvent OnWave;
 
-
-
     public static KinectController instance = null;
 
-    /// <summary>
-    /// nested class for storing kinect user id and more.
-    /// </summary>
-    private class KinectUser
-    {
-        public readonly long userId;
-
-        public KinectUser(long id)
-        {
-            userId = id;
-        }
-    }
 
     //objects
     private KinectManager kManager;
@@ -36,18 +22,6 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     [SerializeField]
     private float skeletonSize = 5f;
 
-    //setup event listeners
-    private void OnEnable()
-    {
-        KinectManager.OnNewUser += OnNewUser;
-        KinectManager.OnLostUser += OnLostUser;
-    }
-
-    private void OnDisable()
-    {
-        KinectManager.OnNewUser -= OnNewUser;
-        KinectManager.OnLostUser -= OnLostUser;
-    }
 
 
     void Awake()
@@ -79,22 +53,11 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     }
 
 
-    private void OnNewUser(long userId)
+    public void ClearUsers()
     {
-        KinectUser newUser = new KinectUser(userId);
-        //allUsers.Add(newUser);
+        kManager.ClearKinectUsers();
     }
 
-    private void OnLostUser(long userId)
-    {
-        //foreach (KinectUser ku in allUsers)
-        //{
-        //    if (ku.userId == userId)
-        //    {
-        //        allUsers.Remove(ku);
-        //    }
-        //}
-    }
 
     public void UserDetected(long userId, int userIndex)
     {
