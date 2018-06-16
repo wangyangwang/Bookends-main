@@ -5,11 +5,17 @@ using UnityEngine.UI;
 
 public class ParticleSystemController : MonoBehaviour
 {
+
+    public enum ParticleType {
+        KVANTSPRAY, UNITYBUILDIN
+    }
+
     //TODO: move particle position to hands.
+    //TODO: add world space option to Kvant Spray system 
 
     //fileds
     GameObject[] psChildren;
-    Kvant.Spray[] particleSystems;
+    PSUnit[] particleSystems;
 
     //Slider amountSlider;
     //Toggle[] enableToggles;
@@ -20,6 +26,12 @@ public class ParticleSystemController : MonoBehaviour
     public float defaultParticleSystemAmount = 1;
     [Range(0, 2)]
     public int defaultParticleSystemIndex = 0;
+
+
+    //HACK!!! FIX ME LATER!
+    public Transform leftHand;
+    public Transform rightHand;
+
 
     //properties
     public int ParticleSystemNumer
@@ -45,32 +57,32 @@ public class ParticleSystemController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //enableToggles = 
     }
 
 
     void Start()
     {
-
-        particleSystems = GetComponentsInChildren<Kvant.Spray>();
+        particleSystems = GetComponentsInChildren<PSUnit>();
 
         ChangeParticleType(defaultParticleSystemIndex);
         ChangeParicleAmount(defaultParticleSystemAmount);
 
         FollowHand = true;
-        //TODO: particle follow hands
     }
 
     private void Update()
     {
-        
+        if(FollowHand)
+        {
+            transform.position = rightHand.transform.position;
+        }
     }
 
 
     void EnableParticle(int index, bool state)
     {
-        particleSystems[index].enabled = state;
+        particleSystems[index].State = state;
+
     }
 
 
@@ -80,18 +92,10 @@ public class ParticleSystemController : MonoBehaviour
     {
         for (int i = 0; i < particleSystems.Length; i++)
         {
-            particleSystems[i].throttle = n;
+            particleSystems[i].Amount = n;
         }
 
     }
-
-    //public void CheckAllParticles()
-    //{
-    //    for (int i = 0; i < sprays.Length; i++)
-    //    {
-    //        EnableParticle(i, enableToggles[i].isOn);
-    //    }
-    //}
 
     public void ChangeParticleType(int index)
     {

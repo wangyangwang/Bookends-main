@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 114687597119974660}
   - component: {fileID: 114313982429498850}
   - component: {fileID: 114112030181631882}
+  - component: {fileID: 114901511219894318}
   m_Layer: 5
   m_Name: OnScreenControlPanelCanvas
   m_TagString: Untagged
@@ -889,6 +890,8 @@ MonoBehaviour:
     - m_Text: Option B
       m_Image: {fileID: 0}
     - m_Text: Option C
+      m_Image: {fileID: 0}
+    - m_Text: Option D
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2441,6 +2444,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114901511219894318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118148186877814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d83a73ffa8e418d97ac78936aab30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleAmountSlider: {fileID: 114789398874955036}
+  particleTypeDropdown: {fileID: 114047144432744672}
 --- !u!114 &114934216525356044
 MonoBehaviour:
   m_ObjectHideFlags: 1
