@@ -1,13 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PostProcessingController : MonoBehaviour
 {
-    
+
     public static PostProcessingController instance = null;
 
 
+    List<MonoBehaviour> filterList;
+
+    public int FilterCount
+    {
+        get
+        {
+            return filterList.Count();
+        }
+    }
 
     private void Awake()
     {
@@ -21,22 +31,32 @@ public class PostProcessingController : MonoBehaviour
         }
     }
 
-    // Use this for initialization
+
     void Start()
     {
+        //This is customized for <Camera Filter Pack>, if changing to a different filter pack, this will need to be re-written
+        var mainCam = Camera.main.transform;
+        var filters = from filter in mainCam.GetComponents<MonoBehaviour>()
+                      where ((MonoBehaviour)filter).GetType().ToString().Contains("CameraFilter")
+                      select filter;
 
+        filterList = filters.ToList();
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
     }
 
-    public void UseEffect(int i)
+
+    public void UseEffect(int index)
     {
-        //TODO: MELODY
+        for (int i = 0; i < FilterCount; ++i)
+        {
+            filterList[i].enabled = index == i;
+        }
     }
 
 

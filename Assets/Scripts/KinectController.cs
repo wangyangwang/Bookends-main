@@ -30,7 +30,7 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     //objects
     private KinectManager kManager;
-    private List<KinectUser> allUsers;
+    //private List<KinectUser> allUsers;
 
     //parameters
     [SerializeField]
@@ -68,7 +68,7 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     void Start()
     {
         kManager = KinectManager.Instance;
-        allUsers = new List<KinectUser>();
+        //allUsers = new List<KinectUser>();
 
         kManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
         if (!kManager.IsInitialized())
@@ -82,18 +82,18 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     private void OnNewUser(long userId)
     {
         KinectUser newUser = new KinectUser(userId);
-        allUsers.Add(newUser);
+        //allUsers.Add(newUser);
     }
 
     private void OnLostUser(long userId)
     {
-        foreach (KinectUser ku in allUsers)
-        {
-            if (ku.userId == userId)
-            {
-                allUsers.Remove(ku);
-            }
-        }
+        //foreach (KinectUser ku in allUsers)
+        //{
+        //    if (ku.userId == userId)
+        //    {
+        //        allUsers.Remove(ku);
+        //    }
+        //}
     }
 
     public void UserDetected(long userId, int userIndex)
