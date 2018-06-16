@@ -1,10 +1,1 @@
-# bookends-kinect
-
-
-This is the kinect prototye code for project _Bookends_
-
-Project is for the technical demostration at late june in Shanghai
-
-
-
-
+![diagram](https://trello-attachments.s3.amazonaws.com/5b1c0ef0c8fb46ba96aa90ae/5b1c1c775906656ef32549e6/6403f3a5768e7fd21db3136f5fdf1538/bookends.jpg)
