@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PSUnit : MonoBehaviour {
+public class PSUnit : MonoBehaviour
+{
 
-  
+
 
     private bool state;
     public bool State
@@ -26,7 +27,7 @@ public class PSUnit : MonoBehaviour {
                     {
                         GetComponent<ParticleSystem>().emissionRate = 0;//FIXME: use modern API
                     }
-                   
+
                     break;
                 default:
                     Debug.LogWarning("Type is not set yet!");
@@ -71,15 +72,17 @@ public class PSUnit : MonoBehaviour {
 
 
     public ParticleSystemController.ParticleType Type { get; private set; }
-    
 
-	// Use this for initialization
-	void Awake () {
 
-		if(GetComponent<Kvant.Spray>()!=null)
+    // Use this for initialization
+    void Awake()
+    {
+
+        if (GetComponent<Kvant.Spray>() != null)
         {
             Type = ParticleSystemController.ParticleType.KVANTSPRAY;
-        }else if(GetComponent<ParticleSystem>()!=null)
+        }
+        else if (GetComponent<ParticleSystem>() != null)
         {
             Type = ParticleSystemController.ParticleType.UNITYBUILDIN;
         }
@@ -88,8 +91,8 @@ public class PSUnit : MonoBehaviour {
             Debug.LogError("PSUnit couldn't find any matching component. Deleting PSUnit on this gameobject...");
             Destroy(this);
         }
-	}
+    }
 
 
-    
+
 }

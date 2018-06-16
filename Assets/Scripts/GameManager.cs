@@ -22,10 +22,12 @@ public class GameManager : MonoBehaviour
         OSCController.OnParticleAmountChange += ParticleAmountChange;
         OSCController.OnParticleTypeChange += ParticleTypeChange;
         OSCController.OnKinectUserReset += ResetUserTracking;
-        OSCController.OnNextStage += ToNextStage;
-        OSCController.OnPreStage += ToPreStage;
+        OSCController.OnStageChange += StageChange;
+        OSCController.OnMusicianChange += MusicianChange;
+
 
         KinectController.OnWave += OnUserWave;
+
 
     }
 
@@ -41,8 +43,8 @@ public class GameManager : MonoBehaviour
         OSCController.OnParticleAmountChange -= ParticleAmountChange;
         OSCController.OnParticleTypeChange -= ParticleTypeChange;
         OSCController.OnKinectUserReset -= ResetUserTracking;
-        OSCController.OnNextStage -= ToNextStage;
-        OSCController.OnPreStage -= ToPreStage;
+        OSCController.OnStageChange -= StageChange;
+        OSCController.OnMusicianChange -= MusicianChange;
 
         KinectController.OnWave -= OnUserWave;
     }
@@ -150,15 +152,18 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void ToNextStage()
+    void StageChange(int targetStage)
     {
-        StageController.instance.LoadNextStage();
+        //TODO:
+        //StageController.instance.LoadNextStage();
     }
 
-    void ToPreStage()
+    void MusicianChange(int targetMusician)
     {
-        StageController.instance.LoadPreStage();
+        //TODO:
     }
+
+
 
     void OnUserWave()
     {
