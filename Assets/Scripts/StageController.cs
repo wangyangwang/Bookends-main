@@ -4,21 +4,52 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StageController : MonoBehaviour {
+public class StageController : MonoBehaviour
+{
 
+    private static bool created = false;
     public static StageController instance = null;
-    public Button nextButton;
-    public Button preButton;
+
+    //===============Settings================================
+
+    [System.Serializable]
+    public struct SessionSettings
+    {
+        public StageSettings[] stageSettings;
+    }
+
+    [System.Serializable]
+    public struct StageSettings
+    {
+        public AudioClip backgroundSoundtrack;
+        //public GameObject 
+        public Animator leadDancerAnimator;
+    }
+
+    [SerializeField]
+    public SessionSettings sessionOneSetting;
+    [SerializeField]
+    public SessionSettings sessionTwoSetting;
+
+    //===============================================
 
     int index = 0;
     int sceneCount = 0;
 
     private void Awake()
     {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            Debug.Log("Awake: " + this.gameObject);
+        }
+
         if (instance == null)
         {
             instance = this;
-        }else if (instance != this)
+        }
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -28,12 +59,8 @@ public class StageController : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-        if (!nextButton || !preButton)
-            return;
-
-        nextButton.onClick.AddListener(LoadNextStage);
-        preButton.onClick.AddListener(LoadPreStage);
+    void Start()
+    {
 
     }
 
@@ -43,7 +70,8 @@ public class StageController : MonoBehaviour {
         if (index < sceneCount)
         {
             index += 1;
-        }else if (index == sceneCount)
+        }
+        else if (index == sceneCount)
         {
             index = sceneCount;
         }
@@ -54,10 +82,11 @@ public class StageController : MonoBehaviour {
 
     public void LoadPreStage()
     {
-        if(index > 0)
+        if (index > 0)
         {
-            index -= 1;   
-        } else if(index == 0)
+            index -= 1;
+        }
+        else if (index == 0)
         {
             index = 0;
         }
@@ -67,7 +96,7 @@ public class StageController : MonoBehaviour {
 
 
 
-    public IEnumerator LoadingStage(int sceneNum)
+    IEnumerator LoadingStage(int sceneNum)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneNum, LoadSceneMode.Single);
 
@@ -79,9 +108,20 @@ public class StageController : MonoBehaviour {
     }
 
 
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void GoToStage(int stageIndex)
+    {
+
+    }
+
+    public void GoToMusician(int musicianIndex)
+    {
+
+    }
 }

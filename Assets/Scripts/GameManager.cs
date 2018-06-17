@@ -8,6 +8,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+
+    private static bool created = false;
+
+
     public static GameManager instance = null;
 
     private void OnEnable()
@@ -51,6 +55,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            Debug.Log("Awake: " + this.gameObject);
+        }
+
         if (instance == null)
         {
             instance = this;
@@ -63,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
 
         print("----Checking all controllers...");
@@ -100,72 +111,68 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
     }
 
     //callback methods
-    void Play()
+    private void Play()
     {
         PlayController.instance.Play();
     }
 
-    void StopPlay()
+    private void StopPlay()
     {
         PlayController.instance.StopPlay();
     }
 
-    void PausePlay()
+    private void PausePlay()
     {
         PlayController.instance.PausePlay();
     }
 
-    void JumpTo(float p)
+    private void JumpTo(float p)
     {
         PlayController.instance.JumpTo(p);
     }
 
-    void ParticleAmountChange(float newAmount)
+    private void ParticleAmountChange(float newAmount)
     {
         ParticleSystemController.instance.ChangeParicleAmount(newAmount);
     }
 
-    void ParticleTypeChange(int typeIndex)
+    private void ParticleTypeChange(int typeIndex)
     {
         ParticleSystemController.instance.ChangeParticleType(typeIndex);
     }
 
-    void VolumnChange(int which, float newVol)
+    private void VolumnChange(int which, float newVol)
     {
         //TODO
     }
 
-    void FilterTypeChange(int newTypeIndex)
+    private void FilterTypeChange(int newTypeIndex)
     {
         //TODO
     }
 
-    void ResetUserTracking()
+    private void ResetUserTracking()
     {
         //TODO
     }
 
-
-    void StageChange(int targetStage)
+    private void StageChange(int targetStage)
     {
-        //TODO:
-        //StageController.instance.LoadNextStage();
+        StageController.instance.GoToStage(targetStage);
     }
 
-    void MusicianChange(int targetMusician)
+    private void MusicianChange(int targetMusician)
     {
-        //TODO:
+        StageController.instance.GoToMusician(targetMusician);
     }
 
-
-
-    void OnUserWave()
+    private void OnUserWave()
     {
 
     }
