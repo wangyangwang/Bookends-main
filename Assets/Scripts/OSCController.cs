@@ -83,6 +83,12 @@ public class OSCController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (!oscObject)
+        {
+            Debug.LogError("Couldn't find OSC object!");
+            return;
+        }
+
         oscObject.SetAllMessageHandler(ProcessMessage);
     }
 

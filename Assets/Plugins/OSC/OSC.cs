@@ -331,11 +331,19 @@ public class UDPPacketIO
 
 	}
 
+    public Type GetValueType(int index)
+    {
+        return values[index].GetType();
+    }
 
 	public int GetInt(int index) {
-
 		if (values [index].GetType() == typeof(int) || values [index].GetType() == typeof(float) ) {
-            int data = (int)values[index];
+            if(values[index].GetType() == typeof(float))
+            {
+                Debug.LogWarning("Receiving a float, casting it to Int...");
+            }
+            int data = (int)((float)values[index]);
+           
             if (Double.IsNaN(data)) return 0;
             return data;
 		} else {
