@@ -119,56 +119,67 @@ public class GameManager : MonoBehaviour
     //callback methods
     private void Play()
     {
+        Debug.Log("play");
         PlayController.instance.Play();
     }
 
     private void StopPlay()
     {
+        Debug.Log("stop");
         PlayController.instance.StopPlay();
     }
 
     private void PausePlay()
     {
+        Debug.Log("pause");
         PlayController.instance.PausePlay();
     }
 
     private void JumpTo(float p)
     {
+        Debug.Log("Jumping to percentage " + p);
         PlayController.instance.JumpTo(p);
     }
 
     private void ParticleAmountChange(float newAmount)
     {
+        Debug.Log("Changing Partile Amount to  " + newAmount);
         ParticleSystemController.instance.ChangeParicleAmount(newAmount);
     }
 
     private void ParticleTypeChange(int typeIndex)
     {
+        Debug.Log("Changing to Particle Type " + typeIndex);
         ParticleSystemController.instance.ChangeParticleType(typeIndex);
     }
 
     private void VolumnChange(int which, float newVol)
     {
+        Debug.Log("Changing sound track " + which + " to volumn " + newVol);
         //TODO
     }
 
     private void FilterTypeChange(int newTypeIndex)
     {
+        Debug.Log("Changing filter type to  " + newTypeIndex);
         //TODO
     }
 
     private void ResetUserTracking()
     {
+        Debug.Log("Cleared all kinect users.");
         //TODO
     }
 
     private void StageChange(int targetStage)
     {
+        Debug.Log("Chang stage to " + targetStage);
         StageController.instance.GoToStage(targetStage);
     }
 
     private void MusicianChange(int targetMusician)
     {
+        Debug.Log("Change musician to " + targetMusician);
         StageController.instance.GoToMusician(targetMusician);
     }
 
