@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114403103324162084}
   - component: {fileID: 114819392773781750}
   - component: {fileID: 114956357273721290}
-  - component: {fileID: 114607547267885674}
+  - component: {fileID: 114889712975470376}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -59,7 +59,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -166,17 +166,6 @@ MonoBehaviour:
   Speed: 3.03
   Fade: 1
   Count: 0
---- !u!114 &114607547267885674
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598494318647024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045cf35476e4b40e081fb1b6f9634176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114817205608047084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +197,18 @@ MonoBehaviour:
   Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   PosX: 0.5
   PosY: 0.5
+--- !u!114 &114889712975470376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598494318647024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 6a48fbc09e2618d47b366cadea064a72, type: 2}
 --- !u!114 &114956357273721290
 MonoBehaviour:
   m_ObjectHideFlags: 1

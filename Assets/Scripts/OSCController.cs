@@ -25,8 +25,10 @@ public class OSCController : MonoBehaviour
     public static event IntPlusValueMsg OnVolumnChange;
     public static event IntMsg OnFilterTypeChange;
     public static event BoolMsg OnKinectUserReset;
-    public static event BoolMsg OnNextStage;
-    public static event BoolMsg OnPreStage;
+
+    public static event IntMsg OnStageChange;
+    public static event IntMsg OnMusicianChange;
+
 
 
     OSC oscObject;
@@ -50,13 +52,16 @@ public class OSCController : MonoBehaviour
         public const string volumn3 = "/volumn/three"; //float: 0 - 1
         public const string volumn4 = "/volumn/four"; //float: 0 - 1
         //filter
-        public const string filterType = "/filter/type"; //int: 0 - 3
-        //public string filterSetting;
+        public const string filterType = "/filter/type"; //int: 0 - 5 (?)
+
         //kinect
-        public const string kinectUserTracking = "/kinect/resetUserTracking"; //int 0-1
+        public const string kinectUserTracking = "/kinect/resetUserTracking"; //int: 0-1 (1 for active, 0 triggers nothign)
+
         //stage control
-        public const string nextStage = "/stage/next";
-        public const string preStage = "/stage/pre";
+        public const string changeStage = "/stage"; //int: 0-5 (6 stages in total)
+
+        //musician
+        public const string changeMusician = "/musician"; //int: 0-1 (2 musicians in total)
     }
 
 
@@ -128,15 +133,17 @@ public class OSCController : MonoBehaviour
             case Paths.filterType:
                 if (OnFilterTypeChange != null) OnFilterTypeChange(msg.GetInt(0));
                 break;
-               
+
             case Paths.kinectUserTracking:
                 if (OnKinectUserReset != null) OnKinectUserReset();
                 break;
-            case Paths.nextStage:
-                if (OnNextStage != null) OnNextStage();
+
+            case Paths.changeStage:
+                if (OnStageChange != null) OnStageChange(msg.GetInt(0));
                 break;
-            case Paths.preStage:
-                if (OnPreStage != null) OnPreStage();
+
+            case Paths.changeMusician:
+                if (OnMusicianChange != null) OnMusicianChange(msg.GetInt(0));
                 break;
 
             default:

@@ -8,6 +8,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+
+    private static bool created = false;
+
+
     public static GameManager instance = null;
 
     private void OnEnable()
@@ -22,10 +26,12 @@ public class GameManager : MonoBehaviour
         OSCController.OnParticleAmountChange += ParticleAmountChange;
         OSCController.OnParticleTypeChange += ParticleTypeChange;
         OSCController.OnKinectUserReset += ResetUserTracking;
-        OSCController.OnNextStage += ToNextStage;
-        OSCController.OnPreStage += ToPreStage;
+        OSCController.OnStageChange += StageChange;
+        OSCController.OnMusicianChange += MusicianChange;
+
 
         KinectController.OnWave += OnUserWave;
+
 
     }
 
@@ -41,14 +47,21 @@ public class GameManager : MonoBehaviour
         OSCController.OnParticleAmountChange -= ParticleAmountChange;
         OSCController.OnParticleTypeChange -= ParticleTypeChange;
         OSCController.OnKinectUserReset -= ResetUserTracking;
-        OSCController.OnNextStage -= ToNextStage;
-        OSCController.OnPreStage -= ToPreStage;
+        OSCController.OnStageChange -= StageChange;
+        OSCController.OnMusicianChange -= MusicianChange;
 
         KinectController.OnWave -= OnUserWave;
     }
 
     private void Awake()
     {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            Debug.Log("Awake: " + this.gameObject);
+        }
+
         if (instance == null)
         {
             instance = this;
@@ -61,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
 
         print("----Checking all controllers...");
@@ -98,69 +111,68 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
     }
 
     //callback methods
-    void Play()
+    private void Play()
     {
         PlayController.instance.Play();
     }
 
-    void StopPlay()
+    private void StopPlay()
     {
         PlayController.instance.StopPlay();
     }
 
-    void PausePlay()
+    private void PausePlay()
     {
         PlayController.instance.PausePlay();
     }
 
-    void JumpTo(float p)
+    private void JumpTo(float p)
     {
         PlayController.instance.JumpTo(p);
     }
 
-    void ParticleAmountChange(float newAmount)
+    private void ParticleAmountChange(float newAmount)
     {
         ParticleSystemController.instance.ChangeParicleAmount(newAmount);
     }
 
-    void ParticleTypeChange(int typeIndex)
+    private void ParticleTypeChange(int typeIndex)
     {
         ParticleSystemController.instance.ChangeParticleType(typeIndex);
     }
 
-    void VolumnChange(int which, float newVol)
+    private void VolumnChange(int which, float newVol)
     {
         //TODO
     }
 
-    void FilterTypeChange(int newTypeIndex)
+    private void FilterTypeChange(int newTypeIndex)
     {
         //TODO
     }
 
-    void ResetUserTracking()
+    private void ResetUserTracking()
     {
         //TODO
     }
 
-
-    void ToNextStage()
+    private void StageChange(int targetStage)
     {
-        StageController.instance.LoadNextStage();
+        StageController.instance.GoToStage(targetStage);
     }
 
-    void ToPreStage()
+    private void MusicianChange(int targetMusician)
     {
-        StageController.instance.LoadPreStage();
+        StageController.instance.GoToMusician(targetMusician);
     }
 
-    void OnUserWave()
+    private void OnUserWave()
     {
 
     }
