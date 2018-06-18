@@ -52,6 +52,15 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     }
 
+    public Vector3 GetRightHandPos(){
+        //TODO
+        return Vector3.zero;
+    }
+    public Vector3 GetLeftHandPos(){
+        //TODO
+        return Vector3.zero;
+    }
+
 
     public void ClearUsers()
     {

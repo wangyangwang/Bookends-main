@@ -1,4 +1,4 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ParticleSystemController : MonoBehaviour
 {
 
-    public enum ParticleType {
+    public enum ParticleType
+    {
         KVANTSPRAY, UNITYBUILDIN
     }
 
     //TODO: move particle position to hands.
-    //TODO: add world space option to Kvant Spray system 
 
     //fileds
     GameObject[] psChildren;
@@ -27,7 +27,7 @@ public class ParticleSystemController : MonoBehaviour
 
     public float defaultParticleSystemAmount = 10;
     [Range(0, 3)]
-    public int defaultParticleSystemIndex = 0; 
+    public int defaultParticleSystemIndex = 0;
 
 
     //HACK!!! FIX ME LATER!
@@ -52,15 +52,15 @@ public class ParticleSystemController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-      if (instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-      else if (instance != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
-     
+
     }
 
 
@@ -76,11 +76,10 @@ public class ParticleSystemController : MonoBehaviour
 
     private void Update()
     {
-        if(FollowHand)
+        if (FollowHand)
         {
-            transform.position = rightHand.transform.position;
-            clonePS.transform.position = leftHand.transform.position;
-
+            transform.position = KinectController.instance.GetRightHandPos();
+            clonePS.transform.position = KinectController.instance.GetLeftHandPos();
         }
     }
 
@@ -113,7 +112,7 @@ public class ParticleSystemController : MonoBehaviour
             EnableParticle(i, i == index);
         }
         //clone the activated PS
-        clonePS = Instantiate(transform.GetChild(index).gameObject, leftHand.transform.position,leftHand.transform.rotation);
+        clonePS = Instantiate(transform.GetChild(index).gameObject, leftHand.transform.position, leftHand.transform.rotation);
     }
 
 

@@ -9,14 +9,14 @@ public class OnScreenControlPanelHelper : MonoBehaviour
     [SerializeField]
     Slider particleAmountSlider;
     [SerializeField]
-    Dropdown particleTypeDropdown;
+    Slider particleTypeSlider;
 
 
     // Use this for initialization
     void Start()
     {
         particleAmountSlider.onValueChanged.AddListener(ChangeParticleAmount);
-        particleTypeDropdown.onValueChanged.AddListener(ChangeParticleType);
+        particleTypeSlider.onValueChanged.AddListener(ChangeParticleType);
     }
 
     // Update is called once per frame
@@ -30,8 +30,8 @@ public class OnScreenControlPanelHelper : MonoBehaviour
         ParticleSystemController.instance.ChangeParicleAmount(amount);
     }
 
-    void ChangeParticleType(int type)
+    void ChangeParticleType(float type)
     {
-        ParticleSystemController.instance.ChangeParticleType(type);
+        ParticleSystemController.instance.ChangeParticleType((int)type);
     }
 }
