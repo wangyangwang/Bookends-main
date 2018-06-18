@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,20 +17,23 @@ public class ParticleSystemController : MonoBehaviour
     GameObject[] psChildren;
     PSUnit[] particleSystems;
 
+    GameObject clonePS;
+    PSUnit clonePSUnit;
     //Slider amountSlider;
     //Toggle[] enableToggles;
 
     public static ParticleSystemController instance = null;
 
 
-    public float defaultParticleSystemAmount = 1;
-    [Range(0, 2)]
-    public int defaultParticleSystemIndex = 0;
+    public float defaultParticleSystemAmount = 10;
+    [Range(0, 3)]
+    public int defaultParticleSystemIndex = 0; 
 
 
     //HACK!!! FIX ME LATER!
-    public Transform leftHand;
     public Transform rightHand;
+    public Transform leftHand;
+
 
 
     //properties
@@ -49,14 +52,15 @@ public class ParticleSystemController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if (instance == null)
+      if (instance == null)
         {
             instance = this;
         }
-        else if (instance != this)
+      else if (instance != this)
         {
             Destroy(gameObject);
         }
+     
     }
 
 
@@ -75,6 +79,8 @@ public class ParticleSystemController : MonoBehaviour
         if(FollowHand)
         {
             transform.position = rightHand.transform.position;
+            clonePS.transform.position = leftHand.transform.position;
+
         }
     }
 
@@ -94,6 +100,9 @@ public class ParticleSystemController : MonoBehaviour
         {
             particleSystems[i].Amount = n;
         }
+        //clone the psUnit
+        clonePSUnit = clonePS.GetComponent<PSUnit>();
+
 
     }
 
@@ -103,6 +112,8 @@ public class ParticleSystemController : MonoBehaviour
         {
             EnableParticle(i, i == index);
         }
+        //clone the activated PS
+        clonePS = Instantiate(transform.GetChild(index).gameObject, leftHand.transform.position,leftHand.transform.rotation);
     }
 
 

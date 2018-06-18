@@ -19,15 +19,12 @@ public class PSUnit : MonoBehaviour
                     GetComponent<Kvant.Spray>().enabled = state;
                     break;
                 case ParticleSystemController.ParticleType.UNITYBUILDIN:
-                    if (state)
-                    {
-                        GetComponent<ParticleSystem>().emissionRate = Amount;//FIXME: use modern API
-                    }
-                    else
-                    {
-                        GetComponent<ParticleSystem>().emissionRate = 0;//FIXME: use modern API
-                    }
-
+             
+                        var em = GetComponent<ParticleSystem>().emission;
+                        em.enabled  = state;//FIXME: use modern API
+                    
+               
+                   
                     break;
                 default:
                     Debug.LogWarning("Type is not set yet!");
@@ -54,8 +51,9 @@ public class PSUnit : MonoBehaviour
                     GetComponent<Kvant.Spray>().throttle = amount;
                     break;
                 case ParticleSystemController.ParticleType.UNITYBUILDIN:
-                    float newRate = amount * 50f;
-                    GetComponent<ParticleSystem>().emissionRate = newRate; //FIXME: user modern API // TODO: change 50 to variable
+                    float newRate = amount * 100f;
+                    var em = GetComponent<ParticleSystem>().emission;
+                    em.rateOverTime = newRate;
                     break;
                 default:
                     Debug.LogWarning("Type is not set yet!");
