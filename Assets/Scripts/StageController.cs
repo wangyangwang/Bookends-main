@@ -22,8 +22,8 @@ public class StageController : MonoBehaviour
     public struct StageSettings
     {
         public AudioClip backgroundSoundtrack;
-        //public GameObject 
         public Animator leadDancerAnimator;
+        public GameObject environmentPrefab;
     }
 
     [SerializeField]
