@@ -41,6 +41,12 @@ public class StageController : MonoBehaviour
     public int CurrentMusicianIndex { get; private set; }
     public StageSettings.StageType CurrentStageType { get; private set; }
 
+    [SerializeField]
+    [Header("Just For Checking, Don't Change")]
+    //for us to inspect if it is getting settings correctly.
+    //UNDONE
+    private StageSettings currentSettings;
+
 
     private void Awake()
     {
@@ -84,21 +90,21 @@ public class StageController : MonoBehaviour
 
     public void ReInitScene()
     {
-        StageSettings targetSettings = GetSettings(CurrentMusicianIndex, CurrentStageIndex);
+        currentSettings = GetSettings(CurrentMusicianIndex, CurrentStageIndex);
 
         //Set Backdrop 
-        motionSceneStaging.SetActive(targetSettings.stageType == StageSettings.StageType.MOTION);
-        composingSceneStaging.SetActive(targetSettings.stageType == StageSettings.StageType.COMPOSING);
+        motionSceneStaging.SetActive(currentSettings.stageType == StageSettings.StageType.MOTION);
+        composingSceneStaging.SetActive(currentSettings.stageType == StageSettings.StageType.COMPOSING);
 
         //enable/disable
-        PlayController.instance.EnableDancer(targetSettings.dancerStatus);
-        PlayController.instance.EnableBird(targetSettings.flyingBirdStatus);
-        ParticleSystemController.instance.EnableParticles(targetSettings.useParticles);
-        KinectController.instance.EnableRedPanda(targetSettings.useKinectControledRedPanda);
+        PlayController.instance.EnableDancer(currentSettings.dancerStatus);
+        PlayController.instance.EnableBird(currentSettings.flyingBirdStatus);
+        ParticleSystemController.instance.EnableParticles(currentSettings.useParticles);
+        KinectController.instance.EnableRedPanda(currentSettings.useKinectControledRedPanda);
 
         //swap
-        PlayController.instance.ChangeStageType(targetSettings.stageType);
-        PlayController.instance.ChangeAudioClips(targetSettings.soundTracks);
+        PlayController.instance.ChangeStageType(currentSettings.stageType);
+        PlayController.instance.ChangeAudioClips(currentSettings.soundTracks);
         PlayController.instance.ChangeAnimators();//TODO
 
         //Setup finished, reload
@@ -109,7 +115,7 @@ public class StageController : MonoBehaviour
     {
         StageSettings[] settings;
 
-        switch (currentStageIndex)
+        switch (currentMusicianIndex)
         {
             case 0:
                 settings = vivaldi;

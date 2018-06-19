@@ -57,26 +57,26 @@ MonoBehaviour:
   composingSceneStaging: {fileID: 0}
   vivaldi:
   - stageType: 0
-    useKinectControledRedPanda: 0
+    useKinectControledRedPanda: 1
     soundTracks:
     - {fileID: 8300000, guid: c2223b5cd9be142689c63d9226cc0a3a, type: 3}
     dancerStatus: 0
     useParticles: 1
     flyingBirdStatus: 0
   - stageType: 0
-    useKinectControledRedPanda: 0
+    useKinectControledRedPanda: 1
     soundTracks:
     - {fileID: 8300000, guid: 9a9c1b0591f2e48beb7538531b3807ca, type: 3}
     dancerStatus: 0
     useParticles: 1
     flyingBirdStatus: 0
   - stageType: 0
-    useKinectControledRedPanda: 0
+    useKinectControledRedPanda: 1
     soundTracks:
     - {fileID: 8300000, guid: bc51a7f75e4e649728cb28ada4e362b3, type: 3}
     dancerStatus: 1
     useParticles: 1
-    flyingBirdStatus: 0
+    flyingBirdStatus: 1
   - stageType: 1
     useKinectControledRedPanda: 0
     soundTracks:
@@ -89,7 +89,6 @@ MonoBehaviour:
   - stageType: 1
     useKinectControledRedPanda: 0
     soundTracks:
-    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -98,35 +97,48 @@ MonoBehaviour:
     flyingBirdStatus: 1
   mozart:
   - stageType: 0
-    useKinectControledRedPanda: 0
+    useKinectControledRedPanda: 1
     soundTracks:
     - {fileID: 8300000, guid: 1882bd27b7d784bfba2b983053676749, type: 3}
     dancerStatus: 0
     useParticles: 1
     flyingBirdStatus: 0
   - stageType: 0
-    useKinectControledRedPanda: 0
+    useKinectControledRedPanda: 1
     soundTracks:
     - {fileID: 8300000, guid: 5468a457c1131414d96ff4a178166c79, type: 3}
     dancerStatus: 0
     useParticles: 1
     flyingBirdStatus: 0
   - stageType: 0
-    useKinectControledRedPanda: 0
+    useKinectControledRedPanda: 1
     soundTracks:
     - {fileID: 8300000, guid: c09ddbd2c1bc74a53ba46e3e4d5b2ee1, type: 3}
     dancerStatus: 1
     useParticles: 1
-    flyingBirdStatus: 0
+    flyingBirdStatus: 1
   - stageType: 1
     useKinectControledRedPanda: 0
-    soundTracks: []
+    soundTracks:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     dancerStatus: 0
     useParticles: 0
     flyingBirdStatus: 0
   - stageType: 1
     useKinectControledRedPanda: 0
-    soundTracks: []
+    soundTracks:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     dancerStatus: 0
     useParticles: 0
     flyingBirdStatus: 1
+  currentSettings:
+    stageType: 0
+    useKinectControledRedPanda: 0
+    soundTracks: []
+    dancerStatus: 0
+    useParticles: 0
+    flyingBirdStatus: 0
