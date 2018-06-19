@@ -17,11 +17,17 @@ public class AudioUnit : MonoBehaviour
 
         set
         {
+            //reset volumn
+            foreach (AudioSource a in sources)
+            {
+                a.volume = 1;
+            }
+
             active = value;
         }
     }
 
-    public PlayController.StageType playControlStageType;
+    public StageController.StageType playControlStageType;
 
     // Use this for initialization
     void Start()
@@ -30,8 +36,8 @@ public class AudioUnit : MonoBehaviour
 
         //HACK
         if (sources.Length < 1) Debug.LogError("no audio source found!");
-        if (sources.Length == 1) playControlStageType = PlayController.StageType.MOTION;
-        if (sources.Length == 4) playControlStageType = PlayController.StageType.COMPOSING;
+        if (sources.Length == 1) playControlStageType = StageController.StageType.MOTION;
+        if (sources.Length == 4) playControlStageType = StageController.StageType.COMPOSING;
 
         Debug.Log("audio unit" + gameObject.name + " type has changed to " + playControlStageType.ToString());
     }
@@ -43,6 +49,12 @@ public class AudioUnit : MonoBehaviour
         {
             a.Play();
         }
+    }
+
+    public void ChangeVolumn(float v, int index)
+    {
+        if (!active || playControlStageType == StageController.StageType.MOTION) return;
+        sources[index].volume = v;
     }
 
     public void Stop()

@@ -8,6 +8,8 @@ public class AnimatorController : MonoBehaviour
 
     public static AnimatorController instance = null;
 
+    public StageController.StageType stageType { get; private set; }
+
 
     private void Awake()
     {
@@ -49,5 +51,10 @@ public class AnimatorController : MonoBehaviour
     public void JumpTo(float p)
     {
         //TODO
+    }
+
+    public void ChangeStageType(StageController.StageType newtype)
+    {
+        stageType = newtype;
     }
 }

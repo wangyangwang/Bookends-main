@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour
 {
 
     public static AudioController instance;
-    public PlayController.StageType stageType { get; private set; }
+    public StageController.StageType stageType { get; private set; }
 
     AudioUnit[] units;
 
@@ -49,6 +49,14 @@ public class AudioController : MonoBehaviour
         }
     }
 
+    public void ChangeVolumn(int index, float v)
+    {
+        foreach (AudioUnit u in units)
+        {
+            u.ChangeVolumn(v, index);
+        }
+    }
+
     public void StopPlay()
     {
         foreach (AudioUnit u in units)
@@ -65,7 +73,7 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public void ChangeStageType(PlayController.StageType newtype)
+    public void ChangeStageType(StageController.StageType newtype)
     {
         stageType = newtype;
         foreach (AudioUnit u in units)

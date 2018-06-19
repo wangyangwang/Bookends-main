@@ -155,8 +155,8 @@ public class GameManager : MonoBehaviour
 
     private void VolumnChange(int which, float newVol)
     {
+        AudioController.instance.ChangeVolumn(which, newVol);
         Debug.Log("Changing sound track " + which + " to volumn " + newVol);
-        //TODO
     }
 
     private void FilterTypeChange(int newTypeIndex)

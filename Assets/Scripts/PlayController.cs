@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Wrapper class for AnimationController and AudioController
+/// </summary>
 public class PlayController : MonoBehaviour
 {
 
     public static PlayController instance = null;
+
+
+    public StageController.StageType CurrentStageType { get; private set; }
 
 
     private void Awake()
@@ -19,8 +25,8 @@ public class PlayController : MonoBehaviour
             Debug.LogError("found more than 1 playcontroller, destroying the gameobject...");
             Destroy(gameObject);
         }
-
     }
+
     // Use this for initialization
     void Start()
     {
@@ -62,6 +68,14 @@ public class PlayController : MonoBehaviour
     {
         AudioController.instance.JumpTo(p);
         AnimatorController.instance.JumpTo(p);
+    }
+
+
+    public void ChangeStageType(StageController.StageType newType)
+    {
+        CurrentStageType = newType;
+        AudioController.instance.ChangeStageType(newType);
+        AnimatorController.instance.ChangeStageType(newType);
     }
 
 
