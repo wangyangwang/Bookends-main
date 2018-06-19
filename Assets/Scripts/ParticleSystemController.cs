@@ -59,13 +59,12 @@ public class ParticleSystemController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-
-    void Start()
-    {
         particleSystems = GetComponentsInChildren<PSUnit>();
+
     }
+
+
 
     private void OnEnable()
     {
