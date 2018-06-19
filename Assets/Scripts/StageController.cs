@@ -18,8 +18,10 @@ public class StageController : MonoBehaviour
 
 
     [Header("Links")]
+    //TODO: better ways to link those things
     public GameObject bird;
     public GameObject dancer;
+    public GameObject avatarRedPanda;
     public GameObject motionSceneStaging;
     public GameObject composingSceneStaging;
 
@@ -42,7 +44,6 @@ public class StageController : MonoBehaviour
     public StageSettings.StageType CurrentStageType { get; private set; }
 
     [SerializeField]
-    [Header("Just For Checking, Don't Change")]
     //for us to inspect if it is getting settings correctly.
     //UNDONE
     private StageSettings currentSettings;
@@ -99,7 +100,7 @@ public class StageController : MonoBehaviour
         //enable/disable
         PlayController.instance.EnableDancer(currentSettings.dancerStatus);
         PlayController.instance.EnableBird(currentSettings.flyingBirdStatus);
-        ParticleSystemController.instance.EnableParticles(currentSettings.useParticles);
+        //ParticleSystemController.instance.EnableParticles(currentSettings.useParticles);
         KinectController.instance.EnableRedPanda(currentSettings.useKinectControledRedPanda);
 
         //swap
@@ -108,7 +109,7 @@ public class StageController : MonoBehaviour
         PlayController.instance.ChangeAnimators();//TODO
 
         //Setup finished, reload
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.LogWarning("going to stage : " + CurrentStageIndex + "  musician:  " + CurrentMusicianIndex);
     }
 
     private StageSettings GetSettings(int currentMusicianIndex, int currentStageIndex)

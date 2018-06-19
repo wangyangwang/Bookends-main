@@ -7,9 +7,11 @@ public class AudioUnit : MonoBehaviour
 {
 
     //FIXME: probbaly use active to control is not a good idea.
-    AudioSource[] sources;
+    private AudioSource[] sources;
 
+    [SerializeField]
     private bool active;
+
     public bool Active
     {
         get
@@ -19,29 +21,24 @@ public class AudioUnit : MonoBehaviour
 
         set
         {
-            //reset volumn
-            foreach (AudioSource a in sources)
-            {
-                a.volume = 1;
-            }
-
+            ResetVol();
             active = value;
         }
     }
 
-    public StageSettings.StageType PlayControlStageType { get; private set; }
+    //TODO:better way to setup type
+    public StageSettings.StageType stageType;
+
+    private void Awake()
+    {
+        sources = GetComponentsInChildren<AudioSource>();
+    }
 
     // Use this for initialization
     void Start()
     {
-        sources = GetComponentsInChildren<AudioSource>();
-
-        //HACK
         if (sources.Length < 1) Debug.LogError("no audio source found!");
-        if (sources.Length == 1) PlayControlStageType = StageSettings.StageType.MOTION;
-        if (sources.Length == 4) PlayControlStageType = StageSettings.StageType.COMPOSING;
-
-        Debug.Log("audio unit" + gameObject.name + " type has changed to " + PlayControlStageType.ToString());
+        Debug.Log("audio unit" + gameObject.name + " type has changed to " + stageType.ToString());
     }
 
     public void Play()
@@ -55,7 +52,7 @@ public class AudioUnit : MonoBehaviour
 
     public void ChangeVolumn(float v, int index)
     {
-        if (!active || PlayControlStageType == StageSettings.StageType.MOTION) return;
+        if (!active || stageType == StageSettings.StageType.MOTION) return;
         sources[index].volume = v;
     }
 
@@ -86,13 +83,31 @@ public class AudioUnit : MonoBehaviour
         }
     }
 
+    public void ResetVol()
+    {
+        foreach (AudioSource a in sources)
+        {
+            a.volume = 1;
+        }
+    }
+
     internal void ChangeAudioClips(AudioClip[] soundTracks)
     {
-        if (!active) return;
-        //if type is right, then sources length should be right too
-        for (int i = 0; i < sources.Length; ++i)
+
+        //HACK
+        if (soundTracks.Length == sources.Length)
         {
-            sources[i].clip = soundTracks[i];
+            for (int i = 0; i < sources.Length; ++i)
+            {
+                sources[i].clip = soundTracks[i];
+            }
         }
+        else
+        {
+            Debug.Log(gameObject.name + "  sources count doesn't math.");
+        }
+
+
+
     }
 }

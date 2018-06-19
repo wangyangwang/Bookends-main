@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bird: {fileID: 0}
   dancer: {fileID: 0}
+  avatarRedPanda: {fileID: 0}
   motionSceneStaging: {fileID: 0}
   composingSceneStaging: {fileID: 0}
   vivaldi:

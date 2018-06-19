@@ -200,6 +200,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114378113813378898, guid: 76e41202c612f416daba6dc4a272ac01,
+        type: 2}
+      propertyPath: stageType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76e41202c612f416daba6dc4a272ac01, type: 2}
   m_IsPrefabParent: 0
@@ -322,6 +327,11 @@ Prefab:
       propertyPath: dancer
       value: 
       objectReference: {fileID: 765739271}
+    - target: {fileID: 114569271052345558, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: avatarRedPanda
+      value: 
+      objectReference: {fileID: 1625499792}
     - target: {fileID: 114569271052345558, guid: bad10226839b5ad409162caa2f3039bc,
         type: 2}
       propertyPath: motionSceneStaging
@@ -679,7 +689,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1207709984502940, guid: 4622b884a39a64e479042aaf24260b62, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4281646566588442, guid: 4622b884a39a64e479042aaf24260b62, type: 2}
       propertyPath: m_LocalPosition.x
@@ -749,6 +759,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1207709984502940, guid: 4622b884a39a64e479042aaf24260b62,
     type: 2}
   m_PrefabInternal: {fileID: 1618339116}
+--- !u!1 &1625499792 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1284607631255116, guid: 30e1b03ccc0b2c44e9adc43a94e5e79f,
+    type: 2}
+  m_PrefabInternal: {fileID: 592319479}
 --- !u!1001 &1673094184
 Prefab:
   m_ObjectHideFlags: 0
@@ -1526,12 +1541,12 @@ Prefab:
     - target: {fileID: 224474673858452552, guid: 4462401209b2e6b47bd607b0b5f18a33,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224474673858452552, guid: 4462401209b2e6b47bd607b0b5f18a33,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224474673858452552, guid: 4462401209b2e6b47bd607b0b5f18a33,
         type: 2}
@@ -1649,6 +1664,10 @@ Prefab:
     - target: {fileID: 4193260919276844, guid: 6174699b9e597f34089244eeb49396f1, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521442630183376, guid: 6174699b9e597f34089244eeb49396f1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6174699b9e597f34089244eeb49396f1, type: 2}

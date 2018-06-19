@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class AudioController : MonoBehaviour
 {
 
@@ -24,15 +23,18 @@ public class AudioController : MonoBehaviour
             Debug.LogError("Found more than 1 AudioController, destroying...");
             Destroy(gameObject);
         }
+        units = GetComponentsInChildren<AudioUnit>();
+
     }
 
 
     void Start()
     {
-        units = GetComponentsInChildren<AudioUnit>();
         if (units.Length != 2) Debug.LogWarning("audio source count is wrong, please check all audio sources.");
-    }
 
+        ResetState();
+        ResetVol();
+    }
 
     public void Play()
     {
@@ -77,11 +79,8 @@ public class AudioController : MonoBehaviour
     public void ChangeStageType(StageSettings.StageType newtype)
     {
         stageType = newtype;
-        foreach (AudioUnit u in units)
-        {
-            u.Active = (stageType == u.PlayControlStageType);
-            Debug.Log("AudioController's stage type is changed to " + newtype.ToString());
-        }
+        ResetState();
+        ResetVol();
     }
 
     internal void ChangeAudioClips(AudioClip[] soundTracks)
@@ -91,4 +90,21 @@ public class AudioController : MonoBehaviour
             u.ChangeAudioClips(soundTracks);
         }
     }
+
+    private void ResetState()
+    {
+        foreach (AudioUnit u in units)
+        {
+            u.Active = (stageType == u.stageType);
+        }
+    }
+
+    private void ResetVol()
+    {
+        foreach (AudioUnit u in units)
+        {
+            u.ResetVol();
+        }
+    }
+
 }

@@ -50,11 +50,7 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     public void EnableRedPanda(bool state)
     {
-        foreach (var avatarCon in kinectManager.avatarControllers)
-        {
-            //TODO: need testing, if toggle on and off will not break the link.
-            avatarCon.gameObject.SetActive(state);
-        }
+        StageController.instance.avatarRedPanda.SetActive(state);
     }
 
     public Vector3 GetRightHandPos()
