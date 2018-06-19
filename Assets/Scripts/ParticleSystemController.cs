@@ -17,8 +17,9 @@ public class ParticleSystemController : MonoBehaviour
     GameObject[] psChildren;
     PSUnit[] particleSystems;
 
-    GameObject clonePS;
+    public GameObject clonePS;
     PSUnit clonePSUnit;
+  
     //Slider amountSlider;
     //Toggle[] enableToggles;
 
@@ -26,8 +27,8 @@ public class ParticleSystemController : MonoBehaviour
 
 
     public float defaultParticleSystemAmount = 10;
-    [Range(0, 3)]
-    public int defaultParticleSystemIndex = 0;
+    [Range(0, 4)]
+    public int defaultParticleSystemIndex = 0; 
 
 
     //HACK!!! FIX ME LATER!
@@ -78,8 +79,13 @@ public class ParticleSystemController : MonoBehaviour
     {
         if (FollowHand)
         {
-            transform.position = KinectController.instance.GetRightHandPos();
-            clonePS.transform.position = KinectController.instance.GetLeftHandPos();
+            transform.position = rightHand.transform.position;
+            if (clonePS != null)
+            {
+                clonePS.transform.position = leftHand.transform.position;
+            }
+            
+
         }
     }
 
@@ -112,7 +118,19 @@ public class ParticleSystemController : MonoBehaviour
             EnableParticle(i, i == index);
         }
         //clone the activated PS
-        clonePS = Instantiate(transform.GetChild(index).gameObject, leftHand.transform.position, leftHand.transform.rotation);
+        var psInstance = clonePS;
+        clonePS = Instantiate<GameObject>(transform.GetChild(index).gameObject);
+        if (psInstance == null)
+        {  
+            psInstance = clonePS;
+        }
+        else if(psInstance != null)
+        {
+            Destroy(psInstance);
+        }
+      
+
+
     }
 
 
