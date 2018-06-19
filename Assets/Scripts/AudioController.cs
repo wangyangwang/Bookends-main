@@ -7,8 +7,9 @@ public class AudioController : MonoBehaviour
 {
 
     public static AudioController instance;
+    public PlayController.StageType stageType { get; private set; }
 
-    AudioSource audioSource;
+    AudioUnit[] units;
 
 
     private void Awake()
@@ -24,38 +25,54 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    // Use this for initialization
+
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.loop = false;
+        units = GetComponentsInChildren<AudioUnit>();
+        if (units.Length != 2) Debug.LogWarning("audio source count is wrong, please check all audio sources.");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void Play()
     {
-        audioSource.Play();
+        foreach (AudioUnit u in units)
+        {
+            u.Play();
+        }
     }
 
     public void PausePlay()
     {
-        audioSource.Pause();
+        foreach (AudioUnit u in units)
+        {
+            u.Pause();
+        }
     }
 
     public void StopPlay()
     {
-        audioSource.Stop();
+        foreach (AudioUnit u in units)
+        {
+            u.Stop();
+        }
     }
 
     public void JumpTo(float p)
     {
-        float realSeconds = p / audioSource.clip.length;
-        audioSource.time = realSeconds;
+        foreach (AudioUnit u in units)
+        {
+            u.JumpTo(p);
+        }
     }
+
+    public void ChangeStageType(PlayController.StageType newtype)
+    {
+        stageType = newtype;
+        foreach (AudioUnit u in units)
+        {
+            u.Active = (stageType == u.playControlStageType);
+            Debug.Log("AudioController's stage type is changed to " + newtype.ToString());
+        }
+    }
+
 }
