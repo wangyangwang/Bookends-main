@@ -27,7 +27,7 @@ public class ParticleSystemController : MonoBehaviour
 
 
     public float defaultParticleSystemAmount = 10;
-    [Range(0, 4)]
+    [Range(0, 5)]
     public int defaultParticleSystemIndex = 0; 
 
 
@@ -104,10 +104,10 @@ public class ParticleSystemController : MonoBehaviour
         for (int i = 0; i < particleSystems.Length; i++)
         {
             particleSystems[i].Amount = n;
+            //clone the psUnit
+            clonePSUnit = clonePS.GetComponent<PSUnit>();
+            clonePSUnit.Amount = n;
         }
-        //clone the psUnit
-        clonePSUnit = clonePS.GetComponent<PSUnit>();
-
 
     }
 

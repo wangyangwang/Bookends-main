@@ -1757,11 +1757,6 @@ Prefab:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1776078937}
-    - target: {fileID: 114275680026810822, guid: 6174699b9e597f34089244eeb49396f1,
-        type: 2}
-      propertyPath: defaultParticleSystemIndex
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6174699b9e597f34089244eeb49396f1, type: 2}
   m_IsPrefabParent: 0

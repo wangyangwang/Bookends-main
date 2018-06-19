@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.59
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -171,48 +171,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ce0761e3f628994889957aa725813fc, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &58295375
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.01745245
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.99984777
-      objectReference: {fileID: 0}
-    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &62426733
 Prefab:
@@ -926,7 +884,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 505065532}
+      - m_Target: {fileID: 0}
         m_MethodName: UseEffect
         m_Mode: 3
         m_Arguments:
@@ -977,12 +935,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4486110082573828, guid: 4ee477ec2415da44799fba9885fe3c0a,
     type: 2}
   m_PrefabInternal: {fileID: 678931576}
---- !u!114 &505065532 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114607547267885674, guid: 84f83ed76bf064e01b2940e7e977761a,
-    type: 2}
-  m_PrefabInternal: {fileID: 58295375}
-  m_Script: {fileID: 11500000, guid: 045cf35476e4b40e081fb1b6f9634176, type: 3}
 --- !u!4 &505608609 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4264824933336996, guid: d06a11a34cde3714983fc6a09362ba83,
@@ -1380,7 +1332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 505065532}
+      - m_Target: {fileID: 0}
         m_MethodName: UseEffect
         m_Mode: 3
         m_Arguments:
@@ -1849,6 +1801,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ee477ec2415da44799fba9885fe3c0a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1042382201
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.01745245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99984777
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640118799033004, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 84f83ed76bf064e01b2940e7e977761a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1046545039
 GameObject:
@@ -2890,7 +2884,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 505065532}
+      - m_Target: {fileID: 0}
         m_MethodName: UseEffect
         m_Mode: 3
         m_Arguments:
@@ -3294,7 +3288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 505065532}
+      - m_Target: {fileID: 0}
         m_MethodName: UseEffect
         m_Mode: 3
         m_Arguments:
@@ -3632,7 +3626,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 505065532}
+      - m_Target: {fileID: 0}
         m_MethodName: UseEffect
         m_Mode: 3
         m_Arguments:

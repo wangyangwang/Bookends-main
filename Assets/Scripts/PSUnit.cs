@@ -51,7 +51,7 @@ public class PSUnit : MonoBehaviour
                     GetComponent<Kvant.Spray>().throttle = amount;
                     break;
                 case ParticleSystemController.ParticleType.UNITYBUILDIN:
-                    float newRate = amount * 100f;
+                    float newRate = amount * 20f;
                     var em = GetComponent<ParticleSystem>().emission;
                     em.rateOverTime = newRate;
                     break;
