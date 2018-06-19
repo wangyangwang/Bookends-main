@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,5 +79,8 @@ public class PlayController : MonoBehaviour
         AnimatorController.instance.ChangeStageType(newType);
     }
 
-
+    internal void ChangeAudioClips(AudioSource[] soundTracks)
+    {
+        AudioController.instance.ChangeAudioClips(soundTracks);
+    }
 }
