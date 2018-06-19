@@ -10,19 +10,47 @@ public class OnScreenControlPanelHelper : MonoBehaviour
     Slider particleAmountSlider;
     [SerializeField]
     Slider particleTypeSlider;
+    [SerializeField]
+    Slider changeMusicianSlider;
+    [SerializeField]
+    Slider changeStageSlider;
 
+
+    private static bool created = false;
+
+
+    private void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+        }
+    }
 
     // Use this for initialization
     void Start()
     {
         particleAmountSlider.onValueChanged.AddListener(ChangeParticleAmount);
         particleTypeSlider.onValueChanged.AddListener(ChangeParticleType);
+        changeMusicianSlider.onValueChanged.AddListener((arg0) => ChangeMusician((int)arg0));
+        changeStageSlider.onValueChanged.AddListener((arg0) => ChangeStage((int)arg0));
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    void ChangeMusician(int i)
+    {
+        StageController.instance.GoToMusician(i);
+    }
+
+    void ChangeStage(int i)
+    {
+        StageController.instance.GoToStage(i);
     }
 
     void ChangeParticleAmount(float amount)

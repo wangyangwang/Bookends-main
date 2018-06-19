@@ -3,41 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class StageController : MonoBehaviour
 {
 
-    private static bool created = false;
-    public static StageController instance = null;
+    //===============================================
 
-    //===============Settings================================
 
-    [System.Serializable]
-    public struct SessionSettings
-    {
-        public StageSettings[] stageSettings;
-    }
+    public const int STAGE_COUNT = 5;
+    public const int stageWithBackgroundTrack = 3;
+    public const int backdropCount = 2;
+    public const int MUSICIAN_STAGE_COUNT = 2;
 
-    [System.Serializable]
-    public struct StageSettings
-    {
-        public AudioClip backgroundSoundtrack;
-        public Animator leadDancerAnimator;
-        public GameObject environmentPrefab;
-    }
 
-    [SerializeField]
-    public SessionSettings sessionOneSetting;
-    [SerializeField]
-    public SessionSettings sessionTwoSetting;
+    [Header("Links")]
+    public GameObject bird;
+    public GameObject dancer;
+    public GameObject motionSceneStaging;
+    public GameObject composingSceneStaging;
+
+    [Header("Settings for each stage")]
+
+
+
+    public StageSettings[] vivaldi = new StageSettings[STAGE_COUNT];
+    public StageSettings[] mozart = new StageSettings[STAGE_COUNT];
+
 
     //===============================================
 
-    int index = 0;
-    int sceneCount = 0;
+    private static bool created = false;
+    public static StageController instance = null;
+
+
+    public int CurrentStageIndex { get; private set; }
+    public int CurrentMusicianIndex { get; private set; }
+    public StageSettings.StageType CurrentStageType { get; private set; }
+
 
     private void Awake()
     {
+
         if (!created)
         {
             DontDestroyOnLoad(this.gameObject);
@@ -54,74 +61,68 @@ public class StageController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        index = SceneManager.GetActiveScene().buildIndex;
-        sceneCount = SceneManager.sceneCountInBuildSettings;
+        CurrentStageIndex = SceneManager.GetActiveScene().buildIndex;
+        CurrentMusicianIndex = SceneManager.sceneCountInBuildSettings;
     }
 
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-
-    }
-
-
-    public void LoadNextStage()
-    {
-        if (index < sceneCount)
-        {
-            index += 1;
-        }
-        else if (index == sceneCount)
-        {
-            index = sceneCount;
-        }
-        StartCoroutine(LoadingStage(index));
-    }
-
-
-
-    public void LoadPreStage()
-    {
-        if (index > 0)
-        {
-            index -= 1;
-        }
-        else if (index == 0)
-        {
-            index = 0;
-        }
-        StartCoroutine(LoadingStage(index));
-
-    }
-
-
-
-    IEnumerator LoadingStage(int sceneNum)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneNum, LoadSceneMode.Single);
-
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        ReInitScene();
     }
 
     public void GoToStage(int stageIndex)
     {
-
+        CurrentStageIndex = stageIndex;
+        ReInitScene();
     }
 
     public void GoToMusician(int musicianIndex)
     {
+        CurrentMusicianIndex = musicianIndex;
+        ReInitScene();
+    }
 
+    public void ReInitScene()
+    {
+        StageSettings targetSettings = GetSettings(CurrentMusicianIndex, CurrentStageIndex);
+
+        //Set Backdrop 
+        motionSceneStaging.SetActive(targetSettings.stageType == StageSettings.StageType.MOTION);
+        composingSceneStaging.SetActive(targetSettings.stageType == StageSettings.StageType.COMPOSING);
+
+        //enable/disable
+        PlayController.instance.EnableDancer(targetSettings.dancerStatus);
+        PlayController.instance.EnableBird(targetSettings.flyingBirdStatus);
+        ParticleSystemController.instance.EnableParticles(targetSettings.useParticles);
+        KinectController.instance.EnableRedPanda(targetSettings.useKinectControledRedPanda);
+
+        //swap
+        PlayController.instance.ChangeStageType(targetSettings.stageType);
+        PlayController.instance.ChangeAudioClips(targetSettings.soundTracks);
+        PlayController.instance.ChangeAnimators();//TODO
+
+        //Setup finished, reload
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private StageSettings GetSettings(int currentMusicianIndex, int currentStageIndex)
+    {
+        StageSettings[] settings;
+
+        switch (currentStageIndex)
+        {
+            case 0:
+                settings = vivaldi;
+                break;
+            case 1:
+                settings = mozart;
+                break;
+            default:
+                Debug.LogError("Cannot find matching musician index!");
+                settings = null;
+                break;
+        }
+
+        return settings[currentStageIndex];
     }
 }

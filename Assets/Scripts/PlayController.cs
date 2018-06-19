@@ -12,7 +12,7 @@ public class PlayController : MonoBehaviour
     public static PlayController instance = null;
 
 
-    public StageController.StageType CurrentStageType { get; private set; }
+    public StageSettings.StageType CurrentStageType { get; private set; }
 
 
     private void Awake()
@@ -71,16 +71,30 @@ public class PlayController : MonoBehaviour
         AnimatorController.instance.JumpTo(p);
     }
 
-
-    public void ChangeStageType(StageController.StageType newType)
+    public void ChangeStageType(StageSettings.StageType newType)
     {
         CurrentStageType = newType;
         AudioController.instance.ChangeStageType(newType);
         AnimatorController.instance.ChangeStageType(newType);
     }
 
-    internal void ChangeAudioClips(AudioSource[] soundTracks)
+    internal void ChangeAudioClips(AudioClip[] soundTracks)
     {
         AudioController.instance.ChangeAudioClips(soundTracks);
+    }
+
+    internal void EnableDancer(bool dancerStatus)
+    {
+        AnimatorController.instance.EnableDancer(dancerStatus);
+    }
+
+    internal void EnableBird(bool birdStatus)
+    {
+        AnimatorController.instance.EnableBird(birdStatus);
+    }
+
+    internal void ChangeAnimators()
+    {
+        //TODO
     }
 }

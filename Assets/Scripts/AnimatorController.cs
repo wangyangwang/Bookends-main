@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class AnimatorController : MonoBehaviour
 
     public static AnimatorController instance = null;
 
-    public StageController.StageType stageType { get; private set; }
+    public StageSettings.StageType stageType { get; private set; }
 
 
     private void Awake()
@@ -53,8 +54,20 @@ public class AnimatorController : MonoBehaviour
         //TODO
     }
 
-    public void ChangeStageType(StageController.StageType newtype)
+    internal void EnableDancer(bool dancerStatus)
+    {
+        //FIXME code coupling
+        StageController.instance.dancer.SetActive(dancerStatus);
+    }
+
+    public void ChangeStageType(StageSettings.StageType newtype)
     {
         stageType = newtype;
+    }
+
+    internal void EnableBird(bool birdStatus)
+    {
+        //FIXME code coupling
+        StageController.instance.bird.SetActive(birdStatus);
     }
 }

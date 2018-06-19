@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class AudioController : MonoBehaviour
 {
 
     public static AudioController instance;
-    public StageController.StageType stageType { get; private set; }
+    public StageSettings.StageType stageType { get; private set; }
 
     AudioUnit[] units;
 
@@ -73,14 +74,21 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public void ChangeStageType(StageController.StageType newtype)
+    public void ChangeStageType(StageSettings.StageType newtype)
     {
         stageType = newtype;
         foreach (AudioUnit u in units)
         {
-            u.Active = (stageType == u.playControlStageType);
+            u.Active = (stageType == u.PlayControlStageType);
             Debug.Log("AudioController's stage type is changed to " + newtype.ToString());
         }
     }
 
+    internal void ChangeAudioClips(AudioClip[] soundTracks)
+    {
+        foreach (AudioUnit u in units)
+        {
+            u.ChangeAudioClips(soundTracks);
+        }
+    }
 }

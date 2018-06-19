@@ -10,18 +10,14 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     public delegate void GestureEvent();
     public static event GestureEvent OnWave;
-
     public static KinectController instance = null;
 
 
-    //objects
-    private KinectManager kManager;
-    //private List<KinectUser> allUsers;
+    private KinectManager kinectManager;
 
     //parameters
     [SerializeField]
     private float skeletonSize = 5f;
-
 
 
     void Awake()
@@ -41,22 +37,33 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     // Use this for initialization
     void Start()
     {
-        kManager = KinectManager.Instance;
+        kinectManager = KinectManager.Instance;
         //allUsers = new List<KinectUser>();
 
-        kManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
-        if (!kManager.IsInitialized())
+        kinectManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
+        if (!kinectManager.IsInitialized())
         {
             Debug.LogError("Kinect Manager is not initialized!");
         }
 
     }
 
-    public Vector3 GetRightHandPos(){
+    public void EnableRedPanda(bool state)
+    {
+        foreach (var avatarCon in kinectManager.avatarControllers)
+        {
+            //TODO: need testing, if toggle on and off will not break the link.
+            avatarCon.gameObject.SetActive(state);
+        }
+    }
+
+    public Vector3 GetRightHandPos()
+    {
         //TODO
         return Vector3.zero;
     }
-    public Vector3 GetLeftHandPos(){
+    public Vector3 GetLeftHandPos()
+    {
         //TODO
         return Vector3.zero;
     }
@@ -64,16 +71,16 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     public void ClearUsers()
     {
-        kManager.ClearKinectUsers();
+        kinectManager.ClearKinectUsers();
     }
 
 
     public void UserDetected(long userId, int userIndex)
     {
-        if (!kManager) return;
+        if (!kinectManager) return;
         //list of gestures to be detected
-        kManager.DetectGesture(userId, KinectGestures.Gestures.Wave);
-        kManager.DetectGesture(userId, KinectGestures.Gestures.Jump);
+        kinectManager.DetectGesture(userId, KinectGestures.Gestures.Wave);
+        kinectManager.DetectGesture(userId, KinectGestures.Gestures.Jump);
     }
 
     public void UserLost(long userId, int userIndex)

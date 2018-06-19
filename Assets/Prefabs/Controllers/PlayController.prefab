@@ -67,6 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4159285655215182}
+  - component: {fileID: 114378113813378898}
   m_Layer: 0
   m_Name: SingingAnimalMusics
   m_TagString: Untagged
@@ -147,6 +148,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4587689286877722}
+  - component: {fileID: 114644171199883572}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -890,6 +892,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70dd82afc413049d6bdc12a4f30d9ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114378113813378898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299076706458660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356204f9c64984a049aefb8ec4d67cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114630472693608826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -899,6 +912,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b2ef7edda8b49f4cb905560b80dbcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114644171199883572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928129343044586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356204f9c64984a049aefb8ec4d67cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114927812698557908

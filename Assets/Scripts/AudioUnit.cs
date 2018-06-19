@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioUnit : MonoBehaviour
 {
 
+    //FIXME: probbaly use active to control is not a good idea.
     AudioSource[] sources;
 
     private bool active;
@@ -27,7 +29,7 @@ public class AudioUnit : MonoBehaviour
         }
     }
 
-    public StageController.StageType playControlStageType;
+    public StageSettings.StageType PlayControlStageType { get; private set; }
 
     // Use this for initialization
     void Start()
@@ -36,10 +38,10 @@ public class AudioUnit : MonoBehaviour
 
         //HACK
         if (sources.Length < 1) Debug.LogError("no audio source found!");
-        if (sources.Length == 1) playControlStageType = StageController.StageType.MOTION;
-        if (sources.Length == 4) playControlStageType = StageController.StageType.COMPOSING;
+        if (sources.Length == 1) PlayControlStageType = StageSettings.StageType.MOTION;
+        if (sources.Length == 4) PlayControlStageType = StageSettings.StageType.COMPOSING;
 
-        Debug.Log("audio unit" + gameObject.name + " type has changed to " + playControlStageType.ToString());
+        Debug.Log("audio unit" + gameObject.name + " type has changed to " + PlayControlStageType.ToString());
     }
 
     public void Play()
@@ -53,7 +55,7 @@ public class AudioUnit : MonoBehaviour
 
     public void ChangeVolumn(float v, int index)
     {
-        if (!active || playControlStageType == StageController.StageType.MOTION) return;
+        if (!active || PlayControlStageType == StageSettings.StageType.MOTION) return;
         sources[index].volume = v;
     }
 
@@ -84,7 +86,13 @@ public class AudioUnit : MonoBehaviour
         }
     }
 
-
-
-
+    internal void ChangeAudioClips(AudioClip[] soundTracks)
+    {
+        if (!active) return;
+        //if type is right, then sources length should be right too
+        for (int i = 0; i < sources.Length; ++i)
+        {
+            sources[i].clip = soundTracks[i];
+        }
+    }
 }
