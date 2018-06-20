@@ -50,7 +50,8 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     public void EnableRedPanda(bool state)
     {
-        StageController.instance.avatarRedPanda.SetActive(state);
+        //TODO
+        //StageController.instance.avatarRedPanda.SetActive(state);
     }
 
     public Vector3 GetRightHandPos()

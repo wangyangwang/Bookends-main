@@ -12,7 +12,7 @@ public class PlayController : MonoBehaviour
     public static PlayController instance = null;
 
 
-    public StageSettings.StageType CurrentStageType { get; private set; }
+    public StageController.SceneConfigurationData.SceneType CurrentStageType { get; private set; }
 
 
     private void Awake()
@@ -71,7 +71,7 @@ public class PlayController : MonoBehaviour
         AnimatorController.instance.JumpTo(p);
     }
 
-    public void ChangeStageType(StageSettings.StageType newType)
+    public void ChangeStageType(StageController.SceneConfigurationData.SceneType newType)
     {
         CurrentStageType = newType;
         AudioController.instance.ChangeStageType(newType);

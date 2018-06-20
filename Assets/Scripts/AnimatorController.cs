@@ -9,7 +9,7 @@ public class AnimatorController : MonoBehaviour
 
     public static AnimatorController instance = null;
 
-    public StageSettings.StageType stageType { get; private set; }
+    public StageController.SceneConfigurationData.SceneType stageType { get; private set; }
 
 
     private void Awake()
@@ -57,10 +57,10 @@ public class AnimatorController : MonoBehaviour
     internal void EnableDancer(bool dancerStatus)
     {
         //FIXME code coupling
-        StageController.instance.dancer.SetActive(dancerStatus);
+        //StageController.instance.dancer.SetActive(dancerStatus);
     }
 
-    public void ChangeStageType(StageSettings.StageType newtype)
+    public void ChangeStageType(StageController.SceneConfigurationData.SceneType newtype)
     {
         stageType = newtype;
     }
@@ -68,6 +68,6 @@ public class AnimatorController : MonoBehaviour
     internal void EnableBird(bool birdStatus)
     {
         //FIXME code coupling
-        StageController.instance.bird.SetActive(birdStatus);
+        //StageController.instance.bird.SetActive(birdStatus);
     }
 }
