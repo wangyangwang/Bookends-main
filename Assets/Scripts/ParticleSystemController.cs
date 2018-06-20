@@ -31,6 +31,7 @@ public class ParticleSystemController : MonoBehaviour
     public int defaultParticleSystemIndex = 0;
 
 
+
     //HACK!!! FIX ME LATER!
     public Transform rightHand;
     public Transform leftHand;
@@ -98,9 +99,14 @@ public class ParticleSystemController : MonoBehaviour
         for (int i = 0; i < particleSystems.Length; i++)
         {
             particleSystems[i].Amount = n;
+            //clone the psUnit
+            clonePSUnit = clonePS.GetComponent<PSUnit>();
+            clonePSUnit.Amount = n;
         }
+
         //clone the psUnit
         clonePSUnit = clonePS.GetComponent<PSUnit>();
+
 
     }
 
