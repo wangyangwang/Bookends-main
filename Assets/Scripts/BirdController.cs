@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-   
+
+
+    public static BirdController Instance = null;
 
     //TODO:
 
@@ -19,6 +21,18 @@ public class BirdController : MonoBehaviour
         {
             //TODO
             _loop = value;
+        }
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 

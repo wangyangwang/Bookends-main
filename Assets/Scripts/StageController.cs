@@ -91,38 +91,16 @@ public class StageController : MonoBehaviour
     {
 
         SceneConfigurationData config = SceneConfigData.GetConfig(targetSceneData);
+        SceneManager.LoadScene(0);
 
-        if (config.sceneType == SceneConfigurationData.SceneType.Composing)
-        {
-            SceneManager.LoadScene(1);
-        }
-        else
-        {
-            SceneManager.LoadScene(0);
-        }
+        KinectController.instance.gameObject.SetActive(config.hasKinectAvatar);
 
-
-        //enable/disable
-        PlayController.instance.EnableDancer(config.hasDancer);
-        PlayController.instance.EnableBird(config.hasBird);
-        //ParticleSystemController.instance.EnableParticles(config.useParticles);
-        //KinectController.instance.EnableRedPanda(config.useKinectControledRedPanda);
-
-        //swap
-        //PlayController.instance.ChangeStageType(config.stageType);
-        PlayController.instance.ChangeAudioClips(config.singingMusics);
-        PlayController.instance.ChangeAnimators();//TODO
-
-        //Setup finished, reload
-        //Debug.LogWarning("going to stage : " + CurrentStageIndex + "  musician:  " + CurrentMusicianIndex);
+        //KinectManager.Instance.
+        BirdController.Instance.gameObject.SetActive(config.hasBird);
 
 
         activeSceneData = targetSceneData;
     }
-
-
-
-
 
     [System.Serializable]
     public struct SceneData
@@ -147,14 +125,12 @@ public class StageController : MonoBehaviour
 
         public SceneType sceneType;
         public Environment environment;
-
         public AudioClip backgroundMusic;
-        public bool hasSingingMusics;
         public AudioClip[] singingMusics;
 
-        public bool hasKinectManager;
+        public bool hasSingingMusics;
+        public bool hasKinectAvatar;
         public bool hasRedPandaAvatar;
-   
         public bool hasDancer;
         public bool hasBird;
         public bool hasSingingAnimals;
