@@ -149,6 +149,7 @@ public class StageController : MonoBehaviour
         public Environment environment;
 
         public AudioClip backgroundMusic;
+        public bool hasSingingMusics;
         public AudioClip[] singingMusics;
 
         public bool hasKinectManager;
@@ -156,6 +157,8 @@ public class StageController : MonoBehaviour
    
         public bool hasDancer;
         public bool hasBird;
+        public bool hasSingingAnimals;
+        public int singingAnimalNumber;
 
     }
 
