@@ -11,6 +11,7 @@ public class PlayController : MonoBehaviour
 
     public static PlayController instance = null;
 
+    public const float FAST_FORWARD_STEP = 10;//seconds
 
     public StageController.SceneConfigurationData.SceneType CurrentStageType { get; private set; }
 
@@ -31,7 +32,7 @@ public class PlayController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (!AudioController.instance)
+        if (!AudioController.Instance)
         {
             Debug.LogError("cannot find audiocontroller");
         }
@@ -49,49 +50,54 @@ public class PlayController : MonoBehaviour
 
     public void Play()
     {
-        AudioController.instance.Play();
+        AudioController.Instance.Play();
         AnimatorController.instance.Play();
     }
 
     public void PausePlay()
     {
-        AudioController.instance.PausePlay();
+        AudioController.Instance.PausePlay();
         AnimatorController.instance.PausePlay();
     }
 
     public void StopPlay()
     {
-        AudioController.instance.StopPlay();
+        AudioController.Instance.StopPlay();
         AnimatorController.instance.StopPlay();
     }
 
-    public void JumpTo(float p)
+    public void FastForward()
     {
-        AudioController.instance.JumpTo(p);
-        AnimatorController.instance.JumpTo(p);
+        AudioController.Instance.FastForward();
+        AnimatorController.instance.FastForward();
+    }
+
+    public void Reverse(){
+        AudioController.Instance.Reverse();
+        AnimatorController.instance.Reverse();
     }
 
     public void ChangeStageType(StageController.SceneConfigurationData.SceneType newType)
     {
         CurrentStageType = newType;
-        AudioController.instance.ChangeStageType(newType);
+        AudioController.Instance.ChangeStageType(newType);
         AnimatorController.instance.ChangeStageType(newType);
     }
 
     internal void ChangeAudioClips(AudioClip[] soundTracks)
     {
-        AudioController.instance.ChangeAudioClips(soundTracks);
+        AudioController.Instance.ChangeAudioClips(soundTracks);
     }
 
-    internal void EnableDancer(bool dancerStatus)
-    {
-        AnimatorController.instance.EnableDancer(dancerStatus);
-    }
+    //internal void EnableDancer(bool dancerStatus)
+    //{
+    //    AnimatorController.instance.EnableDancer(dancerStatus);
+    //}
 
-    internal void EnableBird(bool birdStatus)
-    {
-        AnimatorController.instance.EnableBird(birdStatus);
-    }
+    //internal void EnableBird(bool birdStatus)
+    //{
+    //    //AnimatorController.instance.EnableBird(birdStatus);
+    //}
 
     internal void ChangeAnimators()
     {

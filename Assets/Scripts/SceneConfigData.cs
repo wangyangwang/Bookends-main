@@ -6,8 +6,6 @@ using UnityEditor;
 //[ExecuteInEditMode]
 public class SceneConfigData : MonoBehaviour
 {
-    public const int STAGE_COUNT_EACH_MUSICIAN = 5;
-    public const int MUSICIAN_COUNT = 2;
 
     public static SceneConfigData Instance = null;
 
@@ -55,16 +53,16 @@ public class SceneConfigData : MonoBehaviour
         return data;
     }
 
- 
+
     public void InitDataStructure()
     {
 
-        GConfig = new MusicianConfig[MUSICIAN_COUNT];
+        GConfig = new MusicianConfig[StageController.MUSICIAN_COUNT];
 
         for (int i = 0; i < GConfig.Length; i++)
         {
             GConfig[i] = new MusicianConfig();
-            GConfig[i].stage = new StageController.SceneConfigurationData[STAGE_COUNT_EACH_MUSICIAN];
+            GConfig[i].stage = new StageController.SceneConfigurationData[StageController.STAGE_COUNT_EACH_MUSICIAN];
             for (int y = 0; y < GConfig[i].stage.Length; y++)
             {
                 GConfig[i].stage[y] = new StageController.SceneConfigurationData();
@@ -75,10 +73,10 @@ public class SceneConfigData : MonoBehaviour
 
         foreach (var mc in GConfig)
         {
-            for (int i = 0; i < STAGE_COUNT_EACH_MUSICIAN; i++)
+            for (int i = 0; i < StageController.STAGE_COUNT_EACH_MUSICIAN; i++)
             {
 
-                //based on id
+                //audio count and scene type
                 if (i == 0 || i == 1 || i == 2)
                 {
                     mc.stage[i].singingMusics = new AudioClip[0];
@@ -98,18 +96,22 @@ public class SceneConfigData : MonoBehaviour
                     mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
                 }
 
-                //based on scene type
+                if (i > 1)
+                {
+                    mc.stage[i].hasBird = true;
+                }
+
+                //the rest
                 if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Composing)
                 {
                     mc.stage[i].hasSingingMusics = true;
-                    if (i == 4) mc.stage[i].hasBird = true;
+
                     mc.stage[i].hasSingingAnimals = true;
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
 
                 }
                 else if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Motion)
                 {
-
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
                     mc.stage[i].hasKinectAvatar = true;
                     mc.stage[i].hasParticleEffect = true;

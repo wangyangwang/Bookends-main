@@ -84,7 +84,7 @@ MonoBehaviour:
       hasKinectAvatar: 1
       hasParticleEffect: 1
       hasDancer: 1
-      hasBird: 0
+      hasBird: 1
       hasSingingAnimals: 0
       singingAnimalNumber: 0
     - sceneType: 1
@@ -98,7 +98,7 @@ MonoBehaviour:
       hasKinectAvatar: 0
       hasParticleEffect: 0
       hasDancer: 0
-      hasBird: 0
+      hasBird: 1
       hasSingingAnimals: 1
       singingAnimalNumber: 3
     - sceneType: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
       hasKinectAvatar: 1
       hasParticleEffect: 1
       hasDancer: 1
-      hasBird: 0
+      hasBird: 1
       hasSingingAnimals: 0
       singingAnimalNumber: 0
     - sceneType: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
       hasKinectAvatar: 0
       hasParticleEffect: 0
       hasDancer: 0
-      hasBird: 0
+      hasBird: 1
       hasSingingAnimals: 1
       singingAnimalNumber: 3
     - sceneType: 1

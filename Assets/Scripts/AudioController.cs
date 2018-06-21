@@ -6,19 +6,19 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
 
-    public static AudioController instance;
-    public StageController.SceneConfigurationData.SceneType stageType { get; private set; }
+    public static AudioController Instance;
+    public StageController.SceneConfigurationData.SceneType sceneType { get; private set; }
 
     AudioUnit[] units;
 
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != null)
+        else if (Instance != null)
         {
             Debug.LogError("Found more than 1 AudioController, destroying...");
             Destroy(gameObject);
@@ -68,17 +68,19 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public void JumpTo(float p)
+    public void FastForward()
     {
-        foreach (AudioUnit u in units)
-        {
-            u.JumpTo(p);
-        }
+        //todo
+    }
+
+    public void Reverse()
+    {
+        //todo
     }
 
     public void ChangeStageType(StageController.SceneConfigurationData.SceneType newtype)
     {
-        stageType = newtype;
+        sceneType = newtype;
         ResetState();
         ResetVol();
     }
@@ -95,7 +97,7 @@ public class AudioController : MonoBehaviour
     {
         foreach (AudioUnit u in units)
         {
-            u.Active = (stageType == u.stageType);
+            u.Active = (sceneType == u.stageType);
         }
     }
 

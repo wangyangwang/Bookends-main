@@ -3,111 +3,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AudioUnit : MonoBehaviour
 {
 
-    //FIXME: probbaly use active to control is not a good idea.
-    private AudioSource[] sources;
+    private AudioSource source;
+    private float vol;
+    private bool audible;
+    private AudioClip clip;
 
-    [SerializeField]
-    private bool active;
-
-    public bool Active
+    public float Vol
     {
         get
         {
-            return active;
+            return vol;
+        }
+        set
+        {
+            vol = value;
+            if (Audible) source.volume = vol;
+        }
+    }
+
+
+    public bool Audible
+    {
+        get
+        {
+            return audible;
         }
 
         set
         {
-            ResetVol();
-            active = value;
+            audible = value;
+            source.volume = audible ? Vol : 0;
         }
     }
 
-    //TODO:better way to setup type
-    public StageController.SceneConfigurationData.SceneType stageType;
-
-    private void Awake()
+    public AudioClip Clip
     {
-        sources = GetComponentsInChildren<AudioSource>();
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-        if (sources.Length < 1) Debug.LogError("no audio source found!");
-        Debug.Log("audio unit" + gameObject.name + " type has changed to " + stageType.ToString());
-    }
-
-    public void Play()
-    {
-        if (!active) return;
-        foreach (AudioSource a in sources)
+        get
         {
-            a.Play();
+            return clip;
         }
-    }
 
-    public void ChangeVolumn(float v, int index)
-    {
-        if (!active || stageType == StageController.SceneConfigurationData.SceneType.Motion) return;
-        sources[index].volume = v;
-    }
-
-    public void Stop()
-    {
-        if (!active) return;
-        foreach (AudioSource a in sources)
+        set
         {
-            a.Stop();
+            clip = value;
+            source.clip = clip;
         }
     }
-    public void Pause()
+
+
+
+    private void Start()
     {
-        if (!active) return;
-        foreach (AudioSource a in sources)
-        {
-            a.Pause();
-        }
+        source = GetComponent<AudioSource>();
+
     }
 
-    public void JumpTo(float p)
+    private void OnEnable()
     {
-        if (!active) return;
-        float realSeconds = p * sources[0].clip.length;
-        foreach (AudioSource a in sources)
-        {
-            a.time = realSeconds;
-        }
+        source.Stop();
+        source.loop = false;
+        source.playOnAwake = false;
+        Vol = 1;
     }
 
-    public void ResetVol()
-    {
-        foreach (AudioSource a in sources)
-        {
-            a.volume = 1;
-        }
-    }
-
-    internal void ChangeAudioClips(AudioClip[] soundTracks)
-    {
-
-        //HACK
-        if (soundTracks.Length == sources.Length)
-        {
-            for (int i = 0; i < sources.Length; ++i)
-            {
-                sources[i].clip = soundTracks[i];
-            }
-        }
-        else
-        {
-            Debug.Log(gameObject.name + "  sources count doesn't math.");
-        }
+    public void Play() { source.Play(); }
+    public void Pause() { source.Pause(); }
+    public void Stop() { source.Stop(); }
+    public void FastForward() { source.time = source.time + PlayController.FAST_FORWARD_STEP; }
+    public void Reverse() { source.time = source.time - PlayController.FAST_FORWARD_STEP; }
 
 
-
-    }
 }

@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321952327827784}
   m_Layer: 0
-  m_Name: Env-01
+  m_Name: Garden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

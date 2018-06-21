@@ -35,8 +35,8 @@ public class PostProcessingController : MonoBehaviour
     void Start()
     {
         //This is customized for <Camera Filter Pack>, if changing to a different filter pack, this will need to be re-written
-        var mainCam = Camera.main.transform;
-        var filters = from filter in mainCam.GetComponents<MonoBehaviour>()
+        //var mainCam = Camera.main.transform;
+        var filters = from filter in GetComponents<MonoBehaviour>()
                       where ((MonoBehaviour)filter).GetType().ToString().Contains("CameraFilter")
                       select filter;
 

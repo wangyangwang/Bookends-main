@@ -8,7 +8,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public static GameManager instance = null;
+    public static GameManager Instance = null;
+
+
+  
+ 
 
     private void OnEnable()
     {
@@ -51,11 +55,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != null)
+        else if (Instance != null)
         {
             Debug.LogError("found more than 1 GameManager, destroying " + gameObject.name);
             Destroy(gameObject);
@@ -67,7 +71,6 @@ public class GameManager : MonoBehaviour
     {
 
         print("----Checking all controllers...");
-
         if (!PlayController.instance)
         {
             Debug.LogError("cannot find PlayController");
@@ -144,7 +147,7 @@ public class GameManager : MonoBehaviour
 
     private void VolumnChange(int which, float newVol)
     {
-        AudioController.instance.ChangeVolumn(which, newVol);
+        AudioController.Instance.ChangeVolumn(which, newVol);
         Debug.Log("Changing sound track " + which + " to volumn " + newVol);
     }
 

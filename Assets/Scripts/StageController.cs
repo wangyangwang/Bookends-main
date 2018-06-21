@@ -8,18 +8,16 @@ using System;
 [RequireComponent(typeof(SceneConfigData))]
 public class StageController : MonoBehaviour
 {
-    public const int STAGE_COUNT = 5;
-    public const int MUSICIAN_STAGE_COUNT = 2;
 
     public static StageController instance = null;
+
+    public const int STAGE_COUNT_EACH_MUSICIAN = 5;
+    public const int MUSICIAN_COUNT = 2;
 
     //scene data
     private SceneData startupSceneData;
     private SceneData activeSceneData;
     private SceneData targetSceneData;
-    //scene settings
-    private SceneConfigurationData sceneConfig;
-
 
     //dontdestroyonload
     private static bool created = false;
@@ -32,13 +30,6 @@ public class StageController : MonoBehaviour
         }
     }
 
-    public SceneConfigurationData GetSceneConfiguration
-    {
-        get
-        {
-            return sceneConfig;
-        }
-    }
 
     private void Awake()
     {
@@ -84,18 +75,34 @@ public class StageController : MonoBehaviour
     }
 
 
-    public void InitScene()
+    internal void InitScene()
     {
 
         SceneConfigurationData config = SceneConfigData.GetConfig(targetSceneData);
 
-
+        //=======================
+        //BACKGROUND
         EnvironmentController.Instance.ChangeToScene(config.environment);
+        //=======================
+        //KINECT
         KinectController.Instance.gameObject.SetActive(config.hasKinectAvatar);
+        //=======================
+        //BIRD
         BirdController.Instance.gameObject.SetActive(config.hasBird);
+        //=======================
+        //DANCER
         DancerController.Instance.gameObject.SetActive(config.hasDancer);
+        //=======================
+        //PARTICLE SYSTEM
         ParticleSystemController.Instance.gameObject.SetActive(config.hasParticleEffect);
-        //SiningAnimalController.Instance.gameObject.SetActive(config.hasSingingAnimals);
+        //=======================
+        //SINGING ANIMALS
+        SingingAnimalController.Instance.gameObject.SetActive(config.hasSingingAnimals);
+        if (config.hasSingingAnimals)
+        {
+            SingingAnimalController.Instance.FillAudioClips(config.singingMusics);
+        }
+
 
 
         activeSceneData = targetSceneData;

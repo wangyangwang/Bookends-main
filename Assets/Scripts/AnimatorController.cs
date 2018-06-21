@@ -54,20 +54,11 @@ public class AnimatorController : MonoBehaviour
         //TODO
     }
 
-    internal void EnableDancer(bool dancerStatus)
-    {
-        //FIXME code coupling
-        //StageController.instance.dancer.SetActive(dancerStatus);
-    }
 
     public void ChangeStageType(StageController.SceneConfigurationData.SceneType newtype)
     {
         stageType = newtype;
     }
 
-    internal void EnableBird(bool birdStatus)
-    {
-        //FIXME code coupling
-        //StageController.instance.bird.SetActive(birdStatus);
-    }
+
 }
