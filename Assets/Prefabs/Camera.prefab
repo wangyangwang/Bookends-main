@@ -30,7 +30,6 @@ GameObject:
   - component: {fileID: 114819392773781750}
   - component: {fileID: 114472981062496556}
   - component: {fileID: 114263579872434208}
-  - component: {fileID: 114916147992575260}
   - component: {fileID: 114641398434448086}
   - component: {fileID: 114771628098636798}
   - component: {fileID: 114322160515342920}
@@ -348,21 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6a48fbc09e2618d47b366cadea064a72, type: 2}
---- !u!114 &114916147992575260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598494318647024}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c15a8913414b544980ef2b5789fa26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: ac96ed51c5818e7469a3e3163bc3140e, type: 3}
-  __Speed: 0.108
-  _LightMin: 0
-  _LightMax: 1
 --- !u!114 &114937401039186616
 MonoBehaviour:
   m_ObjectHideFlags: 1

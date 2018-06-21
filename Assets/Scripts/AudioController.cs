@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour
 {
 
     public static AudioController instance;
-    public StageController.SceneConfigurationData.SceneType stageType { get; private set; }
+    public StageSettings.StageType stageType { get; private set; }
 
     AudioUnit[] units;
 
@@ -76,7 +76,7 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public void ChangeStageType(StageController.SceneConfigurationData.SceneType newtype)
+    public void ChangeStageType(StageSettings.StageType newtype)
     {
         stageType = newtype;
         ResetState();

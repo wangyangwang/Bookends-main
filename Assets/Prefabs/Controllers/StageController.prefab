@@ -140,6 +140,6 @@ MonoBehaviour:
     stageType: 0
     useKinectControledRedPanda: 0
     soundTracks: []
-    dancerStatus: 0
-    useParticles: 0
-    flyingBirdStatus: 0
+    dancerStatus: 1
+    useParticles: 1
+    flyingBirdStatus: 1
