@@ -89,21 +89,13 @@ public class StageController : MonoBehaviour
 
         SceneConfigurationData config = SceneConfigData.GetConfig(targetSceneData);
 
-        //reload scene
-        SceneManager.LoadScene(0);
-
-
 
         EnvironmentController.Instance.ChangeToScene(config.environment);
-
-
-
-
-
-        KinectController.instance.gameObject.SetActive(config.hasKinectAvatar);
-
-        //KinectManager.Instance.
+        KinectController.Instance.gameObject.SetActive(config.hasKinectAvatar);
         BirdController.Instance.gameObject.SetActive(config.hasBird);
+        DancerController.Instance.gameObject.SetActive(config.hasDancer);
+        ParticleSystemController.Instance.gameObject.SetActive(config.hasParticleEffect);
+        //SiningAnimalController.Instance.gameObject.SetActive(config.hasSingingAnimals);
 
 
         activeSceneData = targetSceneData;
@@ -137,7 +129,7 @@ public class StageController : MonoBehaviour
 
         public bool hasSingingMusics;
         public bool hasKinectAvatar;
-        public bool hasRedPandaAvatar;
+        public bool hasParticleEffect;
         public bool hasDancer;
         public bool hasBird;
         public bool hasSingingAnimals;

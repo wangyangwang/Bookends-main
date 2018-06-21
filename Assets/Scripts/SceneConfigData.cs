@@ -112,13 +112,14 @@ public class SceneConfigData : MonoBehaviour
 
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
                     mc.stage[i].hasKinectAvatar = true;
+                    mc.stage[i].hasParticleEffect = true;
 
                     if (i == 2)
                     {
                         mc.stage[i].hasDancer = true;
                     }
 
-                    mc.stage[i].hasRedPandaAvatar = true;
+                    mc.stage[i].hasKinectAvatar = true;
 
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.Garden;
 

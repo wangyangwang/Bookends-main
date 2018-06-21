@@ -55,11 +55,11 @@ public class OnScreenControlPanelHelper : MonoBehaviour
 
     void ChangeParticleAmount(float amount)
     {
-        ParticleSystemController.instance.ChangeParicleAmount(amount);
+        ParticleSystemController.Instance.ChangeParicleAmount(amount);
     }
 
     void ChangeParticleType(float type)
     {
-        ParticleSystemController.instance.ChangeParticleType((int)type);
+        ParticleSystemController.Instance.ChangeParticleType((int)type);
     }
 }

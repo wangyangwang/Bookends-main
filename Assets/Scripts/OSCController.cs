@@ -9,6 +9,8 @@ using System.Linq;
 [RequireComponent(typeof(OSC))]
 public class OSCController : MonoBehaviour
 {
+    private static bool created = false;
+
     //event types
     public delegate void FloatMsg(float m);
     public delegate void IntMsg(int m);
@@ -67,7 +69,11 @@ public class OSCController : MonoBehaviour
 
     private void Awake()
     {
-        oscObject = GetComponent<OSC>();
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+        }
 
         if (instance == null)
         {
@@ -75,20 +81,16 @@ public class OSCController : MonoBehaviour
         }
         else if (instance != null)
         {
-            Debug.LogError("More than 1 instance of OSCController is detected, deleting...");
+            Debug.LogWarning("More than 1 instance of OSCController is detected, deleting...");
             Destroy(gameObject);
         }
+
+
     }
 
-    // Use this for initialization
     void Start()
     {
-        if (!oscObject)
-        {
-            Debug.LogError("Couldn't find OSC object!");
-            return;
-        }
-
+        oscObject = GetComponent<OSC>();
         oscObject.SetAllMessageHandler(ProcessMessage);
     }
 

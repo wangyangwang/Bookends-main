@@ -10,7 +10,7 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     public delegate void GestureEvent();
     public static event GestureEvent OnWave;
-    public static KinectController instance = null;
+    public static KinectController Instance = null;
 
 
     private KinectManager kinectManager;
@@ -22,13 +22,13 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != null)
+        else if (Instance != null)
         {
-            Debug.LogError("Found more than 1 kinectControler instance");
+            Debug.LogWarning("Found more than 1 kinectControler instance");
             Destroy(gameObject);
         }
     }

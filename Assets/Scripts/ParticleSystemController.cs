@@ -23,7 +23,7 @@ public class ParticleSystemController : MonoBehaviour
     //Slider amountSlider;
     //Toggle[] enableToggles;
 
-    public static ParticleSystemController instance = null;
+    public static ParticleSystemController Instance = null;
 
 
     public float defaultParticleSystemAmount = 10;
@@ -52,11 +52,11 @@ public class ParticleSystemController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }

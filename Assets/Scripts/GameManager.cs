@@ -8,10 +8,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-
-    private static bool created = false;
-
-
     public static GameManager instance = null;
 
     private void OnEnable()
@@ -55,13 +51,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (!created)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            created = true;
-            Debug.Log("Awake: " + this.gameObject);
-        }
-
         if (instance == null)
         {
             instance = this;
@@ -89,7 +78,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("cannot find OSCController");
         }
 
-        if (!KinectController.instance)
+        if (!KinectController.Instance)
         {
             Debug.LogError("cannot find KinectController");
         }
@@ -98,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("cannot find StageController");
         }
-        if (!ParticleSystemController.instance)
+        if (!ParticleSystemController.Instance)
         {
             Debug.LogError("cannot find ParticleSystemController");
         }
@@ -144,13 +133,13 @@ public class GameManager : MonoBehaviour
     private void ParticleAmountChange(float newAmount)
     {
         Debug.Log("Changing Partile Amount to  " + newAmount);
-        ParticleSystemController.instance.ChangeParicleAmount(newAmount);
+        ParticleSystemController.Instance.ChangeParicleAmount(newAmount);
     }
 
     private void ParticleTypeChange(int typeIndex)
     {
         Debug.Log("Changing to Particle Type " + typeIndex);
-        ParticleSystemController.instance.ChangeParticleType(typeIndex);
+        ParticleSystemController.Instance.ChangeParticleType(typeIndex);
     }
 
     private void VolumnChange(int which, float newVol)

@@ -326,22 +326,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 4000723587860142, guid: 8e08d55bdcd7a3c4c9b46972fdc9844d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000723587860142, guid: 8e08d55bdcd7a3c4c9b46972fdc9844d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000723587860142, guid: 8e08d55bdcd7a3c4c9b46972fdc9844d, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1060914605148414, guid: 8e08d55bdcd7a3c4c9b46972fdc9844d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e08d55bdcd7a3c4c9b46972fdc9844d, type: 2}
   m_IsPrefabParent: 0
@@ -383,18 +367,6 @@ Prefab:
     - target: {fileID: 4198365882664210, guid: 461bc0ee611ebf245b52cfc97b423e42, type: 2}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4198365882664210, guid: 461bc0ee611ebf245b52cfc97b423e42, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4198365882664210, guid: 461bc0ee611ebf245b52cfc97b423e42, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4198365882664210, guid: 461bc0ee611ebf245b52cfc97b423e42, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 461bc0ee611ebf245b52cfc97b423e42, type: 2}
@@ -542,7 +514,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26f38862a5c3b4f59a94bdab0b31e9fd, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1255375813
+--- !u!1001 &1420164620
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1380,12 +1352,12 @@ Prefab:
     - target: {fileID: 224474673858452552, guid: 4462401209b2e6b47bd607b0b5f18a33,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224474673858452552, guid: 4462401209b2e6b47bd607b0b5f18a33,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224474673858452552, guid: 4462401209b2e6b47bd607b0b5f18a33,
         type: 2}
