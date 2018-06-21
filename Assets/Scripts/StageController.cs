@@ -5,52 +5,44 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
+[RequireComponent(typeof(SceneConfigData))]
 public class StageController : MonoBehaviour
 {
-
-    //===============================================
-
-
     public const int STAGE_COUNT = 5;
-    public const int stageWithBackgroundTrack = 3;
-    public const int backdropCount = 2;
     public const int MUSICIAN_STAGE_COUNT = 2;
 
-
-    [Header("Links")]
-    //TODO: better ways to link those things
-    public GameObject bird;
-    public GameObject dancer;
-    public GameObject avatarRedPanda;
-    public GameObject motionSceneStaging;
-    public GameObject composingSceneStaging;
-
-    [Header("Settings for each stage")]
-
-
-
-    public StageSettings[] vivaldi = new StageSettings[STAGE_COUNT];
-    public StageSettings[] mozart = new StageSettings[STAGE_COUNT];
-
-
-    //===============================================
-
-    private static bool created = false;
     public static StageController instance = null;
 
+    //scene data
+    private SceneData startupSceneData;
+    private SceneData activeSceneData;
+    private SceneData targetSceneData;
+    //scene settings
+    private SceneConfigurationData sceneConfig;
 
-    public int CurrentStageIndex { get; private set; }
-    public int CurrentMusicianIndex { get; private set; }
-    public StageSettings.StageType CurrentStageType { get; private set; }
 
-    [SerializeField]
-    //for us to inspect if it is getting settings correctly.
-    //UNDONE
-    private StageSettings currentSettings;
+    //dontdestroyonload
+    private static bool created = false;
 
+    public SceneData GetActiveSceneData
+    {
+        get
+        {
+            return activeSceneData;
+        }
+    }
+
+    public SceneConfigurationData GetSceneConfiguration
+    {
+        get
+        {
+            return sceneConfig;
+        }
+    }
 
     private void Awake()
     {
+
 
         if (!created)
         {
@@ -68,68 +60,107 @@ public class StageController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        CurrentStageIndex = SceneManager.GetActiveScene().buildIndex;
-        CurrentMusicianIndex = SceneManager.sceneCountInBuildSettings;
+        startupSceneData = new SceneData();
+        activeSceneData = new SceneData();
+        targetSceneData = new SceneData();
     }
 
     private void Start()
     {
-        ReInitScene();
+        targetSceneData = startupSceneData;
+        InitScene();
     }
 
-    public void GoToStage(int stageIndex)
+    public void GoToStage(int gotoStageIndex)
     {
-        CurrentStageIndex = stageIndex;
-        ReInitScene();
+        targetSceneData = activeSceneData;
+        targetSceneData.stageIndex = gotoStageIndex;
+        InitScene();
     }
 
-    public void GoToMusician(int musicianIndex)
+    public void GoToMusician(int gotoMusicianIndex)
     {
-        CurrentMusicianIndex = musicianIndex;
-        ReInitScene();
+        targetSceneData = activeSceneData;
+        targetSceneData.musicianIndex = gotoMusicianIndex;
+        InitScene();
     }
 
-    public void ReInitScene()
-    {
-        currentSettings = GetSettings(CurrentMusicianIndex, CurrentStageIndex);
 
-        //Set Backdrop 
-        motionSceneStaging.SetActive(currentSettings.stageType == StageSettings.StageType.MOTION);
-        composingSceneStaging.SetActive(currentSettings.stageType == StageSettings.StageType.COMPOSING);
+
+    public void InitScene()
+    {
+
+        SceneConfigurationData config = SceneConfigData.GetConfig(targetSceneData);
+
+        if (config.sceneType == SceneConfigurationData.SceneType.Composing)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+
 
         //enable/disable
-        PlayController.instance.EnableDancer(currentSettings.dancerStatus);
-        PlayController.instance.EnableBird(currentSettings.flyingBirdStatus);
-        //ParticleSystemController.instance.EnableParticles(currentSettings.useParticles);
-        KinectController.instance.EnableRedPanda(currentSettings.useKinectControledRedPanda);
+        PlayController.instance.EnableDancer(config.hasDancer);
+        PlayController.instance.EnableBird(config.hasBird);
+        //ParticleSystemController.instance.EnableParticles(config.useParticles);
+        //KinectController.instance.EnableRedPanda(config.useKinectControledRedPanda);
 
         //swap
-        PlayController.instance.ChangeStageType(currentSettings.stageType);
-        PlayController.instance.ChangeAudioClips(currentSettings.soundTracks);
+        //PlayController.instance.ChangeStageType(config.stageType);
+        PlayController.instance.ChangeAudioClips(config.singingMusics);
         PlayController.instance.ChangeAnimators();//TODO
 
         //Setup finished, reload
-        Debug.LogWarning("going to stage : " + CurrentStageIndex + "  musician:  " + CurrentMusicianIndex);
+        //Debug.LogWarning("going to stage : " + CurrentStageIndex + "  musician:  " + CurrentMusicianIndex);
+
+
+        activeSceneData = targetSceneData;
     }
 
-    private StageSettings GetSettings(int currentMusicianIndex, int currentStageIndex)
-    {
-        StageSettings[] settings;
 
-        switch (currentMusicianIndex)
+
+
+
+    [System.Serializable]
+    public struct SceneData
+    {
+        public int stageIndex;
+        public int musicianIndex;
+    }
+
+    [System.Serializable]
+    public struct SceneConfigurationData
+    {
+
+        public enum SceneType
         {
-            case 0:
-                settings = vivaldi;
-                break;
-            case 1:
-                settings = mozart;
-                break;
-            default:
-                Debug.LogError("Cannot find matching musician index!");
-                settings = null;
-                break;
+            Motion, Composing
         }
 
-        return settings[currentStageIndex];
+        public enum Environment
+        {
+            Garden, House
+        }
+
+        public SceneType sceneType;
+        public Environment environment;
+
+        public AudioClip backgroundMusic;
+        public bool hasSingingMusics;
+        public AudioClip[] singingMusics;
+
+        public bool hasKinectManager;
+        public bool hasRedPandaAvatar;
+   
+        public bool hasDancer;
+        public bool hasBird;
+        public bool hasSingingAnimals;
+        public int singingAnimalNumber;
+
     }
+
+
 }

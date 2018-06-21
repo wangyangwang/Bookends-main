@@ -27,7 +27,7 @@ public class AudioUnit : MonoBehaviour
     }
 
     //TODO:better way to setup type
-    public StageSettings.StageType stageType;
+    public StageController.SceneConfigurationData.SceneType stageType;
 
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class AudioUnit : MonoBehaviour
 
     public void ChangeVolumn(float v, int index)
     {
-        if (!active || stageType == StageSettings.StageType.MOTION) return;
+        if (!active || stageType == StageController.SceneConfigurationData.SceneType.Motion) return;
         sources[index].volume = v;
     }
 
