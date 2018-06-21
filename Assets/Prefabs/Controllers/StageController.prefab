@@ -57,10 +57,10 @@ MonoBehaviour:
     - sceneType: 0
       environment: 0
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 0
       singingMusics: []
-      hasKinectManager: 1
-      hasRedPandaAvatar: 1
+      hasSingingMusics: 0
+      hasKinectAvatar: 1
+      hasParticleEffect: 1
       hasDancer: 0
       hasBird: 0
       hasSingingAnimals: 0
@@ -68,10 +68,10 @@ MonoBehaviour:
     - sceneType: 0
       environment: 0
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 0
       singingMusics: []
-      hasKinectManager: 1
-      hasRedPandaAvatar: 1
+      hasSingingMusics: 0
+      hasKinectAvatar: 1
+      hasParticleEffect: 1
       hasDancer: 0
       hasBird: 0
       hasSingingAnimals: 0
@@ -79,10 +79,10 @@ MonoBehaviour:
     - sceneType: 0
       environment: 0
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 0
       singingMusics: []
-      hasKinectManager: 1
-      hasRedPandaAvatar: 1
+      hasSingingMusics: 0
+      hasKinectAvatar: 1
+      hasParticleEffect: 1
       hasDancer: 1
       hasBird: 0
       hasSingingAnimals: 0
@@ -90,13 +90,13 @@ MonoBehaviour:
     - sceneType: 1
       environment: 1
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 1
       singingMusics:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      hasKinectManager: 0
-      hasRedPandaAvatar: 0
+      hasSingingMusics: 1
+      hasKinectAvatar: 0
+      hasParticleEffect: 0
       hasDancer: 0
       hasBird: 0
       hasSingingAnimals: 1
@@ -104,14 +104,14 @@ MonoBehaviour:
     - sceneType: 1
       environment: 1
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 1
       singingMusics:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      hasKinectManager: 0
-      hasRedPandaAvatar: 0
+      hasSingingMusics: 1
+      hasKinectAvatar: 0
+      hasParticleEffect: 0
       hasDancer: 0
       hasBird: 1
       hasSingingAnimals: 1
@@ -120,10 +120,10 @@ MonoBehaviour:
     - sceneType: 0
       environment: 0
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 0
       singingMusics: []
-      hasKinectManager: 1
-      hasRedPandaAvatar: 1
+      hasSingingMusics: 0
+      hasKinectAvatar: 1
+      hasParticleEffect: 1
       hasDancer: 0
       hasBird: 0
       hasSingingAnimals: 0
@@ -131,10 +131,10 @@ MonoBehaviour:
     - sceneType: 0
       environment: 0
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 0
       singingMusics: []
-      hasKinectManager: 1
-      hasRedPandaAvatar: 1
+      hasSingingMusics: 0
+      hasKinectAvatar: 1
+      hasParticleEffect: 1
       hasDancer: 0
       hasBird: 0
       hasSingingAnimals: 0
@@ -142,10 +142,10 @@ MonoBehaviour:
     - sceneType: 0
       environment: 0
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 0
       singingMusics: []
-      hasKinectManager: 1
-      hasRedPandaAvatar: 1
+      hasSingingMusics: 0
+      hasKinectAvatar: 1
+      hasParticleEffect: 1
       hasDancer: 1
       hasBird: 0
       hasSingingAnimals: 0
@@ -153,13 +153,13 @@ MonoBehaviour:
     - sceneType: 1
       environment: 1
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 1
       singingMusics:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      hasKinectManager: 0
-      hasRedPandaAvatar: 0
+      hasSingingMusics: 1
+      hasKinectAvatar: 0
+      hasParticleEffect: 0
       hasDancer: 0
       hasBird: 0
       hasSingingAnimals: 1
@@ -167,14 +167,14 @@ MonoBehaviour:
     - sceneType: 1
       environment: 1
       backgroundMusic: {fileID: 0}
-      hasSingingMusics: 1
       singingMusics:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      hasKinectManager: 0
-      hasRedPandaAvatar: 0
+      hasSingingMusics: 1
+      hasKinectAvatar: 0
+      hasParticleEffect: 0
       hasDancer: 0
       hasBird: 1
       hasSingingAnimals: 1
