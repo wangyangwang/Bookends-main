@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Production/Master-MOTION.unity
+  - enabled: 0
+    path: Assets/Scenes/Production/motion.unity
     guid: 5fee01deb89a5264db2196c6379629ff
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Production/Master-COMPOSING.unity
-    guid: b4ad9510d2a794895ab0c18d232fe20a
+    path: Assets/Scenes/Production/compose.unity
+    guid: 515a4f653266a4c1eab9cccd8f4e31db
   m_configObjects: {}

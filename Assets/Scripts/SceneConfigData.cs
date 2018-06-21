@@ -3,31 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class SceneConfigData : MonoBehaviour
 {
+    public const int STAGE_COUNT_EACH_MUSICIAN = 5;
+    public const int MUSICIAN_COUNT = 2;
 
-    const int STAGE_COUNT_EACH_MUSICIAN = 5;
-    const int MUSICIAN_COUNT = 2;
-
+    public static SceneConfigData Instance = null;
 
     [System.Serializable]
     public class MusicianConfig
     {
-        public StageController.SceneConfigurationData[] data;
+        public StageController.SceneConfigurationData[] stage;
     }
 
     [SerializeField]
     [Header("0 means vivaldi, 1 means mozart")]
-    public MusicianConfig[] AllMusicianConfig;
+    public MusicianConfig[] GConfig;
 
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
-        foreach (var m in AllMusicianConfig)
+
+        foreach (var m in GConfig)
         {
-            if (m.data.Length == 0)
+            if (m.stage.Length == 0)
             {
                 Debug.LogError("Scenes Settings are not configured, quitting.");
                 Application.Quit();
@@ -39,27 +51,29 @@ public class SceneConfigData : MonoBehaviour
     public static StageController.SceneConfigurationData GetConfig(StageController.SceneData sceneData)
     {
         StageController.SceneConfigurationData data = new StageController.SceneConfigurationData();
+        data = SceneConfigData.Instance.GConfig[sceneData.musicianIndex].stage[sceneData.stageIndex];
         return data;
     }
 
+ 
     public void InitDataStructure()
     {
 
-        AllMusicianConfig = new MusicianConfig[MUSICIAN_COUNT];
+        GConfig = new MusicianConfig[MUSICIAN_COUNT];
 
-        for (int i = 0; i < AllMusicianConfig.Length; i++)
+        for (int i = 0; i < GConfig.Length; i++)
         {
-            AllMusicianConfig[i] = new MusicianConfig();
-            AllMusicianConfig[i].data = new StageController.SceneConfigurationData[STAGE_COUNT_EACH_MUSICIAN];
-            for (int y = 0; y < AllMusicianConfig[i].data.Length; y++)
+            GConfig[i] = new MusicianConfig();
+            GConfig[i].stage = new StageController.SceneConfigurationData[STAGE_COUNT_EACH_MUSICIAN];
+            for (int y = 0; y < GConfig[i].stage.Length; y++)
             {
-                AllMusicianConfig[i].data[y] = new StageController.SceneConfigurationData();
+                GConfig[i].stage[y] = new StageController.SceneConfigurationData();
             }
 
         }
 
 
-        foreach (var mc in AllMusicianConfig)
+        foreach (var mc in GConfig)
         {
             for (int i = 0; i < STAGE_COUNT_EACH_MUSICIAN; i++)
             {
@@ -67,46 +81,46 @@ public class SceneConfigData : MonoBehaviour
                 //based on id
                 if (i == 0 || i == 1 || i == 2)
                 {
-                    mc.data[i].singingMusics = new AudioClip[0];
-                    mc.data[i].sceneType = StageController.SceneConfigurationData.SceneType.Motion;
+                    mc.stage[i].singingMusics = new AudioClip[0];
+                    mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Motion;
 
                 }
                 else if (i == 3)
                 {
-                    mc.data[i].singingMusics = new AudioClip[3];
-                    mc.data[i].singingAnimalNumber = 3;
-                    mc.data[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
+                    mc.stage[i].singingMusics = new AudioClip[3];
+                    mc.stage[i].singingAnimalNumber = 3;
+                    mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
                 }
                 else if (i == 4)
                 {
-                    mc.data[i].singingMusics = new AudioClip[4];
-                    mc.data[i].singingAnimalNumber = 4;
-                    mc.data[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
+                    mc.stage[i].singingMusics = new AudioClip[4];
+                    mc.stage[i].singingAnimalNumber = 4;
+                    mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
                 }
 
                 //based on scene type
-                if (mc.data[i].sceneType == StageController.SceneConfigurationData.SceneType.Composing)
+                if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Composing)
                 {
-                    mc.data[i].hasSingingMusics = true;
-                    if (i == 4) mc.data[i].hasBird = true;
-                    mc.data[i].hasSingingAnimals = true;
-                    mc.data[i].environment = StageController.SceneConfigurationData.Environment.House;
+                    mc.stage[i].hasSingingMusics = true;
+                    if (i == 4) mc.stage[i].hasBird = true;
+                    mc.stage[i].hasSingingAnimals = true;
+                    mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
 
                 }
-                else if (mc.data[i].sceneType == StageController.SceneConfigurationData.SceneType.Motion)
+                else if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Motion)
                 {
 
-                    mc.data[i].environment = StageController.SceneConfigurationData.Environment.House;
-                    mc.data[i].hasKinectManager = true;
+                    mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
+                    mc.stage[i].hasKinectAvatar = true;
 
                     if (i == 2)
                     {
-                        mc.data[i].hasDancer = true;
+                        mc.stage[i].hasDancer = true;
                     }
 
-                    mc.data[i].hasRedPandaAvatar = true;
+                    mc.stage[i].hasRedPandaAvatar = true;
 
-                    mc.data[i].environment = StageController.SceneConfigurationData.Environment.Garden;
+                    mc.stage[i].environment = StageController.SceneConfigurationData.Environment.Garden;
 
                 }
 

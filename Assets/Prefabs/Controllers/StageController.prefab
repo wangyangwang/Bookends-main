@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4840155745553540}
   - component: {fileID: 114569271052345558}
+  - component: {fileID: 114254315106896796}
   m_Layer: 0
   m_Name: StageController
   m_TagString: Untagged
@@ -40,6 +41,144 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114254315106896796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257222889092998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463f2363443c546e9b72760fd13887d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GConfig:
+  - stage:
+    - sceneType: 0
+      environment: 0
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 0
+      singingMusics: []
+      hasKinectManager: 1
+      hasRedPandaAvatar: 1
+      hasDancer: 0
+      hasBird: 0
+      hasSingingAnimals: 0
+      singingAnimalNumber: 0
+    - sceneType: 0
+      environment: 0
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 0
+      singingMusics: []
+      hasKinectManager: 1
+      hasRedPandaAvatar: 1
+      hasDancer: 0
+      hasBird: 0
+      hasSingingAnimals: 0
+      singingAnimalNumber: 0
+    - sceneType: 0
+      environment: 0
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 0
+      singingMusics: []
+      hasKinectManager: 1
+      hasRedPandaAvatar: 1
+      hasDancer: 1
+      hasBird: 0
+      hasSingingAnimals: 0
+      singingAnimalNumber: 0
+    - sceneType: 1
+      environment: 1
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 1
+      singingMusics:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      hasKinectManager: 0
+      hasRedPandaAvatar: 0
+      hasDancer: 0
+      hasBird: 0
+      hasSingingAnimals: 1
+      singingAnimalNumber: 3
+    - sceneType: 1
+      environment: 1
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 1
+      singingMusics:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      hasKinectManager: 0
+      hasRedPandaAvatar: 0
+      hasDancer: 0
+      hasBird: 1
+      hasSingingAnimals: 1
+      singingAnimalNumber: 4
+  - stage:
+    - sceneType: 0
+      environment: 0
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 0
+      singingMusics: []
+      hasKinectManager: 1
+      hasRedPandaAvatar: 1
+      hasDancer: 0
+      hasBird: 0
+      hasSingingAnimals: 0
+      singingAnimalNumber: 0
+    - sceneType: 0
+      environment: 0
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 0
+      singingMusics: []
+      hasKinectManager: 1
+      hasRedPandaAvatar: 1
+      hasDancer: 0
+      hasBird: 0
+      hasSingingAnimals: 0
+      singingAnimalNumber: 0
+    - sceneType: 0
+      environment: 0
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 0
+      singingMusics: []
+      hasKinectManager: 1
+      hasRedPandaAvatar: 1
+      hasDancer: 1
+      hasBird: 0
+      hasSingingAnimals: 0
+      singingAnimalNumber: 0
+    - sceneType: 1
+      environment: 1
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 1
+      singingMusics:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      hasKinectManager: 0
+      hasRedPandaAvatar: 0
+      hasDancer: 0
+      hasBird: 0
+      hasSingingAnimals: 1
+      singingAnimalNumber: 3
+    - sceneType: 1
+      environment: 1
+      backgroundMusic: {fileID: 0}
+      hasSingingMusics: 1
+      singingMusics:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      hasKinectManager: 0
+      hasRedPandaAvatar: 0
+      hasDancer: 0
+      hasBird: 1
+      hasSingingAnimals: 1
+      singingAnimalNumber: 4
 --- !u!114 &114569271052345558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,95 +190,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a364e6a55aade149987b9622544f980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 0}
-  dancer: {fileID: 0}
-  avatarRedPanda: {fileID: 0}
-  motionSceneStaging: {fileID: 0}
-  composingSceneStaging: {fileID: 0}
-  vivaldi:
-  - stageType: 0
-    useKinectControledRedPanda: 1
-    soundTracks:
-    - {fileID: 8300000, guid: c2223b5cd9be142689c63d9226cc0a3a, type: 3}
-    dancerStatus: 0
-    useParticles: 1
-    flyingBirdStatus: 0
-  - stageType: 0
-    useKinectControledRedPanda: 1
-    soundTracks:
-    - {fileID: 8300000, guid: 9a9c1b0591f2e48beb7538531b3807ca, type: 3}
-    dancerStatus: 0
-    useParticles: 1
-    flyingBirdStatus: 0
-  - stageType: 0
-    useKinectControledRedPanda: 1
-    soundTracks:
-    - {fileID: 8300000, guid: bc51a7f75e4e649728cb28ada4e362b3, type: 3}
-    dancerStatus: 1
-    useParticles: 1
-    flyingBirdStatus: 1
-  - stageType: 1
-    useKinectControledRedPanda: 0
-    soundTracks:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    dancerStatus: 0
-    useParticles: 0
-    flyingBirdStatus: 0
-  - stageType: 1
-    useKinectControledRedPanda: 0
-    soundTracks:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    dancerStatus: 0
-    useParticles: 0
-    flyingBirdStatus: 1
-  mozart:
-  - stageType: 0
-    useKinectControledRedPanda: 1
-    soundTracks:
-    - {fileID: 8300000, guid: 1882bd27b7d784bfba2b983053676749, type: 3}
-    dancerStatus: 0
-    useParticles: 1
-    flyingBirdStatus: 0
-  - stageType: 0
-    useKinectControledRedPanda: 1
-    soundTracks:
-    - {fileID: 8300000, guid: 5468a457c1131414d96ff4a178166c79, type: 3}
-    dancerStatus: 0
-    useParticles: 1
-    flyingBirdStatus: 0
-  - stageType: 0
-    useKinectControledRedPanda: 1
-    soundTracks:
-    - {fileID: 8300000, guid: c09ddbd2c1bc74a53ba46e3e4d5b2ee1, type: 3}
-    dancerStatus: 1
-    useParticles: 1
-    flyingBirdStatus: 1
-  - stageType: 1
-    useKinectControledRedPanda: 0
-    soundTracks:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    dancerStatus: 0
-    useParticles: 0
-    flyingBirdStatus: 0
-  - stageType: 1
-    useKinectControledRedPanda: 0
-    soundTracks:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    dancerStatus: 0
-    useParticles: 0
-    flyingBirdStatus: 1
-  currentSettings:
-    stageType: 0
-    useKinectControledRedPanda: 0
-    soundTracks: []
-    dancerStatus: 1
-    useParticles: 1
-    flyingBirdStatus: 1
