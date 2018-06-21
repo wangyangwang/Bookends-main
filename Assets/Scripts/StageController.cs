@@ -42,8 +42,6 @@ public class StageController : MonoBehaviour
 
     private void Awake()
     {
-
-
         if (!created)
         {
             DontDestroyOnLoad(this.gameObject);
@@ -86,12 +84,21 @@ public class StageController : MonoBehaviour
     }
 
 
-
     public void InitScene()
     {
 
         SceneConfigurationData config = SceneConfigData.GetConfig(targetSceneData);
+
+        //reload scene
         SceneManager.LoadScene(0);
+
+
+
+        EnvironmentController.Instance.ChangeToScene(config.environment);
+
+
+
+
 
         KinectController.instance.gameObject.SetActive(config.hasKinectAvatar);
 
