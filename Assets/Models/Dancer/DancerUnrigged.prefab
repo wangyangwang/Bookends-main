@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000723587860142}
   - component: {fileID: 95617494659090384}
-  - component: {fileID: 114952908071097270}
   m_Layer: 0
   m_Name: DancerUnrigged
   m_TagString: Untagged
@@ -165,8 +164,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1060914605148414}
   m_LocalRotation: {x: -0, y: 0.9982051, z: -0, w: 0.05988794}
-  m_LocalPosition: {x: -9.47, y: -1.72, z: 9.42}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalPosition: {x: -284, y: -3372, z: 0}
+  m_LocalScale: {x: 5199.08, y: 5199.083, z: 5199.083}
   m_Children:
   - {fileID: 4504760474020940}
   - {fileID: 4005865534071158}
@@ -511,14 +510,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114952908071097270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1060914605148414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6d4ee97b66b4eb7b540d746c7b2ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
