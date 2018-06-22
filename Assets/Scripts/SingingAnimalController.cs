@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This is the controller for all four singing animals.
+/// this controls the audio and the animation.
+/// </summary>
 public class SingingAnimalController : MonoBehaviour
 {
 
@@ -42,6 +46,7 @@ public class SingingAnimalController : MonoBehaviour
 
     public void Play()
     {
+        //todo: melody: start play animations
         foreach (AudioUnit s in units)
         {
             s.Play();
@@ -50,6 +55,7 @@ public class SingingAnimalController : MonoBehaviour
 
     public void Pause()
     {
+        //TODO: melody: pause playing animations
         foreach (AudioUnit s in units)
         {
             s.Pause();
@@ -58,6 +64,7 @@ public class SingingAnimalController : MonoBehaviour
 
     public void FastForward()
     {
+        //TODO: MELODY: not sure, maybe nothing is needed here
         foreach (AudioUnit s in units)
         {
             s.FastForward();
@@ -66,6 +73,7 @@ public class SingingAnimalController : MonoBehaviour
 
     public void Reverse()
     {
+        //TODO: MELODY: not sure, maybe nothing is needed here
         foreach (AudioUnit s in units)
         {
             s.Reverse();

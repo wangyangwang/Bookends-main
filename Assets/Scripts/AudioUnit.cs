@@ -25,7 +25,6 @@ public class AudioUnit : MonoBehaviour
         }
     }
 
-
     public bool Audible
     {
         get
@@ -59,7 +58,6 @@ public class AudioUnit : MonoBehaviour
     private void Start()
     {
         source = GetComponent<AudioSource>();
-
     }
 
     private void OnEnable()
