@@ -31,10 +31,10 @@ public class OnScreenControlPanelHelper : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        particleAmountSlider.onValueChanged.AddListener(ChangeParticleAmount);
-        particleTypeSlider.onValueChanged.AddListener(ChangeParticleType);
-        changeMusicianSlider.onValueChanged.AddListener((arg0) => ChangeMusician((int)arg0));
-        changeStageSlider.onValueChanged.AddListener((arg0) => ChangeStage((int)arg0));
+        //particleAmountSlider.onValueChanged.AddListener(ChangeParticleAmount);
+        //particleTypeSlider.onValueChanged.AddListener(ChangeParticleType);
+        //changeMusicianSlider.onValueChanged.AddListener((arg0) => ChangeMusician((int)arg0));
+        //changeStageSlider.onValueChanged.AddListener((arg0) => ChangeStage((int)arg0));
     }
 
     // Update is called once per frame
@@ -43,23 +43,24 @@ public class OnScreenControlPanelHelper : MonoBehaviour
 
     }
 
-    void ChangeMusician(int i)
-    {
-        StageController.instance.GoToMusician(i);
-    }
+    //void ChangeMusician(int i)
+    //{
+    //    OSCController.OnStageChange(i);
+    //    //StageController.Instance.GoToMusician(i);
+    //}
 
-    void ChangeStage(int i)
-    {
-        StageController.instance.GoToStage(i);
-    }
+    //void ChangeStage(int i)
+    //{
+    //    StageController.Instance.GoToStage(i);
+    //}
 
-    void ChangeParticleAmount(float amount)
-    {
-        ParticleSystemController.Instance.ChangeParicleAmount(amount);
-    }
+    //void ChangeParticleAmount(float amount)
+    //{
+    //    ParticleSystemController.Instance.ChangeParicleAmount(amount);
+    //}
 
-    void ChangeParticleType(float type)
-    {
-        ParticleSystemController.Instance.ChangeParticleType((int)type);
-    }
+    //void ChangeParticleType(float type)
+    //{
+    //    ParticleSystemController.Instance.ChangeParticleType((int)type);
+    //}
 }

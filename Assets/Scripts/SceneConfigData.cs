@@ -57,12 +57,12 @@ public class SceneConfigData : MonoBehaviour
     public void InitDataStructure()
     {
 
-        GConfig = new MusicianConfig[StageController.MUSICIAN_COUNT];
+        GConfig = new MusicianConfig[DATA.MUSICIAN_COUNT];
 
         for (int i = 0; i < GConfig.Length; i++)
         {
             GConfig[i] = new MusicianConfig();
-            GConfig[i].stage = new StageController.SceneConfigurationData[StageController.STAGE_COUNT_EACH_MUSICIAN];
+            GConfig[i].stage = new StageController.SceneConfigurationData[DATA.STAGE_COUNT_EACH_MUSICIAN];
             for (int y = 0; y < GConfig[i].stage.Length; y++)
             {
                 GConfig[i].stage[y] = new StageController.SceneConfigurationData();
@@ -73,7 +73,7 @@ public class SceneConfigData : MonoBehaviour
 
         foreach (var mc in GConfig)
         {
-            for (int i = 0; i < StageController.STAGE_COUNT_EACH_MUSICIAN; i++)
+            for (int i = 0; i < DATA.STAGE_COUNT_EACH_MUSICIAN; i++)
             {
 
                 //audio count and scene type
@@ -105,16 +105,14 @@ public class SceneConfigData : MonoBehaviour
                 if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Composing)
                 {
                     mc.stage[i].hasSingingMusics = true;
-
                     mc.stage[i].hasSingingAnimals = true;
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
-
                 }
                 else if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Motion)
                 {
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
                     mc.stage[i].hasKinectAvatar = true;
-                    mc.stage[i].hasParticleEffect = true;
+                    //mc.stage[i].hasParticleEffect = true;
 
                     if (i == 2)
                     {
@@ -122,7 +120,6 @@ public class SceneConfigData : MonoBehaviour
                     }
 
                     mc.stage[i].hasKinectAvatar = true;
-
                     mc.stage[i].environment = StageController.SceneConfigurationData.Environment.Garden;
 
                 }

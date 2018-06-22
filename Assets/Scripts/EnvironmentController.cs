@@ -22,21 +22,26 @@ public class EnvironmentController : MonoBehaviour
         }
     }
 
-    // Use this for initialization
-    void Start()
+    private void OnEnable()
     {
-
+        StageController.OnStageChange += OnStageChange;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-
+        StageController.OnStageChange -= OnStageChange;
     }
 
-    public void ChangeToScene(StageController.SceneConfigurationData.Environment environment)
+
+    private void OnStageChange()
     {
-        bool isGarden = environment == StageController.SceneConfigurationData.Environment.Garden;
+        UpdateEnvironment();
+    }
+
+
+    private void UpdateEnvironment()
+    {
+        bool isGarden = (StageController.Config.environment == StageController.SceneConfigurationData.Environment.Garden);
         garden.SetActive(isGarden);
         house.SetActive(!isGarden);
     }

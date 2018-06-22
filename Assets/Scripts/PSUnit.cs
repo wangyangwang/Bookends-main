@@ -2,34 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(ParticleSystem))]
 public class PSUnit : MonoBehaviour
 {
-
-
-
-    private bool state;
+    
     public bool State
     {
         set
         {
             state = value;
-            switch (Type)
-            {
-                case ParticleSystemController.ParticleType.KVANTSPRAY:
-                    GetComponent<Kvant.Spray>().enabled = state;
-                    break;
-                case ParticleSystemController.ParticleType.UNITYBUILDIN:
-             
-                        var em = GetComponent<ParticleSystem>().emission;
-                        em.enabled  = state;//FIXME: use modern API
-                    
-               
-                   
-                    break;
-                default:
-                    Debug.LogWarning("Type is not set yet!");
-                    break;
-            }
+            var em = ps.emission;
+            em.enabled = state;
         }
 
         get
@@ -39,26 +23,14 @@ public class PSUnit : MonoBehaviour
     }
 
 
-    private float amount;
     public float Amount
     {
         set
         {
             amount = value;
-            switch (Type)
-            {
-                case ParticleSystemController.ParticleType.KVANTSPRAY:
-                    GetComponent<Kvant.Spray>().throttle = amount;
-                    break;
-                case ParticleSystemController.ParticleType.UNITYBUILDIN:
-                    float newRate = amount * 20f;
-                    var em = GetComponent<ParticleSystem>().emission;
-                    em.rateOverTime = newRate;
-                    break;
-                default:
-                    Debug.LogWarning("Type is not set yet!");
-                    break;
-            }
+            float newRate = amount * DATA.PARTICLE_AMOUNT_MULTIPLIER;
+            var em = ps.emission;
+            em.rateOverTime = newRate;
         }
 
         get
@@ -68,27 +40,14 @@ public class PSUnit : MonoBehaviour
     }
 
 
+    private float amount;
+    private bool state;
+    private ParticleSystem ps;
 
-    public ParticleSystemController.ParticleType Type { get; private set; }
 
-
-    // Use this for initialization
-    void Awake()
+    private void Start()
     {
-
-        if (GetComponent<Kvant.Spray>() != null)
-        {
-            Type = ParticleSystemController.ParticleType.KVANTSPRAY;
-        }
-        else if (GetComponent<ParticleSystem>() != null)
-        {
-            Type = ParticleSystemController.ParticleType.UNITYBUILDIN;
-        }
-        else
-        {
-            Debug.LogError("PSUnit couldn't find any matching component. Deleting PSUnit on this gameobject...");
-            Destroy(this);
-        }
+        ps = GetComponent<ParticleSystem>();
     }
 
 

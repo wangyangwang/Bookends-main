@@ -71,8 +71,8 @@ public class AudioUnit : MonoBehaviour
     public void Play() { source.Play(); }
     public void Pause() { source.Pause(); }
     public void Stop() { source.Stop(); }
-    public void FastForward() { source.time = source.time + PlayController.FAST_FORWARD_STEP; }
-    public void Reverse() { source.time = source.time - PlayController.FAST_FORWARD_STEP; }
+    public void FastForward() { source.time = source.time + DATA.FAST_FORWARD_STEP; }
+    public void Reverse() { source.time = source.time - DATA.FAST_FORWARD_STEP; }
 
 
 }

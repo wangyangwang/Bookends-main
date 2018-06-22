@@ -6,9 +6,10 @@ public class BirdController : MonoBehaviour
 {
 
 
-    public static BirdController Instance = null;
+    //TODO: MELODY
+    //We need to figure out what should bird do
 
-    //TODO:
+    public static BirdController Instance = null;
 
     private bool _loop;
     public bool Loop
@@ -36,21 +37,29 @@ public class BirdController : MonoBehaviour
         }
     }
 
-    // Use this for initialization
-    void Start()
+
+    private void OnEnable()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
 
     }
 
-    public void PlayAnimation(int index)
+
+    private void Update()
     {
-        //todo
+        //Does it need to be traslated in space?
+    }
+
+    private void PlayAnimation(int index)
+    {
+        //TODO: MELODY
+        //PLAY ANIMATION 1
+        //PLAY ANIMATION 2
+        //PLAY ANIMATION 3
     }
 
 }

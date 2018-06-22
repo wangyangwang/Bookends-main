@@ -6,21 +6,14 @@ using System;
 
 public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
-
-
     public delegate void GestureEvent();
     public static event GestureEvent OnWave;
     public static KinectController Instance = null;
 
-
     private KinectManager kinectManager;
-
-    //parameters
-    [SerializeField]
     private float skeletonSize = 5f;
 
-
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -33,40 +26,42 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
         }
     }
 
-
-    // Use this for initialization
-    void Start()
+    private void OnEnable()
     {
-        kinectManager = KinectManager.Instance;
-        //allUsers = new List<KinectUser>();
-
-        kinectManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
-        if (!kinectManager.IsInitialized())
-        {
-            Debug.LogError("Kinect Manager is not initialized!");
-        }
-
+        OSCController.OnKinectUserReset += ClearUsers;
     }
 
-    public void EnableRedPanda(bool state)
+    private void OnDisable()
     {
-        //TODO
-        //StageController.instance.avatarRedPanda.SetActive(state);
+        OSCController.OnKinectUserReset -= ClearUsers;
+    }
+
+    private void Start()
+    {
+        kinectManager = KinectManager.Instance;
+        kinectManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
+        if (!kinectManager.IsInitialized()) Debug.LogError("Kinect Manager is not initialized!");
     }
 
     public Vector3 GetRightHandPos()
     {
-        //TODO
+        //HASTODO
         return Vector3.zero;
     }
+
     public Vector3 GetLeftHandPos()
     {
-        //TODO
+        //HASTODO
         return Vector3.zero;
     }
 
 
-    public void ClearUsers()
+
+
+    //INTERFACE FORCES METHODS
+    //................................
+    //................................
+    private void ClearUsers()
     {
         kinectManager.ClearKinectUsers();
     }

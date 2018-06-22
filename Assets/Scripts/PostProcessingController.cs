@@ -9,15 +9,8 @@ public class PostProcessingController : MonoBehaviour
     public static PostProcessingController instance = null;
 
 
-    List<MonoBehaviour> filterList;
+    private List<MonoBehaviour> filterList;
 
-    public int FilterCount
-    {
-        get
-        {
-            return filterList.Count();
-        }
-    }
 
     private void Awake()
     {
@@ -31,29 +24,36 @@ public class PostProcessingController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        Reset();
+        OSCController.OnFilterTypeChange += UseEffect;
+    }
 
-    void Start()
+    private void OnDisable()
+    {
+        OSCController.OnFilterTypeChange -= UseEffect;
+    }
+
+    private void Start()
     {
         //This is customized for <Camera Filter Pack>, if changing to a different filter pack, this will need to be re-written
-        //var mainCam = Camera.main.transform;
         var filters = from filter in GetComponents<MonoBehaviour>()
                       where ((MonoBehaviour)filter).GetType().ToString().Contains("CameraFilter")
                       select filter;
 
         filterList = filters.ToList();
-
     }
 
-
-    void Update()
+    private void Reset()
     {
-
+        UseEffect(0);
     }
 
-
-    public void UseEffect(int index)
+    private void UseEffect(int index)
     {
-        for (int i = 0; i < FilterCount; ++i)
+        //TODO: confirm how many filters we have in total
+        for (int i = 0; i < filterList.Count; ++i)
         {
             filterList[i].enabled = index == i;
         }

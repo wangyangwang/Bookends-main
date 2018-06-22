@@ -26,25 +26,38 @@ public class SingingAnimalController : MonoBehaviour
         }
     }
 
-    void Start()
+    private void OnEnable()
+    {
+        OSCController.OnPlay += Play;
+        OSCController.OnPausePlay += Pause;
+        OSCController.OnStopPlay += Stop;
+        OSCController.OnReverse += Reverse;
+        OSCController.OnFastforward += FastForward;
+        OSCController.OnVolumnChange += ChangeVolumn;
+        OSCController.OnSingingAnimalToggle += SetAudibleState;
+
+        StageController.OnStageChange += OnStageChange;
+    }
+
+    private void OnDisable()
+    {
+        OSCController.OnPlay -= Play;
+        OSCController.OnPausePlay -= Pause;
+        OSCController.OnStopPlay -= Stop;
+        OSCController.OnReverse -= Reverse;
+        OSCController.OnFastforward -= FastForward;
+        OSCController.OnVolumnChange -= ChangeVolumn;
+        OSCController.OnSingingAnimalToggle -= SetAudibleState;
+
+        StageController.OnStageChange -= OnStageChange;
+    }
+
+    private void Start()
     {
         units = GetComponentsInChildren<AudioUnit>();
     }
 
-    public void FillAudioClips(AudioClip[] clips)
-    {
-        int n = clips.Length;
-        if (n != units.Length)
-        {
-            Debug.LogError("audio source number != audioclips length passed in.");
-        }
-        for (int i = 0; i < n; i++)
-        {
-            units[i].Clip = clips[i];
-        }
-    }
-
-    public void Play()
+    private void Play()
     {
         //todo: melody: start play animations
         foreach (AudioUnit s in units)
@@ -53,7 +66,7 @@ public class SingingAnimalController : MonoBehaviour
         }
     }
 
-    public void Pause()
+    private void Pause()
     {
         //TODO: melody: pause playing animations
         foreach (AudioUnit s in units)
@@ -62,7 +75,15 @@ public class SingingAnimalController : MonoBehaviour
         }
     }
 
-    public void FastForward()
+    private void Stop()
+    {
+        foreach (AudioUnit s in units)
+        {
+            s.Stop();
+        }
+    }
+
+    private void FastForward()
     {
         //TODO: MELODY: not sure, maybe nothing is needed here
         foreach (AudioUnit s in units)
@@ -71,7 +92,7 @@ public class SingingAnimalController : MonoBehaviour
         }
     }
 
-    public void Reverse()
+    private void Reverse()
     {
         //TODO: MELODY: not sure, maybe nothing is needed here
         foreach (AudioUnit s in units)
@@ -80,14 +101,34 @@ public class SingingAnimalController : MonoBehaviour
         }
     }
 
-    public void ChangeVolumn(int which, float newVol)
+    private void ChangeVolumn(int which, float newVol)
     {
         units[which].Vol = newVol;
     }
 
-    public void SetAudibleState(int which, bool state)
+    private void SetAudibleState(int which)
     {
-        units[which].Audible = state;
+        units[which].Audible = !(units[which].Audible);
+    }
+
+    private void OnStageChange()
+    {
+        FillAudioClips();
+    }
+
+    private void FillAudioClips()
+    {
+        //update clips
+        var config = StageController.Config;
+        AudioClip[] newclips = StageController.Config.singingMusics;
+        if (newclips.Length != units.Length)
+        {
+            Debug.LogError("audio source number != audioclips length passed in.");
+        }
+        for (int i = 0; i < newclips.Length; i++)
+        {
+            units[i].Clip = newclips[i];
+        }
     }
 
 }

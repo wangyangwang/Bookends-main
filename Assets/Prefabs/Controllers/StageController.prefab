@@ -60,8 +60,8 @@ MonoBehaviour:
       singingMusics: []
       hasSingingMusics: 0
       hasKinectAvatar: 1
-      hasParticleEffect: 1
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 0
       hasSingingAnimals: 0
       singingAnimalNumber: 0
@@ -71,8 +71,8 @@ MonoBehaviour:
       singingMusics: []
       hasSingingMusics: 0
       hasKinectAvatar: 1
-      hasParticleEffect: 1
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 0
       hasSingingAnimals: 0
       singingAnimalNumber: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
       singingMusics: []
       hasSingingMusics: 0
       hasKinectAvatar: 1
-      hasParticleEffect: 1
       hasDancer: 1
+      dancerAnimation: {fileID: 0}
       hasBird: 1
       hasSingingAnimals: 0
       singingAnimalNumber: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
       - {fileID: 0}
       hasSingingMusics: 1
       hasKinectAvatar: 0
-      hasParticleEffect: 0
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 1
       hasSingingAnimals: 1
       singingAnimalNumber: 3
@@ -111,8 +111,8 @@ MonoBehaviour:
       - {fileID: 0}
       hasSingingMusics: 1
       hasKinectAvatar: 0
-      hasParticleEffect: 0
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 1
       hasSingingAnimals: 1
       singingAnimalNumber: 4
@@ -123,8 +123,8 @@ MonoBehaviour:
       singingMusics: []
       hasSingingMusics: 0
       hasKinectAvatar: 1
-      hasParticleEffect: 1
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 0
       hasSingingAnimals: 0
       singingAnimalNumber: 0
@@ -134,8 +134,8 @@ MonoBehaviour:
       singingMusics: []
       hasSingingMusics: 0
       hasKinectAvatar: 1
-      hasParticleEffect: 1
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 0
       hasSingingAnimals: 0
       singingAnimalNumber: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
       singingMusics: []
       hasSingingMusics: 0
       hasKinectAvatar: 1
-      hasParticleEffect: 1
       hasDancer: 1
+      dancerAnimation: {fileID: 0}
       hasBird: 1
       hasSingingAnimals: 0
       singingAnimalNumber: 0
@@ -159,8 +159,8 @@ MonoBehaviour:
       - {fileID: 0}
       hasSingingMusics: 1
       hasKinectAvatar: 0
-      hasParticleEffect: 0
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 1
       hasSingingAnimals: 1
       singingAnimalNumber: 3
@@ -174,8 +174,8 @@ MonoBehaviour:
       - {fileID: 0}
       hasSingingMusics: 1
       hasKinectAvatar: 0
-      hasParticleEffect: 0
       hasDancer: 0
+      dancerAnimation: {fileID: 0}
       hasBird: 1
       hasSingingAnimals: 1
       singingAnimalNumber: 4

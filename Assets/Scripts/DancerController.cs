@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DancerController : MonoBehaviour
 {
-    //TODO
-
+    //TODO: MELODY: All the TODOs on this page is for you :)
 
     public static DancerController Instance = null;
 
@@ -22,21 +21,57 @@ public class DancerController : MonoBehaviour
         }
     }
 
-    // Use this for initialization
+    private void OnEnable()
+    {
+        OSCController.OnPlay += Play;
+        OSCController.OnStopPlay += Stop;
+        OSCController.OnPausePlay += Pause;
+        OSCController.OnReverse += Reverse;
+        OSCController.OnFastforward += FastForward;
+        StageController.OnStageChange += OnStageChange;
+    }
+
+    private void OnDisable()
+    {
+        OSCController.OnPlay -= Play;
+        OSCController.OnStopPlay -= Stop;
+        OSCController.OnPausePlay -= Pause;
+        OSCController.OnReverse -= Reverse;
+        OSCController.OnFastforward -= FastForward;
+        StageController.OnStageChange -= OnStageChange;
+    }
+
     void Start()
     {
-
+        //todo
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Stop()
     {
-
+        //todo
     }
-    //TODO
-    public void Play() { }
-    public void Pause() { }
-    public void FastForward() { }
-    public void InReverse() { }
+
+    private void Play()
+    {
+        //todo
+    }
+    private void Pause()
+    {
+        //todo
+    }
+    private void FastForward()
+    {
+        //todo
+    }
+    private void Reverse()
+    {
+        //todo
+    }
+
+    private void OnStageChange()
+    {
+        var animation = StageController.Config.dancerAnimation;
+        //TODO: use the new animation to replace the current one.
+    }
 
 }

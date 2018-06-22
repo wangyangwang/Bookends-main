@@ -9,26 +9,14 @@ using System;
 public class StageController : MonoBehaviour
 {
 
-    public static StageController instance = null;
+    public static StageController Instance = null;
+    public static System.Action OnStageChange;
+    private static bool created = false;
+    public static SceneConfigurationData Config { get; private set; }
 
-    public const int STAGE_COUNT_EACH_MUSICIAN = 5;
-    public const int MUSICIAN_COUNT = 2;
-
-    //scene data
     private SceneData startupSceneData;
     private SceneData activeSceneData;
     private SceneData targetSceneData;
-
-    //dontdestroyonload
-    private static bool created = false;
-
-    public SceneData GetActiveSceneData
-    {
-        get
-        {
-            return activeSceneData;
-        }
-    }
 
 
     private void Awake()
@@ -40,11 +28,11 @@ public class StageController : MonoBehaviour
             Debug.Log("Awake: " + this.gameObject);
         }
 
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -60,14 +48,26 @@ public class StageController : MonoBehaviour
         InitScene();
     }
 
-    public void GoToStage(int gotoStageIndex)
+    private void OnEnable()
+    {
+        OSCController.OnStageChange += GoToStage;
+        OSCController.OnMusicianChange += GoToMusician;
+    }
+
+    private void OnDisable()
+    {
+        OSCController.OnStageChange -= GoToStage;
+        OSCController.OnMusicianChange -= GoToMusician;
+    }
+
+    private void GoToStage(int gotoStageIndex)
     {
         targetSceneData = activeSceneData;
         targetSceneData.stageIndex = gotoStageIndex;
         InitScene();
     }
 
-    public void GoToMusician(int gotoMusicianIndex)
+    private void GoToMusician(int gotoMusicianIndex)
     {
         targetSceneData = activeSceneData;
         targetSceneData.musicianIndex = gotoMusicianIndex;
@@ -75,38 +75,27 @@ public class StageController : MonoBehaviour
     }
 
 
-    internal void InitScene()
+    private void InitScene()
     {
 
-        SceneConfigurationData config = SceneConfigData.GetConfig(targetSceneData);
+        Config = SceneConfigData.GetConfig(targetSceneData);
 
-        //=======================
-        //BACKGROUND
-        EnvironmentController.Instance.ChangeToScene(config.environment);
-        //=======================
+
         //KINECT
-        KinectController.Instance.gameObject.SetActive(config.hasKinectAvatar);
-        //=======================
+        KinectController.Instance.gameObject.SetActive(Config.hasKinectAvatar);
         //BIRD
-        BirdController.Instance.gameObject.SetActive(config.hasBird);
-        //=======================
+        BirdController.Instance.gameObject.SetActive(Config.hasBird);
         //DANCER
-        DancerController.Instance.gameObject.SetActive(config.hasDancer);
-        //=======================
-        //PARTICLE SYSTEM
-        ParticleSystemController.Instance.gameObject.SetActive(config.hasParticleEffect);
-        //=======================
+        DancerController.Instance.gameObject.SetActive(Config.hasDancer);
         //SINGING ANIMALS
-        SingingAnimalController.Instance.gameObject.SetActive(config.hasSingingAnimals);
-        if (config.hasSingingAnimals)
-        {
-            SingingAnimalController.Instance.FillAudioClips(config.singingMusics);
-        }
+        SingingAnimalController.Instance.gameObject.SetActive(Config.hasSingingAnimals);
 
 
-
+        if (OnStageChange != null) OnStageChange();
         activeSceneData = targetSceneData;
     }
+
+#region str
 
     [System.Serializable]
     public struct SceneData
@@ -136,13 +125,14 @@ public class StageController : MonoBehaviour
 
         public bool hasSingingMusics;
         public bool hasKinectAvatar;
-        public bool hasParticleEffect;
+        //public bool hasParticleEffect;
         public bool hasDancer;
+        public Animator dancerAnimation;
         public bool hasBird;
         public bool hasSingingAnimals;
         public int singingAnimalNumber;
 
     }
-
+#endregion
 
 }

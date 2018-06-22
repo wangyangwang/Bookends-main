@@ -29,41 +29,64 @@ public class BackgroundAudioController : MonoBehaviour
         }
     }
 
-    void Start()
+    private void OnEnable()
+    {
+        OSCController.OnPlay += Play;
+        OSCController.OnPausePlay += Pause;
+        OSCController.OnStopPlay += Stop;
+        OSCController.OnReverse += Reverse;
+        OSCController.OnFastforward += FastForward;
+
+        StageController.OnStageChange += OnStageChange;
+
+    }
+
+    private void OnDisable()
+    {
+        OSCController.OnPlay -= Play;
+        OSCController.OnPausePlay -= Pause;
+        OSCController.OnStopPlay -= Stop;
+        OSCController.OnReverse -= Reverse;
+        OSCController.OnFastforward -= FastForward;
+
+        StageController.OnStageChange -= OnStageChange;
+    }
+
+    private void Start()
     {
         unit = GetComponent<AudioUnit>();
         unit.Audible = true;
     }
 
-    public void Play()
+    private void Play()
     {
         unit.Play();
     }
 
-    public void Pause()
+    private void Pause()
     {
         unit.Pause();
     }
 
-    public void Stop()
+    private void Stop()
     {
         unit.Stop();
     }
 
-    public void FastForward()
+    private void FastForward()
     {
         unit.FastForward();
     }
 
-    public void Reverse()
+    private void Reverse()
     {
         unit.Reverse();
     }
 
-    internal void ChangeAudioClip(AudioClip clip)
+    private void OnStageChange()
     {
-        unit.Clip = clip;
+        //Update audio clip
+        unit.Clip = StageController.Config.backgroundMusic;
     }
-
 
 }

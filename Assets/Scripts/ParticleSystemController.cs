@@ -4,49 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Control particle system type and amount, and place them on left & right hands of redpanda
+/// </summary>
 public class ParticleSystemController : MonoBehaviour
 {
-
-    public enum ParticleType
-    {
-        KVANTSPRAY, UNITYBUILDIN
-    }
-
-    //TODO: move particle position to hands.
-
-    //fileds
-    PSUnit[] particleSystems;
-
-    public GameObject clonePS;
-    PSUnit clonePSUnit;
-
-    //Slider amountSlider;
-    //Toggle[] enableToggles;
+    //FIXME: two hands particle system not working properly.
 
     public static ParticleSystemController Instance = null;
+    public GameObject clonePS;
+    public Transform rightHand; //HACK!!!
+    public Transform leftHand;  //HACK!!!
 
-
-    public float defaultParticleSystemAmount = 10;
-    [Range(0, 4)]
-    public int defaultParticleSystemIndex = 0;
-
-
-
-    //HACK!!! FIX ME LATER!
-    public Transform rightHand;
-    public Transform leftHand;
-
-
-
-    //properties
-    public int ParticleSystemNumer
-    {
-        get
-        {
-            return particleSystems.Length;
-        }
-    }
-
+    private PSUnit clonePSUnit;
+    private PSUnit[] particleSystems;
 
 
     // Use this for initialization
@@ -65,17 +37,23 @@ public class ParticleSystemController : MonoBehaviour
 
     }
 
-
+    private void ResetSettings()
+    {
+        ChangeParticleType(DATA.DEFAULT_PARTICLE_TYPE);
+        ChangeParicleAmount(DATA.DEFAULT_PARTICLE_TYPE);
+    }
 
     private void OnEnable()
     {
-        ChangeParticleType(defaultParticleSystemIndex);
-        ChangeParicleAmount(defaultParticleSystemAmount);
+        ResetSettings();
+        OSCController.OnParticleTypeChange += ChangeParticleType;
+        OSCController.OnParticleAmountChange += ChangeParicleAmount;
     }
 
     private void OnDisable()
     {
-
+        OSCController.OnParticleTypeChange -= ChangeParticleType;
+        OSCController.OnParticleAmountChange -= ChangeParicleAmount;
     }
 
     private void Update()
@@ -91,10 +69,7 @@ public class ParticleSystemController : MonoBehaviour
     }
 
 
-
-    //public methods
-
-    public void ChangeParicleAmount(float n)
+    private void ChangeParicleAmount(float n)
     {
         for (int i = 0; i < particleSystems.Length; i++)
         {
@@ -110,7 +85,7 @@ public class ParticleSystemController : MonoBehaviour
 
     }
 
-    public void ChangeParticleType(int index)
+    private void ChangeParticleType(int index)
     {
         for (int i = 0; i < particleSystems.Length; ++i)
         {
@@ -131,11 +106,4 @@ public class ParticleSystemController : MonoBehaviour
 
     }
 
-    internal void EnableParticles(bool useParticles)
-    {
-        foreach (PSUnit psunit in particleSystems)
-        {
-            psunit.gameObject.SetActive(useParticles);
-        }
-    }
 }
