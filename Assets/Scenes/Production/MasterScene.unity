@@ -339,6 +339,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &865766925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 865766923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07871f54a4fac4202bedf96f787a44f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &865766926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 865766923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356204f9c64984a049aefb8ec4d67cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &912494066
 Prefab:
   m_ObjectHideFlags: 0
@@ -461,16 +483,6 @@ Prefab:
     - target: {fileID: 4753482590825092, guid: 26f38862a5c3b4f59a94bdab0b31e9fd, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114983284474473012, guid: 26f38862a5c3b4f59a94bdab0b31e9fd,
-        type: 2}
-      propertyPath: inPort
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114983284474473012, guid: 26f38862a5c3b4f59a94bdab0b31e9fd,
-        type: 2}
-      propertyPath: outIP
-      value: 127.0.0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26f38862a5c3b4f59a94bdab0b31e9fd, type: 2}
@@ -695,6 +707,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114067018533835842, guid: f2ba20d5831934418be5056c29678743, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f2ba20d5831934418be5056c29678743, type: 2}
   m_IsPrefabParent: 0

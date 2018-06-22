@@ -8,6 +8,7 @@ using UnityEngine;
 /// Singing animals' audios would be controlled by SingingAnimalControllers
 /// </summary>
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioUnit))]
 public class BackgroundAudioController : MonoBehaviour
 {
 
@@ -29,7 +30,7 @@ public class BackgroundAudioController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        unit = GetComponent<AudioUnit>();
+      
     }
 
     private void OnEnable()
@@ -58,6 +59,8 @@ public class BackgroundAudioController : MonoBehaviour
 
     private void Start()
     {
+        unit = GetComponent<AudioUnit>();
+        //FIXME: unit is null
         unit.Audible = true;
     }
 
