@@ -22,6 +22,12 @@ public class PostProcessingController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        //This is customized for <Camera Filter Pack>, if changing to a different filter pack, this will need to be re-written
+        var filters = from filter in GetComponents<MonoBehaviour>()
+                      where ((MonoBehaviour)filter).GetType().ToString().Contains("CameraFilter")
+                      select filter;
+
+        filterList = filters.ToList();
     }
 
     private void OnEnable()
@@ -35,14 +41,10 @@ public class PostProcessingController : MonoBehaviour
         OSCController.OnFilterTypeChange -= UseEffect;
     }
 
+
     private void Start()
     {
-        //This is customized for <Camera Filter Pack>, if changing to a different filter pack, this will need to be re-written
-        var filters = from filter in GetComponents<MonoBehaviour>()
-                      where ((MonoBehaviour)filter).GetType().ToString().Contains("CameraFilter")
-                      select filter;
 
-        filterList = filters.ToList();
     }
 
     private void Reset()

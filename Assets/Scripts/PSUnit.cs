@@ -45,7 +45,7 @@ public class PSUnit : MonoBehaviour
     private ParticleSystem ps;
 
 
-    private void Start()
+    private void Awake()
     {
         ps = GetComponent<ParticleSystem>();
     }

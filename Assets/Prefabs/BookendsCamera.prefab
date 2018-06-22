@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0881b99f622ff34cbc356eecf36ca66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: bccada4cbcabfd147a3a1d5dd8679638, type: 3}
-  Value: 10
+  SCShader: {fileID: 0}
+  Value: 7
 --- !u!114 &114094234017668510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,14 +139,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367d6440e2afdeb47b64da9d19617fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 04df29b8b9c204e46a0df308fe1e2b77, type: 3}
-  Pencil_Color: {r: 0.078431375, g: 0.078431375, b: 0.078431375, a: 0}
-  Pencil_Size: 0.0015
-  Pencil_Correction: 0.5
+  SCShader: {fileID: 0}
+  Pencil_Color: {r: 0, g: 0, b: 0, a: 0}
+  Pencil_Size: 0.00125
+  Pencil_Correction: 0.35
   Intensity: 1
-  Speed_Animation: 0
-  Corner_Lose: 0.4
-  Fade_Paper_to_BackColor: 0.1
+  Speed_Animation: 1
+  Corner_Lose: 1
+  Fade_Paper_to_BackColor: 0
   Fade_With_Original: 1
   Back_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &114127388062099864
@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd11c0fdad9e7f42a10a68cc5381bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 4765e42ea04507f4f90e34c5fc42b2e0, type: 3}
-  Twist: 0.3
-  Speed: 0.1
-  Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  SCShader: {fileID: 0}
+  Twist: 1
+  Speed: 1
+  Color: {r: 0.16, g: 0.57, b: 0.19, a: 1}
   PosX: 0.5
   PosY: 0.5
 --- !u!114 &114280987078545118
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c09ff9509b2d8342bfb78a6524a2993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 56430509f24d1d44d91e75505e141557, type: 3}
+  SCShader: {fileID: 0}
   Fade: 1
   Shadow: 1
 --- !u!114 &114307997449143490
@@ -191,11 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce019cc9862bd045986970860c01269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 91b04af84a6798e41ad1bf1645fefbad, type: 3}
-  Speed: 0.1
+  SCShader: {fileID: 0}
+  Speed: 0.2
   Speed_X: 0.2
-  Speed_Y: 0.2
-  Intensity: 1
+  Speed_Y: 0.3
+  Intensity: 2.4
 --- !u!114 &114456478165113284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,9 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa3eeace73013c4a8388654c6b8e80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: d3dfd102b50442a4a963c30c854c10e8, type: 3}
-  _PosX: 0
-  _PosY: 0.332
+  SCShader: {fileID: 0}
+  _PosX: 0.5
+  _PosY: 0.5
 --- !u!114 &114478750284975772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,13 +221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8959a4189de654b959a50430aac2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 9c004e3ba0bf10542a6527744bbc2356, type: 3}
-  Amount: 2.32
-  FastFilter: 2
-  Threshold: 0.594
-  Intensity: 1.9
-  Precision: 0.392
-  GlowColor: {r: 0.9056604, g: 0.6013605, b: 0, a: 1}
+  SCShader: {fileID: 0}
+  Amount: 4
+  FastFilter: 4
+  Threshold: 0.5
+  Intensity: 2.25
+  Precision: 0.56
+  GlowColor: {r: 0, g: 0.7, b: 1, a: 1}
 --- !u!114 &114607546526319692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,13 +239,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01876c58507bd9542b2870c478d419a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 7c49efe6c1b735a4eb25143b92bda37f, type: 3}
-  Fade: 0.5
+  SCShader: {fileID: 0}
+  Fade: 1
   Intensity: 0.5
-  DirectionX: 0.08
-  Size: 1
-  Speed: 0.1
-  Distortion: 0
+  DirectionX: 0.12
+  Size: 1.5
+  Speed: 0.275
+  Distortion: 0.05
   StormFlashOnOff: 1
 --- !u!114 &114652532676696480
 MonoBehaviour:
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1183d3c50c674a74d8034c16e1026080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: c9bec5a3f0e541d499c129c29bed78f6, type: 3}
+  SCShader: {fileID: 0}
   Value: 1
 --- !u!114 &114654548604116332
 MonoBehaviour:
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ace96f28c022a43a772d2622b08cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 11b2e4c22e9676b4baba8e246a9f1a8b, type: 3}
+  SCShader: {fileID: 0}
   Pencil_Color: {r: 1, g: 1, b: 1, a: 1}
   Pencil_Size: 0.0008
   Pencil_Correction: 0.76
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777916f790985e7439bd599111bd1538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 1f4090ffea4d1ab4cb548bad1e5778ed, type: 3}
+  SCShader: {fileID: 0}
   _Visualize: 0
   _FixDistance: 5
   Snow_Near: 0.08
@@ -300,8 +300,8 @@ MonoBehaviour:
   Fade: 1
   Intensity: 1
   Size: 1
-  Speed: 0.1
-  SnowWithoutObject: 0.5
+  Speed: 0.275
+  SnowWithoutObject: 1
 --- !u!114 &114688874848721032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,10 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d64654daa372f41809ee812ef6924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 1550e6acd0713c24fb984d4e24ccd7ea, type: 3}
-  _Pixelisation: 5
-  _SizeX: 5
-  _SizeY: 10
+  SCShader: {fileID: 0}
+  _Pixelisation: 8
+  _SizeX: 1
+  _SizeY: 1
 --- !u!114 &114884273085896804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,10 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6961ee4797f2ebc46bd2f962c4ae9b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: ff50b655cda3df246a8ceba8e3307fd8, type: 3}
-  Zoom: 0.2
-  Distortion: 0.5
-  Fade: 0.8
+  SCShader: {fileID: 0}
+  Zoom: 0.25
+  Distortion: 0.4
+  Fade: 0.4
 --- !u!114 &114887092758439850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1511efe63af4748a617def340d95bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: 67bdeff028df2e4489715e91f6b4620f, type: 3}
+  SCShader: {fileID: 0}
   Size: 1
   Speed: 5
   PosX: 0.5
@@ -382,11 +382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a061ffe5908746458b57f445cb35681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCShader: {fileID: 4800000, guid: cbaf02ee3972f024b955358476dbaa47, type: 3}
+  SCShader: {fileID: 0}
   _Visualize: 0
-  _FixDistance: 50
-  _Distance: 0.99
-  _Size: 0
+  _FixDistance: 1
+  _Distance: 0.5
+  _Size: 0.1
   DistortionLevel: 1.2
   DistortionSize: 1.4
   LightIntensity: 0.08

@@ -53,12 +53,12 @@ public class AudioUnit : MonoBehaviour
         }
     }
 
-
-
-    private void Start()
+    private void Awake()
     {
         source = GetComponent<AudioSource>();
     }
+
+
 
     private void OnEnable()
     {

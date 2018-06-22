@@ -80,7 +80,6 @@ public class StageController : MonoBehaviour
 
         Config = SceneConfigData.GetConfig(targetSceneData);
 
-
         //KINECT
         KinectController.Instance.gameObject.SetActive(Config.hasKinectAvatar);
         //BIRD
@@ -95,7 +94,6 @@ public class StageController : MonoBehaviour
         activeSceneData = targetSceneData;
     }
 
-#region str
 
     [System.Serializable]
     public struct SceneData
@@ -133,6 +131,6 @@ public class StageController : MonoBehaviour
         public int singingAnimalNumber;
 
     }
-#endregion
+
 
 }

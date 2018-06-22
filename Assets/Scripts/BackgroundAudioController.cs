@@ -7,6 +7,7 @@ using UnityEngine;
 /// Control only the main music track
 /// Singing animals' audios would be controlled by SingingAnimalControllers
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class BackgroundAudioController : MonoBehaviour
 {
 
@@ -27,6 +28,8 @@ public class BackgroundAudioController : MonoBehaviour
             Debug.LogWarning("Found more than 1 AudioController, destroying...");
             Destroy(gameObject);
         }
+
+        unit = GetComponent<AudioUnit>();
     }
 
     private void OnEnable()
@@ -52,9 +55,9 @@ public class BackgroundAudioController : MonoBehaviour
         StageController.OnStageChange -= OnStageChange;
     }
 
+
     private void Start()
     {
-        unit = GetComponent<AudioUnit>();
         unit.Audible = true;
     }
 
