@@ -13,6 +13,9 @@ public class SingingAnimalController : MonoBehaviour
 
     private AudioUnit[] units;
 
+    [SerializeField]
+    private AudioUnit birdUnit;
+
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class SingingAnimalController : MonoBehaviour
         OSCController.OnSingingAnimalToggle += SetAudibleState;
 
         StageController.OnStageChange += OnStageChange;
+
     }
 
     private void OnDisable()
@@ -55,6 +59,7 @@ public class SingingAnimalController : MonoBehaviour
     private void Start()
     {
         units = GetComponentsInChildren<AudioUnit>();
+        if (birdUnit == null) Debug.LogError("please assign birdunit to SingingAnimalController's slot.");
     }
 
     private void Play()
@@ -65,6 +70,12 @@ public class SingingAnimalController : MonoBehaviour
             s.Play();
         }
     }
+
+    private void Update()
+    {
+
+    }
+
 
     private void Pause()
     {
@@ -113,7 +124,22 @@ public class SingingAnimalController : MonoBehaviour
 
     private void OnStageChange()
     {
+        UpdateAudioUnitCount();
         FillAudioClips();
+    }
+
+    private void UpdateAudioUnitCount()
+    {
+        var config = StageController.Config;
+        if (config.singingAnimalNumber < units.Length)
+        {
+            birdUnit.gameObject.SetActive(false);
+        }
+        else
+        {
+            birdUnit.gameObject.SetActive(true);
+        }
+        units = GetComponentsInChildren<AudioUnit>();
     }
 
     private void FillAudioClips()
@@ -121,10 +147,14 @@ public class SingingAnimalController : MonoBehaviour
         //update clips
         var config = StageController.Config;
         AudioClip[] newclips = StageController.Config.singingMusics;
+
+
         if (newclips.Length != units.Length)
         {
-            Debug.LogError("audio source number != audioclips length passed in.");
+            //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
+            Debug.LogError("new clips count > " + newclips.Length + ",       i have audio units  >  " + units.Length);
         }
+
         for (int i = 0; i < newclips.Length; i++)
         {
             units[i].Clip = newclips[i];

@@ -48,6 +48,8 @@ public class StageController : MonoBehaviour
         InitScene();
     }
 
+
+
     private void OnEnable()
     {
         OSCController.OnStageChange += GoToStage;
@@ -77,7 +79,6 @@ public class StageController : MonoBehaviour
 
     private void InitScene()
     {
-
         Config = SceneConfigData.GetConfig(targetSceneData);
 
         //KINECT

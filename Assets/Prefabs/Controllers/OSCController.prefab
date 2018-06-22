@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1788233602209846}
+  m_RootGameObject: {fileID: 1491223657363394}
   m_IsPrefabParent: 1
---- !u!1 &1788233602209846
+--- !u!1 &1491223657363394
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4753482590825092}
-  - component: {fileID: 114983284474473012}
-  - component: {fileID: 114278524781523544}
+  - component: {fileID: 4238851280898090}
+  - component: {fileID: 114196218189113014}
+  - component: {fileID: 114958103568761204}
   m_Layer: 0
   m_Name: OSCController
   m_TagString: Untagged
@@ -28,12 +28,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4753482590825092
+--- !u!4 &4238851280898090
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1788233602209846}
+  m_GameObject: {fileID: 1491223657363394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,23 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114278524781523544
+--- !u!114 &114196218189113014
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1788233602209846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0192813242b4aeb8915ef5f5f8d9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114983284474473012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1788233602209846}
+  m_GameObject: {fileID: 1491223657363394}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b39157a36eb5d48539f077c1b86a9237, type: 3}
@@ -66,3 +55,14 @@ MonoBehaviour:
   inPort: 8000
   outIP: 127.0.0.1
   outPort: 6161
+--- !u!114 &114958103568761204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491223657363394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0192813242b4aeb8915ef5f5f8d9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
