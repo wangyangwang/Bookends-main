@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000541711698268}
   - component: {fileID: 137858831472527588}
+  - component: {fileID: 95394422196377218}
   m_Layer: 0
   m_Name: Pants_GEO
   m_TagString: Untagged
@@ -247,6 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4832014319477970}
   - component: {fileID: 137224916680160270}
+  - component: {fileID: 95620867929973810}
   m_Layer: 0
   m_Name: Shirt_GEO
   m_TagString: Untagged
@@ -1829,7 +1831,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151121887527050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 714.7052, y: -3068.7812, z: -1421}
+  m_LocalPosition: {x: 6929.274, y: -2670.7012, z: -1421}
   m_LocalScale: {x: 4424.464, y: 4424.462, z: 4424.462}
   m_Children:
   - {fileID: 4404930752441980}
@@ -2871,6 +2873,42 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 8660dab750e16294b98cc38c59ca68ad, type: 3}
   m_Controller: {fileID: 9100000, guid: cab461ca324d7734c86324f2922e41df, type: 2}
   m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95394422196377218
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002303710638454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc20319b910ce844ba762e6b8a9052d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95620867929973810
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183395987130656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7fbb48d2815e321418e887dc38f9fccf, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
