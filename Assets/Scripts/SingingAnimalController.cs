@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 /// <summary>
 /// This is the controller for all four singing animals.
@@ -12,6 +13,8 @@ public class SingingAnimalController : MonoBehaviour
     public static SingingAnimalController Instance = null;
 
     private AudioUnit[] units;
+    private PlayableDirector[] timelines;
+
 
     [SerializeField]
     private AudioUnit birdUnit;
@@ -60,37 +63,47 @@ public class SingingAnimalController : MonoBehaviour
     {
         units = GetComponentsInChildren<AudioUnit>();
         if (birdUnit == null) Debug.LogError("please assign birdunit to SingingAnimalController's slot.");
+        timelines = GetComponentsInChildren<PlayableDirector>();
+
     }
 
-    private void Play()
+    private void Play()///change back to private later!!!!!!!!!!!!!!!111
     {
         //todo: melody: start play animations
         foreach (AudioUnit s in units)
         {
             s.Play();
         }
+
+        foreach (PlayableDirector p in timelines)
+        {        
+           p.Play();                     
+        }
     }
 
-    private void Update()
-    {
 
-    }
-
-
-    private void Pause()
+    private void Pause()///change back to private later!!!!!!!!!!!!!!!111
     {
         //TODO: melody: pause playing animations
         foreach (AudioUnit s in units)
         {
             s.Pause();
         }
+        foreach (PlayableDirector p in timelines)
+        {
+            p.Pause();
+        }
     }
 
-    private void Stop()
+    private void Stop()///change back to private later!!!!!!!!!!!!!!!111
     {
         foreach (AudioUnit s in units)
         {
             s.Stop();
+        }
+        foreach (PlayableDirector p in timelines)
+        {
+            p.Stop();
         }
     }
 
@@ -101,6 +114,19 @@ public class SingingAnimalController : MonoBehaviour
         {
             s.FastForward();
         }
+        foreach (PlayableDirector p in timelines)
+        {
+            double currentTime = p.time;
+            if(currentTime <= (p.duration- DATA.FAST_FORWARD_STEP))
+            {
+                p.time = currentTime + DATA.FAST_FORWARD_STEP;
+            }
+            else
+            {
+                p.time = 0f;
+            }
+           
+        }
     }
 
     private void Reverse()
@@ -110,11 +136,26 @@ public class SingingAnimalController : MonoBehaviour
         {
             s.Reverse();
         }
+        foreach (PlayableDirector p in timelines)
+        {
+            double currentTime = p.time;
+            if (currentTime >= (DATA.FAST_FORWARD_STEP))
+            {
+                p.time = currentTime - DATA.FAST_FORWARD_STEP;
+            }
+            else
+            {
+                p.time = 0f;
+            }
+            
+        }
+
     }
 
     private void ChangeVolumn(int which, float newVol)
     {
         units[which].Vol = newVol;
+
     }
 
     private void SetAudibleState(int which)
@@ -130,6 +171,7 @@ public class SingingAnimalController : MonoBehaviour
 
     private void UpdateAudioUnitCount()
     {
+        //FIXME: YANG
         var config = StageController.Config;
         if (config.singingAnimalNumber < units.Length)
         {

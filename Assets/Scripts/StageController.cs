@@ -126,7 +126,7 @@ public class StageController : MonoBehaviour
         public bool hasKinectAvatar;
         //public bool hasParticleEffect;
         public bool hasDancer;
-        public Animator dancerAnimation;
+        public Animator dancerAnimator;
         public bool hasBird;
         public bool hasSingingAnimals;
         public int singingAnimalNumber;

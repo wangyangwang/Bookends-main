@@ -13,11 +13,11 @@ public class ParticleSystemController : MonoBehaviour
     //FIXME: two hands particle system not working properly.
 
     public static ParticleSystemController Instance = null;
-    public GameObject clonePS;
     public Transform rightHand; //HACK!!!
     public Transform leftHand;  //HACK!!!
 
-    private PSUnit clonePSUnit;
+
+    private GameObject clonedPS;
     private PSUnit[] particleSystems;
 
 
@@ -40,12 +40,13 @@ public class ParticleSystemController : MonoBehaviour
     private void ResetSettings()
     {
         ChangeParticleType(DATA.DEFAULT_PARTICLE_TYPE);
-        ChangeParicleAmount(DATA.DEFAULT_PARTICLE_TYPE);
+        ChangeParicleAmount(DATA.DEFAULT_PARTICLE_AMOUNT);
     }
 
     private void OnEnable()
     {
         ResetSettings();
+
         OSCController.OnParticleTypeChange += ChangeParticleType;
         OSCController.OnParticleAmountChange += ChangeParicleAmount;
     }
@@ -54,6 +55,11 @@ public class ParticleSystemController : MonoBehaviour
     {
         OSCController.OnParticleTypeChange -= ChangeParticleType;
         OSCController.OnParticleAmountChange -= ChangeParicleAmount;
+
+        if (clonedPS != null)
+        {
+            Destroy(clonedPS);
+        }
     }
 
     private void Update()
@@ -61,9 +67,9 @@ public class ParticleSystemController : MonoBehaviour
         //HACK
         if (rightHand == null || leftHand == null) return;
         transform.position = rightHand.transform.position;
-        if (clonePS != null)
+        if (clonedPS != null)
         {
-            clonePS.transform.position = leftHand.transform.position;
+            clonedPS.transform.position = leftHand.transform.position;
         }
 
     }
@@ -74,15 +80,8 @@ public class ParticleSystemController : MonoBehaviour
         for (int i = 0; i < particleSystems.Length; i++)
         {
             particleSystems[i].Amount = n;
-            //clone the psUnit
-            clonePSUnit = clonePS.GetComponent<PSUnit>();
-            clonePSUnit.Amount = n;
+            clonedPS.GetComponent<PSUnit>().Amount = n;
         }
-
-        //clone the psUnit
-        clonePSUnit = clonePS.GetComponent<PSUnit>();
-
-
     }
 
     private void ChangeParticleType(int index)
@@ -92,17 +91,11 @@ public class ParticleSystemController : MonoBehaviour
             particleSystems[i].State = i == index;
         }
 
-        //clone the activated PS
-        var psInstance = clonePS;
-        clonePS = Instantiate<GameObject>(transform.GetChild(index).gameObject);
-        if (psInstance == null)
+        if (clonedPS != null)
         {
-            psInstance = clonePS;
+            Destroy(clonedPS);
         }
-        else if (psInstance != null)
-        {
-            Destroy(psInstance);
-        }
+        clonedPS = Instantiate<GameObject>(particleSystems[index].gameObject);
 
     }
 
