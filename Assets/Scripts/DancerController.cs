@@ -52,7 +52,7 @@ public class DancerController : MonoBehaviour
 
     }
 
-    public void Stop()//remind change back to private 
+    private void Stop()//remind change back to private 
     {
         //todo
         danceAnim.speed = 0f;
@@ -61,7 +61,7 @@ public class DancerController : MonoBehaviour
         danceAnim.ResetTrigger("pause");
     }
 
-    public void Play()
+    private void Play()
     {
         //todo
         danceAnim.speed = 1f;
@@ -69,26 +69,26 @@ public class DancerController : MonoBehaviour
         danceAnim.SetTrigger("play"); 
     }
 
-    public void Pause()
+    private void Pause()
     {
         //todo
         danceAnim.ResetTrigger("play");
         danceAnim.SetTrigger("pause");
     }
 
-    public void FastForward()
+    private void FastForward()
     {
         //todo
     }
-    public void Reverse()
+    private void Reverse()
     {
         //todo
     }
 
     private void OnStageChange()
     {
-        var animation = StageController.Config.dancerAnimation;
-        //TODO: use the new animation to replace the current one.
+        var animator = StageController.Config.dancerAnimator;
+        //TODO: use the new animator to replace the current one.
     }
 
 }
