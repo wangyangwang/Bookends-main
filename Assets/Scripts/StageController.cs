@@ -93,7 +93,7 @@ public class StageController : MonoBehaviour
         //SINGING ANIMALS
         SingingAnimalController.Instance.gameObject.SetActive(Config.showSingingAnimals);
 
-        //
+        //STEMS
         StemsController.Instance.gameObject.SetActive(Config.stemTracks.Length == 0 ? false : true);
 
 

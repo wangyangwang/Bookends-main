@@ -5,13 +5,13 @@ using UnityEngine;
 /// <summary>
 /// This is the controller for all stem audios 
 /// </summary>
-public class StemsController : MonoBehaviour {
-
+public class StemsController : MonoBehaviour
+{
     public static StemsController Instance = null;
     private AudioUnit[] units;
 
-    [SerializeField]
-    private AudioUnit birdUnit;
+    //[SerializeField]
+    //private AudioUnit birdUnit;
 
     private void Awake()
     {
@@ -51,20 +51,19 @@ public class StemsController : MonoBehaviour {
     }
 
 
-
-    // Use this for initialization
-    void Start () {
+    void Start()
+    {
         units = GetComponentsInChildren<AudioUnit>();
-        if (birdUnit == null) Debug.LogError("please assign birdunit to SingingAnimalController's slot.");
+        //if (birdUnit == null) Debug.LogError("please assign birdunit to SingingAnimalController's slot.");
     }
 
 
     private void Play()
     {
-       foreach (AudioUnit s in units)
-       {
-           s.Play();
-       }    
+        foreach (AudioUnit s in units)
+        {
+            s.Play();
+        }
     }
 
 
@@ -92,7 +91,7 @@ public class StemsController : MonoBehaviour {
         foreach (AudioUnit s in units)
         {
             s.FastForward();
-        }      
+        }
     }
 
 
@@ -116,28 +115,9 @@ public class StemsController : MonoBehaviour {
         units[which].Audible = !(units[which].Audible);
     }
 
-
     private void OnStageChange()
     {
-        //UpdateAudioUnitCount();//for now, seems doesn't need this function
         FillAudioClips();
-    }
-
-
-    private void UpdateAudioUnitCount()
-    {
-        //TODO
-        //FIXME: YANG
-        //var config = StageController.Config;
-        //if (config.singingAnimalNumber < units.Length)
-        //{
-        //    birdUnit.gameObject.SetActive(false);
-        //}
-        //else
-        //{
-        //    birdUnit.gameObject.SetActive(true);
-        //}
-        //units = GetComponentsInChildren<AudioUnit>();
     }
 
     private void FillAudioClips()
@@ -146,17 +126,19 @@ public class StemsController : MonoBehaviour {
         var config = StageController.Config;
         AudioClip[] newclips = StageController.Config.stemTracks;
 
+        //TODO: does stem number change?
 
-        if (newclips.Length != units.Length)
-        {
-            //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
-            Debug.LogError("new clips count > " + newclips.Length + ",       i have audio units  >  " + units.Length);
-        }
+        //if (newclips.Length != units.Length)
+        //{
+        //    //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
+        //    Debug.LogError("new clips count > " + newclips.Length + ",       i have audio units  >  " + units.Length);
+        //}
 
         for (int i = 0; i < newclips.Length; i++)
         {
             units[i].Clip = newclips[i];
         }
+
     }
 
 

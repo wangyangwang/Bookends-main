@@ -13,9 +13,9 @@ public class SingingAnimalController : MonoBehaviour
     public static SingingAnimalController Instance = null;
 
     private PlayableDirector[] timelines;
-
-    [SerializeField]
-    private Animator birdAnim;
+   
+    //[SerializeField]
+    //private Animator birdAnim;
 
 
     private void Awake()
@@ -53,7 +53,7 @@ public class SingingAnimalController : MonoBehaviour
 
     private void Start()
     {
-        if (birdAnim == null) Debug.LogError("please assign birdAnim to SingingAnimalController");
+        //if (birdAnim == null) Debug.LogError("please assign birdAnim to SingingAnimalController");
         timelines = GetComponentsInChildren<PlayableDirector>();
     }
 
@@ -129,15 +129,15 @@ public class SingingAnimalController : MonoBehaviour
     private void FillTimelineClips()
     {
         //update timeline clips
-        var config = StageController.Config;
         TimelineAsset[] newTimelines = StageController.Config.singingAnimalAnimationTimelineAssets;
 
+        //TODO: does timeline amount change from stage to stage?
 
-        if (newTimelines.Length != timelines.Length)
-        {
-            //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
-            Debug.LogError("new timelines count > " + newTimelines.Length + ",       i have timelines  >  " + timelines.Length);
-        }
+        //if (newTimelines.Length != timelines.Length)
+        //{
+        //    //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
+        //    Debug.LogError("new timelines count > " + newTimelines.Length + ",       i have timelines  >  " + timelines.Length);
+        //}
 
         for (int i = 0; i < newTimelines.Length; i++)
         {

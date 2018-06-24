@@ -30,6 +30,8 @@ public class BackgroundAudioController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        unit = GetComponent<AudioUnit>();
+
       
     }
 
@@ -54,12 +56,12 @@ public class BackgroundAudioController : MonoBehaviour
         OSCController.OnFastforward -= FastForward;
 
         StageController.OnStageChange -= OnStageChange;
+
     }
 
 
     private void Start()
     {
-        unit = GetComponent<AudioUnit>();
         //FIXME: unit is null
         unit.Audible = true;
     }

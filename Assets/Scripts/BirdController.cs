@@ -27,6 +27,7 @@ public class BirdController : MonoBehaviour
             curve = value;
         }
     }
+   
 
 
     private void Awake()
@@ -123,6 +124,7 @@ public class BirdController : MonoBehaviour
         gameObject.SetActive(hasBird);
         //update the bird fly curve
         curve = StageController.Config.birdPath;
+        Debug.Log("birdDoingStagechanging");
     }
 
 }
