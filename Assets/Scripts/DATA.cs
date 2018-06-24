@@ -19,5 +19,8 @@ public static class DATA
     //play timing control
     public const float FAST_FORWARD_STEP = 10f;//seconds
 
+    //kinect
+    //public const float SKELETON_SIZE = 1f;
+
 
 }

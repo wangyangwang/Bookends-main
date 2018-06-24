@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 95379961442511090}
   - component: {fileID: 114664876008585226}
   m_Layer: 0
-  m_Name: AnimatedDancerRigged2
+  m_Name: DancerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

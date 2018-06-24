@@ -55,10 +55,25 @@ public class PostProcessingController : MonoBehaviour
     private void UseEffect(int index)
     {
         //TODO: confirm how many filters we have in total
-        for (int i = 0; i < filterList.Count; ++i)
+
+        //no filter
+        if (index == 0)
         {
-            filterList[i].enabled = index == i;
+            foreach (var filter in filterList)
+            {
+                filter.enabled = false;
+            }
         }
+        else if (index > 0)
+        {
+            int filterIndex = index - 1;
+            for (int i = 0; i < filterList.Count; ++i)
+            {
+                filterList[i].enabled = filterIndex == i;
+            }
+        }
+
+
     }
 
 

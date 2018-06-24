@@ -38,6 +38,10 @@ public class OSCController : MonoBehaviour
 
     private OSC oscObject;
 
+    private bool showIP = true;
+    private string ip = "";
+
+
     struct Paths
     {
         //particle
@@ -87,7 +91,40 @@ public class OSCController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        ip = LocalIPAddress();
+    }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            showIP = !showIP;
+        }
+    }
+
+    private string LocalIPAddress()
+    {
+        System.Net.IPHostEntry host;
+        string localIP = "";
+        host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+        foreach (System.Net.IPAddress ip in host.AddressList)
+        {
+            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                localIP = ip.ToString();
+                break;
+            }
+        }
+        return localIP;
+    }
+
+    private void OnGUI()
+    {
+        if(showIP)
+        {
+            GUI.color = Color.black;
+            GUI.Label(new Rect(10, 10, 300, 50), "ip: " + ip + "     port:   " + oscObject.inPort);
+        }
     }
 
     void Start()

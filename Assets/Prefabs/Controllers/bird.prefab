@@ -2351,8 +2351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5357f7885272a40a888ccf41920d72dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mgcurves: {fileID: 114640976177437902}
-  duration: 10
 --- !u!114 &114640976177437902
 MonoBehaviour:
   m_ObjectHideFlags: 1

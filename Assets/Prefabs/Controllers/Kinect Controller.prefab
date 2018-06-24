@@ -2998,8 +2998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  mirroredMovement: 0
-  verticalMovement: 0
+  mirroredMovement: 1
+  verticalMovement: 1
   externalRootMotion: 0
   externalHeadRotation: 0
   externalHandRotations: 0
@@ -3038,9 +3038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733df465e8add49a7a5bd94ff803375d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clonePS: {fileID: 0}
-  rightHand: {fileID: 0}
-  leftHand: {fileID: 0}
+  rightHand: {fileID: 4580200692902646}
+  leftHand: {fileID: 4940440310629068}
 --- !u!114 &114629427860658032
 MonoBehaviour:
   m_ObjectHideFlags: 1

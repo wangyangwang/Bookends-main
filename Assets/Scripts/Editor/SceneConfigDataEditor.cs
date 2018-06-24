@@ -11,10 +11,12 @@ public class SceneConfigDataEditor : Editor
     {
         SceneConfigData myTarget = (SceneConfigData)target;
         DrawDefaultInspector();
-        if (GUILayout.Button("Init Slots and Length!"))
-        {
-            myTarget.InitDataStructure();
-        }
+
+        
+        //if (GUILayout.Button("Init Slots and Length!"))
+        //{
+        //    myTarget.InitDataStructure();
+        //}
 
     }
 }

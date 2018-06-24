@@ -11,7 +11,6 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     public static KinectController Instance = null;
 
     private KinectManager kinectManager;
-    private float skeletonSize = 5f;
 
     private void Awake()
     {
@@ -39,33 +38,20 @@ public class KinectController : MonoBehaviour, KinectGestures.GestureListenerInt
     private void Start()
     {
         kinectManager = KinectManager.Instance;
-        kinectManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(skeletonSize, skeletonSize, skeletonSize));
+        //kinectManager.SetKinectToWorldMatrix(Vector3.zero, Quaternion.identity, new Vector3(DATA.SKELETON_SIZE, DATA.SKELETON_SIZE, DATA.SKELETON_SIZE));
         if (!kinectManager.IsInitialized()) Debug.LogError("Kinect Manager is not initialized!");
     }
 
-    public Vector3 GetRightHandPos()
-    {
-        //HASTODO
-        return Vector3.zero;
-    }
 
-    public Vector3 GetLeftHandPos()
-    {
-        //HASTODO
-        return Vector3.zero;
-    }
-
-
-
-
-    //INTERFACE FORCES METHODS
-    //................................
-    //................................
     private void ClearUsers()
     {
         kinectManager.ClearKinectUsers();
     }
 
+
+    //INTERFACE FORCES METHODS
+    //................................
+    //................................
 
     public void UserDetected(long userId, int userIndex)
     {

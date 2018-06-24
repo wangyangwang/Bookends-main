@@ -2,22 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 /// <summary>
 /// This is the controller for all four singing animals.
-/// this controls the audio and the animation.
+/// this controls the animation.
 /// </summary>
 public class SingingAnimalController : MonoBehaviour
 {
-
     public static SingingAnimalController Instance = null;
 
-    private AudioUnit[] units;
     private PlayableDirector[] timelines;
 
-
     [SerializeField]
-    private AudioUnit birdUnit;
+    private Animator birdAnim;
 
 
     private void Awake()
@@ -39,9 +37,6 @@ public class SingingAnimalController : MonoBehaviour
         OSCController.OnStopPlay += Stop;
         OSCController.OnReverse += Reverse;
         OSCController.OnFastforward += FastForward;
-        OSCController.OnVolumnChange += ChangeVolumn;
-        OSCController.OnSingingAnimalToggle += SetAudibleState;
-
         StageController.OnStageChange += OnStageChange;
 
     }
@@ -53,28 +48,18 @@ public class SingingAnimalController : MonoBehaviour
         OSCController.OnStopPlay -= Stop;
         OSCController.OnReverse -= Reverse;
         OSCController.OnFastforward -= FastForward;
-        OSCController.OnVolumnChange -= ChangeVolumn;
-        OSCController.OnSingingAnimalToggle -= SetAudibleState;
-
         StageController.OnStageChange -= OnStageChange;
     }
 
     private void Start()
     {
-        units = GetComponentsInChildren<AudioUnit>();
-        if (birdUnit == null) Debug.LogError("please assign birdunit to SingingAnimalController's slot.");
+        if (birdAnim == null) Debug.LogError("please assign birdAnim to SingingAnimalController");
         timelines = GetComponentsInChildren<PlayableDirector>();
-
     }
 
-    private void Play()///change back to private later!!!!!!!!!!!!!!!111
-    {
-        //todo: melody: start play animations
-        foreach (AudioUnit s in units)
-        {
-            s.Play();
-        }
 
+    private void Play()
+    {
         foreach (PlayableDirector p in timelines)
         {        
            p.Play();                     
@@ -82,38 +67,26 @@ public class SingingAnimalController : MonoBehaviour
     }
 
 
-    private void Pause()///change back to private later!!!!!!!!!!!!!!!111
+    private void Pause()
     {
-        //TODO: melody: pause playing animations
-        foreach (AudioUnit s in units)
-        {
-            s.Pause();
-        }
         foreach (PlayableDirector p in timelines)
         {
             p.Pause();
         }
     }
 
-    private void Stop()///change back to private later!!!!!!!!!!!!!!!111
+
+    private void Stop()
     {
-        foreach (AudioUnit s in units)
-        {
-            s.Stop();
-        }
         foreach (PlayableDirector p in timelines)
         {
             p.Stop();
         }
     }
 
+
     private void FastForward()
     {
-        //TODO: MELODY: not sure, maybe nothing is needed here
-        foreach (AudioUnit s in units)
-        {
-            s.FastForward();
-        }
         foreach (PlayableDirector p in timelines)
         {
             double currentTime = p.time;
@@ -124,18 +97,13 @@ public class SingingAnimalController : MonoBehaviour
             else
             {
                 p.time = 0f;
-            }
-           
+            }         
         }
     }
 
+
     private void Reverse()
     {
-        //TODO: MELODY: not sure, maybe nothing is needed here
-        foreach (AudioUnit s in units)
-        {
-            s.Reverse();
-        }
         foreach (PlayableDirector p in timelines)
         {
             double currentTime = p.time;
@@ -146,60 +114,34 @@ public class SingingAnimalController : MonoBehaviour
             else
             {
                 p.time = 0f;
-            }
-            
+            }           
         }
 
     }
 
-    private void ChangeVolumn(int which, float newVol)
-    {
-        units[which].Vol = newVol;
-
-    }
-
-    private void SetAudibleState(int which)
-    {
-        units[which].Audible = !(units[which].Audible);
-    }
 
     private void OnStageChange()
     {
-        UpdateAudioUnitCount();
-        FillAudioClips();
+        FillTimelineClips();
     }
 
-    private void UpdateAudioUnitCount()
+
+    private void FillTimelineClips()
     {
-        //FIXME: YANG
+        //update timeline clips
         var config = StageController.Config;
-        if (config.singingAnimalNumber < units.Length)
-        {
-            birdUnit.gameObject.SetActive(false);
-        }
-        else
-        {
-            birdUnit.gameObject.SetActive(true);
-        }
-        units = GetComponentsInChildren<AudioUnit>();
-    }
-
-    private void FillAudioClips()
-    {
-        //update clips
-        var config = StageController.Config;
-        AudioClip[] newclips = StageController.Config.singingMusics;
+        TimelineAsset[] newTimelines = StageController.Config.singingAnimalAnimationTimelineAssets;
 
 
-        if (newclips.Length != units.Length)
+        if (newTimelines.Length != timelines.Length)
         {
             //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
-            Debug.LogError("new clips count > " + newclips.Length + ",       i have audio units  >  " + units.Length);
+            Debug.LogError("new timelines count > " + newTimelines.Length + ",       i have timelines  >  " + timelines.Length);
         }
 
-        for (int i = 0; i < newclips.Length; i++)
+        for (int i = 0; i < newTimelines.Length; i++)
         {
-            units[i].Clip = newclips[i];
+            timelines[i].playableAsset = newTimelines[i];
         }
     }
 

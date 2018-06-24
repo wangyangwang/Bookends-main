@@ -53,7 +53,7 @@ public class SceneConfigData : MonoBehaviour
         return data;
     }
 
-
+    /*
     public void InitDataStructure()
     {
 
@@ -128,7 +128,7 @@ public class SceneConfigData : MonoBehaviour
 
         }
     }
-
+    */
 
 
 }

@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class DancerController : MonoBehaviour
 {
-    //TODO: MELODY: All the TODOs on this page is for you :)
-
+    //This is the dancer controller, will control the dancer timeline 
     public static DancerController Instance = null;
-    private Animator danceAnim;
-
+    //private Animator danceAnim;
+    private PlayableDirector timeline;
 
     private void Awake()
     {
@@ -21,7 +22,6 @@ public class DancerController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        danceAnim = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -46,49 +46,81 @@ public class DancerController : MonoBehaviour
 
     void Start()
     {
-        //todo
-        danceAnim.speed = 0f;
-        danceAnim.Rebind();
-
+        /*danceAnim = GetComponent<Animator>();
+          danceAnim.speed = 0f;
+          danceAnim.Rebind();
+          */
+        timeline = GetComponentInChildren<PlayableDirector>();
     }
 
-    private void Stop()//remind change back to private 
+
+    private void Stop()
     {
-        //todo
+        /*
         danceAnim.speed = 0f;
         danceAnim.Rebind();
         danceAnim.ResetTrigger("play");
         danceAnim.ResetTrigger("pause");
+        */
+        timeline.Stop();
     }
+
 
     private void Play()
     {
-        //todo
+        /*
         danceAnim.speed = 1f;
         danceAnim.ResetTrigger("pause");
-        danceAnim.SetTrigger("play"); 
+        danceAnim.SetTrigger("play"); */
+        timeline.Play();
     }
+
 
     private void Pause()
     {
-        //todo
+        /*
         danceAnim.ResetTrigger("play");
-        danceAnim.SetTrigger("pause");
+        danceAnim.SetTrigger("pause");*/
+        timeline.Pause();
     }
+
 
     private void FastForward()
     {
-        //todo
+        double currentTime = timeline.time;
+        if (currentTime <= (timeline.duration - DATA.FAST_FORWARD_STEP))
+        {
+            timeline.time = currentTime + DATA.FAST_FORWARD_STEP;
+        }
+        else
+        {
+            timeline.time = 0f;
+        }
     }
+
+
     private void Reverse()
     {
-        //todo
+        double currentTime = timeline.time;
+        if (currentTime >= (DATA.FAST_FORWARD_STEP))
+        {
+            timeline.time = currentTime - DATA.FAST_FORWARD_STEP;
+        }
+        else
+        {
+            timeline.time = 0f;
+        }
     }
+
 
     private void OnStageChange()
     {
-        var animator = StageController.Config.dancerAnimator;
-        //TODO: use the new animator to replace the current one.
+        // var animator = StageController.Config.dancerAnimator;
+        //update if has dancer in the stage
+        bool hasDancer = StageController.Config.hasDancer;
+        gameObject.SetActive(hasDancer);
+        //update the dancer timeline
+        timeline.playableAsset = StageController.Config.dancerTimelineAsset;
     }
 
 }

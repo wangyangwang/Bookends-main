@@ -2,34 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BirdController : MonoBehaviour
 {
-
-
-    //TODO: MELODY
-    //We need to figure out what should bird do
-    //bird motion path
-    public MGCurve mgcurves;
-    public float duration;
-    private float progress;
-    private bool move;
     //bird animation
     public static BirdController Instance = null;
     private Animator birdAnim;
 
-    private bool _loop;
-    public bool Loop
+    //bird motion path
+    private MGCurve curve;
+    private float duration;
+    private float progress;
+    private bool move;
+
+
+    public MGCurve Curve
     {
         get
         {
-            return _loop;
+            return curve;
         }
         set
         {
-            //TODO
-            _loop = value;
+            curve = value;
         }
-    } 
+    }
+
 
     private void Awake()
     {
@@ -45,13 +43,12 @@ public class BirdController : MonoBehaviour
         
     }
 
-
     private void OnEnable()
     {
         OSCController.OnPlay += Play;
         OSCController.OnStopPlay += Stop;
         OSCController.OnPausePlay += Pause;
-       // StageController.OnStageChange += OnStageChange;
+        StageController.OnStageChange += OnStageChange;
 
     }
 
@@ -60,8 +57,7 @@ public class BirdController : MonoBehaviour
         OSCController.OnPlay -= Play;
         OSCController.OnStopPlay -= Stop;
         OSCController.OnPausePlay -= Pause;
-       // StageController.OnStageChange -= OnStageChange;
-
+        StageController.OnStageChange -= OnStageChange;
     }
 
 
@@ -69,13 +65,13 @@ public class BirdController : MonoBehaviour
     {
         birdAnim.speed = 0f;
         birdAnim.Rebind();
+        duration = 10f;
         move = false;
     }
 
 
     private void Update()
     {
-        //Does it need to be traslated in space?
         if (move)
         {
             progress += Time.deltaTime / duration;
@@ -83,10 +79,10 @@ public class BirdController : MonoBehaviour
             {
                 progress = 0;
             }
-            Vector3 position = mgcurves.GetPoint(progress);
+            Vector3 position = curve.GetPoint(progress);
             transform.localPosition = position;
 
-            Vector3 dir = position + mgcurves.GetDirection(progress);
+            Vector3 dir = position + curve.GetDirection(progress);
             transform.LookAt(dir);
         }
         
@@ -120,20 +116,13 @@ public class BirdController : MonoBehaviour
     }
 
 
-
     private void OnStageChange()
     {
-
-    }
-
-
-
-    private void PlayAnimation(int index)
-    {
-        //TODO: MELODY
-        //PLAY ANIMATION 1
-        //PLAY ANIMATION 2
-        //PLAY ANIMATION 3
+        //update if has bird in the stage
+        bool hasBird = StageController.Config.hasBird;
+        gameObject.SetActive(hasBird);
+        //update the bird fly curve
+        curve = StageController.Config.birdPath;
     }
 
 }

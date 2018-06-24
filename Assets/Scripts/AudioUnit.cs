@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class AudioUnit : MonoBehaviour
 {
-
     private AudioSource source;
     private float vol;
     private bool audible;
     private AudioClip clip;
+
+    
 
     public float Vol
     {
@@ -58,6 +59,12 @@ public class AudioUnit : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+
+
+    }
+
 
 
     private void OnEnable()
@@ -73,6 +80,5 @@ public class AudioUnit : MonoBehaviour
     public void Stop() { source.Stop(); }
     public void FastForward() { source.time = source.time + DATA.FAST_FORWARD_STEP; }
     public void Reverse() { source.time = source.time - DATA.FAST_FORWARD_STEP; }
-
 
 }
