@@ -54,131 +54,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GConfig:
   - stage:
-    - sceneType: 0
-      environment: 0
-      backgroundMusic: {fileID: 0}
-      singingMusics: []
-      hasSingingMusics: 0
-      hasKinectAvatar: 1
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 0
-      hasSingingAnimals: 0
-      singingAnimalNumber: 0
-    - sceneType: 0
-      environment: 0
-      backgroundMusic: {fileID: 0}
-      singingMusics: []
-      hasSingingMusics: 0
-      hasKinectAvatar: 1
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 0
-      hasSingingAnimals: 0
-      singingAnimalNumber: 0
-    - sceneType: 0
-      environment: 0
-      backgroundMusic: {fileID: 0}
-      singingMusics: []
-      hasSingingMusics: 0
-      hasKinectAvatar: 1
-      hasDancer: 1
-      dancerAnimation: {fileID: 0}
-      hasBird: 1
-      hasSingingAnimals: 0
-      singingAnimalNumber: 0
-    - sceneType: 1
-      environment: 1
-      backgroundMusic: {fileID: 0}
-      singingMusics:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      hasSingingMusics: 1
+    - environment: 1
+      backgroundMusic: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+      showSingingAnimals: 1
+      stemTracks: []
+      singingAnimalAnimationTimelineAssets:
+      - {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb, type: 2}
+      - {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d, type: 2}
       hasKinectAvatar: 0
       hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 1
-      hasSingingAnimals: 1
-      singingAnimalNumber: 3
-    - sceneType: 1
-      environment: 1
-      backgroundMusic: {fileID: 0}
-      singingMusics:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      hasSingingMusics: 1
-      hasKinectAvatar: 0
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 1
-      hasSingingAnimals: 1
-      singingAnimalNumber: 4
+      dancerTimelineAsset: {fileID: 0}
+      countOffLength: 0
+      countOffAudioClip: {fileID: 0}
+      hasBird: 0
+      birdPath: {fileID: 0}
   - stage:
-    - sceneType: 0
-      environment: 0
-      backgroundMusic: {fileID: 0}
-      singingMusics: []
-      hasSingingMusics: 0
-      hasKinectAvatar: 1
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 0
-      hasSingingAnimals: 0
-      singingAnimalNumber: 0
-    - sceneType: 0
-      environment: 0
-      backgroundMusic: {fileID: 0}
-      singingMusics: []
-      hasSingingMusics: 0
-      hasKinectAvatar: 1
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 0
-      hasSingingAnimals: 0
-      singingAnimalNumber: 0
-    - sceneType: 0
-      environment: 0
-      backgroundMusic: {fileID: 0}
-      singingMusics: []
-      hasSingingMusics: 0
+    - environment: 1
+      backgroundMusic: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+      showSingingAnimals: 0
+      stemTracks: []
+      singingAnimalAnimationTimelineAssets:
+      - {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb, type: 2}
+      - {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d, type: 2}
       hasKinectAvatar: 1
       hasDancer: 1
-      dancerAnimation: {fileID: 0}
-      hasBird: 1
-      hasSingingAnimals: 0
-      singingAnimalNumber: 0
-    - sceneType: 1
-      environment: 1
-      backgroundMusic: {fileID: 0}
-      singingMusics:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      hasSingingMusics: 1
-      hasKinectAvatar: 0
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 1
-      hasSingingAnimals: 1
-      singingAnimalNumber: 3
-    - sceneType: 1
-      environment: 1
-      backgroundMusic: {fileID: 0}
-      singingMusics:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
-      hasSingingMusics: 1
-      hasKinectAvatar: 0
-      hasDancer: 0
-      dancerAnimation: {fileID: 0}
-      hasBird: 1
-      hasSingingAnimals: 1
-      singingAnimalNumber: 4
+      dancerTimelineAsset: {fileID: 0}
+      countOffLength: 0
+      countOffAudioClip: {fileID: 0}
+      hasBird: 0
+      birdPath: {fileID: 0}
+    - environment: 1
+      backgroundMusic: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+      showSingingAnimals: 0
+      stemTracks: []
+      singingAnimalAnimationTimelineAssets:
+      - {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb, type: 2}
+      - {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d, type: 2}
+      hasKinectAvatar: 1
+      hasDancer: 1
+      dancerTimelineAsset: {fileID: 0}
+      countOffLength: 0
+      countOffAudioClip: {fileID: 0}
+      hasBird: 0
+      birdPath: {fileID: 0}
 --- !u!114 &114945643793265030
 MonoBehaviour:
   m_ObjectHideFlags: 1

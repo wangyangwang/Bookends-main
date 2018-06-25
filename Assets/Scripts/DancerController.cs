@@ -21,7 +21,8 @@ public class DancerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        //FIXME
+        timeline = GetComponentInChildren<PlayableDirector>();
     }
 
     private void OnEnable()
@@ -50,7 +51,7 @@ public class DancerController : MonoBehaviour
           danceAnim.speed = 0f;
           danceAnim.Rebind();
           */
-        timeline = GetComponentInChildren<PlayableDirector>();
+
     }
 
 

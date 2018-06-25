@@ -44,6 +44,5 @@ public class EnvironmentController : MonoBehaviour
         bool isGarden = (StageController.Config.environment == StageController.SceneConfigurationData.Environment.Garden);
         garden.SetActive(isGarden);
         house.SetActive(!isGarden);
-        Debug.Log("EnvironmentDoingStagechanging");
     }
 }

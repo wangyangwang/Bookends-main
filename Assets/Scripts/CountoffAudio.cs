@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Control only the main music track
-/// Singing animals' audios would be controlled by SingingAnimalControllers
-/// </summary>
-[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(AudioUnit))]
-public class BackgroundAudioController : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public class CountoffAudio : MonoBehaviour
 {
+    public static CountoffAudio Instance = null;
 
-    public static BackgroundAudioController Instance;
-    //public StageController.SceneConfigurationData.SceneType sceneType { get; private set; }
-
-    AudioUnit unit;
-
+    private AudioUnit unit;
 
     private void Awake()
     {
@@ -24,15 +16,11 @@ public class BackgroundAudioController : MonoBehaviour
         {
             Instance = this;
         }
-        else if (Instance != null)
+        else
         {
-            Debug.LogWarning("Found more than 1 AudioController, destroying...");
             Destroy(gameObject);
         }
-
         unit = GetComponent<AudioUnit>();
-
-      
     }
 
     private void OnEnable()
@@ -42,9 +30,7 @@ public class BackgroundAudioController : MonoBehaviour
         OSCController.OnStopPlay += Stop;
         OSCController.OnReverse += Reverse;
         OSCController.OnFastforward += FastForward;
-
         StageController.OnStageChange += OnStageChange;
-
     }
 
     private void OnDisable()
@@ -54,15 +40,7 @@ public class BackgroundAudioController : MonoBehaviour
         OSCController.OnStopPlay -= Stop;
         OSCController.OnReverse -= Reverse;
         OSCController.OnFastforward -= FastForward;
-
         StageController.OnStageChange -= OnStageChange;
-
-    }
-
-
-    private void Start()
-    {
-        unit.Audible = true;
     }
 
     private void Play()
@@ -70,19 +48,14 @@ public class BackgroundAudioController : MonoBehaviour
         unit.Play();
     }
 
-    private void Pause()
-    {
-        unit.Pause();
-    }
-
     private void Stop()
     {
         unit.Stop();
     }
 
-    private void FastForward()
+    private void Pause()
     {
-        unit.FastForward();
+        unit.Pause();
     }
 
     private void Reverse()
@@ -90,10 +63,16 @@ public class BackgroundAudioController : MonoBehaviour
         unit.Reverse();
     }
 
+    private void FastForward()
+    {
+        unit.FastForward();
+    }
+
     private void OnStageChange()
     {
-        //Update audio clip
-        unit.Clip = StageController.Config.backgroundMusic;
+        var config = StageController.Config;
+        unit.Clip = config.countOffAudioClip;
     }
+
 
 }

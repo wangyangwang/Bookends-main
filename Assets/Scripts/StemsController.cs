@@ -128,11 +128,6 @@ public class StemsController : MonoBehaviour
 
         //TODO: does stem number change?
 
-        //if (newclips.Length != units.Length)
-        //{
-        //    //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
-        //    Debug.LogError("new clips count > " + newclips.Length + ",       i have audio units  >  " + units.Length);
-        //}
 
         for (int i = 0; i < newclips.Length; i++)
         {

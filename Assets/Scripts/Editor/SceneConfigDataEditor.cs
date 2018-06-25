@@ -13,10 +13,15 @@ public class SceneConfigDataEditor : Editor
         DrawDefaultInspector();
 
         
-        //if (GUILayout.Button("Init Slots and Length!"))
-        //{
-        //    myTarget.InitDataStructure();
-        //}
+        if (GUILayout.Button("save to json file"))
+        {
+            myTarget.ConvertToJson();
+        }
+
+        if (GUILayout.Button("load json file"))
+        {
+            myTarget.LoadJson();
+        }
 
     }
 }

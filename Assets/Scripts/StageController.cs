@@ -44,6 +44,9 @@ public class StageController : MonoBehaviour
 
     private void Start()
     {
+        startupSceneData.musicianIndex = DATA.STARTUP_SCENE_MUSICIAN;
+        startupSceneData.stageIndex = DATA.STARTUP_SCENE_STAGE;
+
         targetSceneData = startupSceneData;
         InitScene();
     }
@@ -90,11 +93,16 @@ public class StageController : MonoBehaviour
         //DANCER
         DancerController.Instance.gameObject.SetActive(Config.hasDancer);
 
+        //COUNT OFF
+        CountoffAudio.Instance.gameObject.SetActive(Config.countOffAudioClip != null);
+
         //SINGING ANIMALS
         SingingAnimalController.Instance.gameObject.SetActive(Config.showSingingAnimals);
 
         //STEMS
         StemsController.Instance.gameObject.SetActive(Config.stemTracks.Length == 0 ? false : true);
+
+
 
 
         if (OnStageChange != null) OnStageChange();
@@ -118,42 +126,32 @@ public class StageController : MonoBehaviour
             Garden, House
         }
 
+
+        //---------------------------------------------
         public Environment environment;
 
+        [Header("SOUND")]
         public AudioClip backgroundMusic;
-
-        public bool showSingingAnimals;
-
-
-        [Header("has 4")]
+        [Tooltip("stem audio tracks, has 4 always")]
         public AudioClip[] stemTracks;
+        public AudioClip countOffAudioClip;
 
-        [Header("has 3")]
+        [Header("ANIMATION")]
+        public bool showSingingAnimals;
+        public UnityEngine.Timeline.TimelineAsset dancerTimelineAsset;
+        [Tooltip("bird flying path")]
+        public MGCurve birdPath;
         public UnityEngine.Timeline.TimelineAsset[] singingAnimalAnimationTimelineAssets;
 
-        /// <summary>
-        /// if use kinect + redpanda + particle system
-        /// </summary>
+        [Header("TOGGLE ON/OFF")]
+        [Tooltip("if use kinect + redpanda + particle system")]
         public bool hasKinectAvatar;
-        /// <summary>
-        /// if shwo dancer
-        /// </summary>
+        [Tooltip("if show dancer")]
         public bool hasDancer;
-        public UnityEngine.Timeline.TimelineAsset dancerTimelineAsset;
-        /// <summary>
-        /// how long the animation wil delay start
-        /// </summary>
-        public float countOffLength;
-        public AudioClip countOffAudioClip;
-        /// <summary>
-        /// should we show the bird gameobject
-        /// </summary>
+        [Tooltip("if show bird gameobject, only affect visual aspect")]
         public bool hasBird;
-        /// <summary>
-        /// bird flying path
-        /// </summary>
-        public MGCurve birdPath;
-        
+
+
     }
 
 

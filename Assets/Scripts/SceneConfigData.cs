@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 //[ExecuteInEditMode]
 public class SceneConfigData : MonoBehaviour
@@ -34,7 +35,6 @@ public class SceneConfigData : MonoBehaviour
 
     private void Start()
     {
-
         foreach (var m in GConfig)
         {
             if (m.stage.Length == 0)
@@ -43,7 +43,6 @@ public class SceneConfigData : MonoBehaviour
                 Application.Quit();
             }
         }
-
     }
 
     public static StageController.SceneConfigurationData GetConfig(StageController.SceneData sceneData)
@@ -53,82 +52,29 @@ public class SceneConfigData : MonoBehaviour
         return data;
     }
 
-    /*
-    public void InitDataStructure()
+
+
+    public void ConvertToJson()
     {
 
-        GConfig = new MusicianConfig[DATA.MUSICIAN_COUNT];
+        string jsonVivaldi = JsonUtility.ToJson(GConfig[0]);
 
-        for (int i = 0; i < GConfig.Length; i++)
-        {
-            GConfig[i] = new MusicianConfig();
-            GConfig[i].stage = new StageController.SceneConfigurationData[DATA.STAGE_COUNT_EACH_MUSICIAN];
-            for (int y = 0; y < GConfig[i].stage.Length; y++)
-            {
-                GConfig[i].stage[y] = new StageController.SceneConfigurationData();
-            }
+        string path = "Assets/Resources/data.json";
 
-        }
+        //Write some text to the test.txt file
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(jsonVivaldi);
+        writer.Close();
 
+        ////Re-import the file to update the reference in the editor
+        //AssetDatabase.ImportAsset(path);
+        //TextAsset asset = Resources.Load("test");
 
-        foreach (var mc in GConfig)
-        {
-            for (int i = 0; i < DATA.STAGE_COUNT_EACH_MUSICIAN; i++)
-            {
-
-                //audio count and scene type
-                if (i == 0 || i == 1 || i == 2)
-                {
-                    mc.stage[i].singingMusics = new AudioClip[0];
-                    mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Motion;
-
-                }
-                else if (i == 3)
-                {
-                    mc.stage[i].singingMusics = new AudioClip[3];
-                    mc.stage[i].singingAnimalNumber = 3;
-                    mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
-                }
-                else if (i == 4)
-                {
-                    mc.stage[i].singingMusics = new AudioClip[4];
-                    mc.stage[i].singingAnimalNumber = 4;
-                    mc.stage[i].sceneType = StageController.SceneConfigurationData.SceneType.Composing;
-                }
-
-                if (i > 1)
-                {
-                    mc.stage[i].hasBird = true;
-                }
-
-                //the rest
-                if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Composing)
-                {
-                    mc.stage[i].hasSingingMusics = true;
-                    mc.stage[i].hasSingingAnimals = true;
-                    mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
-                }
-                else if (mc.stage[i].sceneType == StageController.SceneConfigurationData.SceneType.Motion)
-                {
-                    mc.stage[i].environment = StageController.SceneConfigurationData.Environment.House;
-                    mc.stage[i].hasKinectAvatar = true;
-                    //mc.stage[i].hasParticleEffect = true;
-
-                    if (i == 2)
-                    {
-                        mc.stage[i].hasDancer = true;
-                    }
-
-                    mc.stage[i].hasKinectAvatar = true;
-                    mc.stage[i].environment = StageController.SceneConfigurationData.Environment.Garden;
-
-                }
-
-            }
-
-        }
     }
-    */
+
+    public void LoadJson(){
+        
+    }
 
 
 }

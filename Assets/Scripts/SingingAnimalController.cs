@@ -133,12 +133,6 @@ public class SingingAnimalController : MonoBehaviour
 
         //TODO: does timeline amount change from stage to stage?
 
-        //if (newTimelines.Length != timelines.Length)
-        //{
-        //    //FIXME: sometimes this error appear, trying to reproduce it and seems kinda random now.
-        //    Debug.LogError("new timelines count > " + newTimelines.Length + ",       i have timelines  >  " + timelines.Length);
-        //}
-
         for (int i = 0; i < newTimelines.Length; i++)
         {
             timelines[i].playableAsset = newTimelines[i];

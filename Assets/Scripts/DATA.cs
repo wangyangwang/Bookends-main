@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public static class DATA
 {
+    public const int STARTUP_SCENE_MUSICIAN = 0;
+    public const int STARTUP_SCENE_STAGE = 0;
+
     //stage control
     public const int STAGE_COUNT_EACH_MUSICIAN = 5;
     public const int MUSICIAN_COUNT = 2;
