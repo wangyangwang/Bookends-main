@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -238,15 +238,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4932874324620468, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.000000033711366
+      value: -0.00000003371137
       objectReference: {fileID: 0}
     - target: {fileID: 4932874324620468, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000025296258
+      value: -0.000000025296254
       objectReference: {fileID: 0}
     - target: {fileID: 4932874324620468, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.38040265
+      value: 0.38040254
       objectReference: {fileID: 0}
     - target: {fileID: 4932874324620468, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.w
@@ -254,7 +254,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4444655598179584, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.000000006306961
+      value: -0.0000000063069576
       objectReference: {fileID: 0}
     - target: {fileID: 4444655598179584, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.y
@@ -262,27 +262,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4444655598179584, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.6342426
+      value: 0.63424265
       objectReference: {fileID: 0}
     - target: {fileID: 4444655598179584, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.7731341
+      value: -0.773134
       objectReference: {fileID: 0}
     - target: {fileID: 4539731767402744, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.000000040473203
+      value: 0.000000012989441
       objectReference: {fileID: 0}
     - target: {fileID: 4539731767402744, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000011759111
+      value: 0.00000005341122
       objectReference: {fileID: 0}
     - target: {fileID: 4539731767402744, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.68252975
+      value: 0.68252933
       objectReference: {fileID: 0}
     - target: {fileID: 4539731767402744, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7308579
+      value: 0.73085827
       objectReference: {fileID: 0}
     - target: {fileID: 1907641938527168, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_IsActive

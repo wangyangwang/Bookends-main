@@ -54,27 +54,11 @@ public class SceneConfigData : MonoBehaviour
 
 
 
-    public void ConvertToJson()
+    public void CheckData()
     {
-
-        string jsonVivaldi = JsonUtility.ToJson(GConfig[0]);
-
-        string path = "Assets/Resources/data.json";
-
-        //Write some text to the test.txt file
-        StreamWriter writer = new StreamWriter(path, true);
-        writer.WriteLine(jsonVivaldi);
-        writer.Close();
-
-        ////Re-import the file to update the reference in the editor
-        //AssetDatabase.ImportAsset(path);
-        //TextAsset asset = Resources.Load("test");
-
+        Debug.LogError("Check data has not been implemented");
     }
 
-    public void LoadJson(){
-        
-    }
 
 
 }

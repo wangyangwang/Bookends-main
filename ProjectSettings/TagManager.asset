@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [PS, PS]
+  tags:
+  - PS
+  - PS
   layers:
   - Default
   - TransparentFX
@@ -38,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: charaRigging
+    uniqueID: 4117276939
+    locked: 1
   - name: Default
     uniqueID: 0
     locked: 0

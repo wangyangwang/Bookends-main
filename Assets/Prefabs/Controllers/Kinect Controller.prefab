@@ -3004,7 +3004,7 @@ MonoBehaviour:
   externalHeadRotation: 0
   externalHandRotations: 0
   fingerOrientations: 0
-  moveRate: 1
+  moveRate: 8
   smoothFactor: 10
   offsetNode: {fileID: 0}
   posRelativeToCamera: {fileID: 0}

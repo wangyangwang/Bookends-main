@@ -137,6 +137,7 @@ public class StageController : MonoBehaviour
         public AudioClip countOffAudioClip;
 
         [Header("ANIMATION")]
+        public float countoffLength;
         public bool showSingingAnimals;
         public UnityEngine.Timeline.TimelineAsset dancerTimelineAsset;
         [Tooltip("bird flying path")]

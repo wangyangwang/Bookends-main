@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 4682258228023386}
   - component: {fileID: 95379961442511090}
   - component: {fileID: 114664876008585226}
+  - component: {fileID: 320810392612735740}
   m_Layer: 0
   m_Name: DancerController
   m_TagString: Untagged
@@ -3216,3 +3217,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.07364819, y: -0.014523357, z: 0.0016581761}
     m_Extent: {x: 0.025763273, y: 0.030704103, z: 0.012407529}
   m_DirtyAABB: 0
+--- !u!320 &320810392612735740
+PlayableDirector:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056599099639330}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []

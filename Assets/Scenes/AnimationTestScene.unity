@@ -215,7 +215,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4682258228023386, guid: 11da7ee8c1263624c987759668950622, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056599099639330, guid: 11da7ee8c1263624c987759668950622, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11da7ee8c1263624c987759668950622, type: 2}
@@ -257,7 +261,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4184380356352902, guid: 5b19e3fe9295b4013b3b8f87d26e974b, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490612509053364, guid: 5b19e3fe9295b4013b3b8f87d26e974b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b19e3fe9295b4013b3b8f87d26e974b, type: 2}
@@ -299,7 +307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4746124400200336, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4080969718386538, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
       propertyPath: m_LocalRotation.x
@@ -397,6 +405,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 0.7308579
       objectReference: {fileID: 0}
+    - target: {fileID: 1907641938527168, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1e2abf9ac2804534ad6bc664a8f8001, type: 2}
   m_IsPrefabParent: 0
@@ -407,6 +419,131 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].singingAnimalAnimationTimelineAssets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4836815306177542, guid: bad10226839b5ad409162caa2f3039bc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -443,7 +580,7 @@ Prefab:
         type: 2}
       propertyPath: GConfig.Array.data[0].stage.Array.data[0].birdPath
       value: 
-      objectReference: {fileID: 1667650841}
+      objectReference: {fileID: 1645738486}
     - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
         type: 2}
       propertyPath: GConfig.Array.data[1].stage.Array.data[0].birdPath
@@ -454,8 +591,979 @@ Prefab:
       propertyPath: GConfig.Array.data[1].stage.Array.data[1].birdPath
       value: 
       objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[0].hasDancer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[1].stage.Array.data[1].hasDancer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[0].hasDancer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[0].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].hasDancer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[0].environment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[1].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[2].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[3].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[4].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[5].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[6].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[7].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[8].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[9].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[10].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[11].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[12].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[13].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[14].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[15].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[16].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[17].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[18].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[19].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].environment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e050e691bb92439db6691942554f180, type: 3}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].birdPath
+      value: 
+      objectReference: {fileID: 1667650841}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].singingAnimalAnimationTimelineAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d9e6ab7600ce0342a6a80bec3bf09fb,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].singingAnimalAnimationTimelineAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78a49f81452d5214d86e304d1bdf4b6d,
+        type: 2}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].hasKinectAvatar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[20].hasBird
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114258749275524102, guid: bad10226839b5ad409162caa2f3039bc,
+        type: 2}
+      propertyPath: GConfig.Array.data[0].stage.Array.data[0].showSingingAnimals
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bad10226839b5ad409162caa2f3039bc, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &741182167
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174532084783504, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ba9718312bffb40459b27a7418b0e179, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &926721064
 Prefab:
@@ -536,7 +1644,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4543494638973630, guid: 98555f3d72bf240f2abc584892639cd1, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115766760866612, guid: 98555f3d72bf240f2abc584892639cd1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853473519348600, guid: 98555f3d72bf240f2abc584892639cd1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724428775240586, guid: 98555f3d72bf240f2abc584892639cd1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98555f3d72bf240f2abc584892639cd1, type: 2}
@@ -578,7 +1698,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4755629405919600, guid: d2a7af75ddd6e274b9a232d04f4496a1, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1108925034764032, guid: d2a7af75ddd6e274b9a232d04f4496a1, type: 2}
       propertyPath: m_IsActive
@@ -624,55 +1744,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4390549757466666, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1134931627517352, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
       propertyPath: m_Name
       value: Bird
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 44.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 26.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 35.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384572972280796, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c653a8d8234c46f49954372ae6cd6ded, type: 2}
@@ -719,9 +1795,15 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8b7c9e9b8d024114b161576dcea19c5, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1667650841 stripped
+--- !u!114 &1645738486 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114640976177437902, guid: c653a8d8234c46f49954372ae6cd6ded,
+    type: 2}
+  m_PrefabInternal: {fileID: 1063736735}
+  m_Script: {fileID: 11500000, guid: a38c9cf39438a754aa21e6c1eece5e62, type: 3}
+--- !u!114 &1667650841 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114390249849066974, guid: c653a8d8234c46f49954372ae6cd6ded,
     type: 2}
   m_PrefabInternal: {fileID: 1063736735}
   m_Script: {fileID: 11500000, guid: a38c9cf39438a754aa21e6c1eece5e62, type: 3}

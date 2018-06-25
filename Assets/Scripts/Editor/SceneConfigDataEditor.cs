@@ -13,15 +13,12 @@ public class SceneConfigDataEditor : Editor
         DrawDefaultInspector();
 
         
-        if (GUILayout.Button("save to json file"))
+        if (GUILayout.Button("Check Data"))
         {
-            myTarget.ConvertToJson();
+            myTarget.CheckData();
         }
 
-        if (GUILayout.Button("load json file"))
-        {
-            myTarget.LoadJson();
-        }
+
 
     }
 }
